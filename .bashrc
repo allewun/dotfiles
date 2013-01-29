@@ -7,7 +7,7 @@ export INPUTRC=~/.inputrc
 
 # RVM stuff
 PATH=$PATH:$HOME/.rvm/bin
-[[ -s "/Users/allen/.rvm/scripts/rvm" ]] && source "/Users/allen/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #===========================================================================
 # Terminal / Prompt
@@ -57,8 +57,9 @@ alias preview="open -a Preview"
 alias xcode="open -a Xcode"
 
 # Directory shortcuts
-alias iosimage="~/scripts/iOSImageReport/iOSImageReport.rb"
-alias ucla="~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/"
+alias dotfiles="cd ~/Dropbox/dotfiles/"
+alias iosimage="cd ~/scripts/iOSImageReport/iOSImageReport.rb"
+alias ucla="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/"
 
 alias ee115c="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/EE\ 115C/"
 alias stats="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/Stats\ 105/"
