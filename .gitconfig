@@ -1,0 +1,35 @@
+[user]
+  name = Allen Wu
+  email = # email adress #
+
+[mergetool]
+  keepBackup = true
+
+[color]
+  ui = true
+  diff = auto
+  status = auto
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+
+[color "status"]
+  added = green
+  changed = cyan
+
+[alias]
+  s = status
+  co = checkout
+  d = difftool
+  c = commit
+  l = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short
+  lg = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --graph
+  b = branch
+
+  this = !git init && git add . && git commit -m \"Initial commit\"
+
+[core]
+  excludesfile = /Users/allen/.gitignore
