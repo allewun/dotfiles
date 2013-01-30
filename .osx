@@ -1,0 +1,55 @@
+#============================================================================
+# OS X settings
+# based on: https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+#============================================================================
+
+#============================================================================
+# General UI/UX
+#============================================================================
+
+# always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+#============================================================================
+# Trackpad/mouse/keyboard/input
+#============================================================================
+
+# disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 3
+
+#============================================================================
+# Screen
+#============================================================================
+
+# disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+
+#============================================================================
+# Finder
+#============================================================================
+
+# show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# display full path in window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+
+# search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+
+killall Finder
+
