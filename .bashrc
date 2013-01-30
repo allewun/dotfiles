@@ -21,13 +21,13 @@ export PS1="$GREEN\w$ENDCOLOR $WHITE>$ENDCOLOR "
 shopt -s checkwinsize
 
 # color man pages
-export LESS_TERMCAP_mb=$'\E[01;36m'
-export LESS_TERMCAP_md=$'\E[01;36m'
+export LESS_TERMCAP_mb=$'\E[0;36m'     # cyan
+export LESS_TERMCAP_md=$'\E[0;36m'     # cyan
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_so=$'\E[0;30;102m' # highlighted text
 export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;33m'
+export LESS_TERMCAP_us=$'\E[0;33m'     # yellow
 
 #===========================================================================
 # History
@@ -91,6 +91,7 @@ alias gti='git'
 
 # grep
 alias grep='grep --color=auto'
+export GREP_COLOR='4;93' # yellow, underlined matches
 
 # copy/paste
 alias copy='pbcopy'
