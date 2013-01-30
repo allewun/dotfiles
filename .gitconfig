@@ -38,6 +38,10 @@
   c = commit
   l = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short
   lg = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --graph
+  lr = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=relative
+  lgr = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=relative --graph
+ 
+
   b = branch
 
   this = !git init && git add . && git commit -m \"Initial commit\"
