@@ -112,3 +112,5 @@ alias md5='openssl md5'
 # networking
 alias ip="curl http://ident.me/; echo"
 alias headers="curl -I"
+alias speedtest="wget -O /dev/null http://184.82.225.2/bigtest.tgz"
+
