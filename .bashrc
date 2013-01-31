@@ -1,11 +1,14 @@
 #===========================================================================
 # .bashrc
-#  Allen Wu (1/30/2013)
+#  Allen Wu (1/31/2013)
 #===========================================================================
 
-export INPUTRC=~/.inputrc
-
+# add ~/bin to $PATH
 PATH=$PATH:$HOME/bin
+
+# .inputrc stuff
+export INPUTRC=~/.inputrc
+bind -f ~/.inputrc
 
 # RVM stuff
 PATH=$PATH:$HOME/.rvm/bin

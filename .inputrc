@@ -3,3 +3,10 @@
 
 "\C-[OB": history-search-forward
 "\C-[[B": history-search-forward
+
+"\e[5C" : forward-word
+"\e[5D" : backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+set completion-ignore-case On
