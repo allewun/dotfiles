@@ -18,10 +18,24 @@ PATH=$PATH:$HOME/.rvm/bin
 # Terminal / Prompt
 #===========================================================================
 
-GREEN='\[\e[0;32m\]'
-WHITE='\[\e[1;37m\]'
-ENDCOLOR='\[\e[0m\]'
-export PS1="$GREEN\w$ENDCOLOR $WHITE>$ENDCOLOR "
+# colored prompt with current git branch
+source ~/.bash/git-completion.bash
+
+function prompt {
+  local GREEN='\[\e[0;32m\]'
+  local WHITE='\[\e[1;37m\]'
+  local CYAN='\[\e[0;36m\]'
+  local ENDCOLOR='\[\e[0m\]'
+
+  local __dir="$GREEN\w$ENDCOLOR"
+  local __git_branch='$(__git_ps1 " [%s]") '
+  local __arrow="$WHITE>$ENDCOLOR"
+
+  export GIT_PS1_SHOWDIRTYSTATE=1
+  export PS1="$__dir$CYAN$__git_branch$ENDCOLOR$__arrow "
+}
+
+prompt
 
 shopt -s checkwinsize
 
