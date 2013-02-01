@@ -36,12 +36,14 @@
   co = checkout
   d = difftool
   c = commit
+  # concise log
   l = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short
+  # concise log + graph
   lg = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --graph
+  # concise log with relative times
   lr = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=relative
+  # concise logs + graph with relative times
   lgr = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=relative --graph
- 
-
   b = branch
 
   this = !git init && git add . && git commit -m \"Initial commit\"
