@@ -135,3 +135,7 @@ alias ip="curl http://ident.me/; echo"
 alias headers="curl -I"
 alias speedtest="wget -O /dev/null http://184.82.225.2/bigtest.tgz"
 
+# ruby/rails
+alias rs='rails s'
+alias rc='rails c'
+
