@@ -1,6 +1,6 @@
 #===========================================================================
 # .bashrc
-#  Allen Wu (1/31/2013)
+#  Allen Wu (2/1/2013)
 #===========================================================================
 
 # add ~/bin to $PATH
@@ -113,6 +113,11 @@ alias gti='git'
 # grep
 alias grep='grep --color=auto'
 export GREP_COLOR='4;93' # yellow, underlined matches
+
+# ack
+export ACK_COLOR_FILENAME='underline cyan'
+export ACK_COLOR_MATCH='underline yellow'
+export ACK_COLOR_LINENO='cyan'
 
 # copy/paste
 alias copy='pbcopy'
