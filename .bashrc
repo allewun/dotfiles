@@ -107,6 +107,9 @@ function cd() {
   builtin cd "$*" && ls
 }
 
+# mkdir
+alias mkdir='mkdir -p'
+
 # git
 alias gti='git'
 
