@@ -79,6 +79,7 @@ alias xcode="open -a Xcode"
 
 # Directory shortcuts
 alias dotfiles="cd ~/Dropbox/dotfiles/"
+alias desk="cd ~/Desktop/"
 alias iosimage="cd ~/scripts/iOSImageReport/iOSImageReport.rb"
 alias ucla="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/"
 
