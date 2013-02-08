@@ -1,6 +1,6 @@
 #===========================================================================
 # .bashrc
-#  Allen Wu (2/2/2013)
+#  Allen Wu (2/8/2013)
 #===========================================================================
 
 # add ~/bin to $PATH
@@ -142,4 +142,14 @@ alias speedtest="wget -O /dev/null http://184.82.225.2/bigtest.tgz"
 # ruby/rails
 alias rs='rails s'
 alias rc='rails c'
+
+# Misc.
+function histail() {
+  if [ -z "$1" ]
+  then
+    history | tail -10
+  else
+    history | tail -n "$1"
+  fi
+}
 
