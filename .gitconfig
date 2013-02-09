@@ -2,49 +2,39 @@
   name = Allen Wu
   email = # email adress #
 
-[mergetool]
+[merge]
   tool = p4merge
-  keepBackup = true
 
-[mergetool "p4merge"]
-  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  keepTemporaries = false
-  trustExitCode = false
-  keepBackup = false
-
-[diff]
-  external = p4diff
-  summary = true
+[mergetool]
+  prompt = false
 
 [color]
-  ui = true
-  diff = auto
+  ui     = true
+  diff   = auto
   status = auto
 
 [color "diff"]
   meta = yellow bold
   frag = magenta bold
-  old = red
-  new = green
+  old  = red
+  new  = green
 
 [color "status"]
-  added = green
+  added   = green
   changed = cyan
 
 [alias]
-  s = status
+  s  = status
   co = checkout
-  d = difftool
-  c = commit
+  d  = difftool
+  c  = commit
+  b  = branch
   # concise log
   l = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short
   # concise log + graph
   lg = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --graph
-  # concise log with relative times
-  lr = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=relative
-  # concise logs + graph with relative times
-  lgr = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=relative --graph
-  b = branch
+  # log with modified files
+  lf = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --stat
 
   this = !git init && git add . && git commit -m \"Initial commit\"
 
