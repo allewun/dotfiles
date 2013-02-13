@@ -20,8 +20,8 @@ PATH=$PATH:$HOME/.rvm/bin
 
 # colored prompt with current git branch
 
-source ~/.bash/.git-completion.sh
-source ~/.bash/.git-prompt.sh
+source ~/.bash/git-completion.sh
+source ~/.bash/git-prompt.sh
 
 function prompt {
   local GREEN='\[\e[0;32m\]'
