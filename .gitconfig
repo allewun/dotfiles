@@ -29,14 +29,14 @@
   d  = difftool
   c  = commit
   b  = branch
-  # concise log
+
+  # concise log, concise log + graph, concise log with modified files
   l = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short
-  # concise log + graph
   lg = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --graph
-  # log with modified files
   lf = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --stat
 
   this = !git init && git add . && git commit -m \"Initial commit\"
+  email = config user.email
 
 [core]
   excludesfile = /Users/allen/.gitignore
