@@ -1,6 +1,6 @@
 [user]
-  name = Allen Wu
-  email = # email adress #
+  name  = Allen Wu
+  email = Allen.Wu@originate.com
 
 [merge]
   tool = p4merge

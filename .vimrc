@@ -1,6 +1,9 @@
 syntax on
 colorscheme made_of_code
 
+" Highlight search results
+set hlsearch
+
 set tabstop=2 shiftwidth=2 expandtab
 set number
 set cursorline
