@@ -1,6 +1,6 @@
 #===========================================================================
 # .bashrc
-#  Allen Wu (2/8/2013)
+#  Allen Wu (2/13/2013)
 #===========================================================================
 
 # add ~/bin to $PATH
@@ -166,7 +166,6 @@ export ACK_COLOR_LINENO='cyan'
 alias copy='pbcopy'
 alias paste='pbpaste'
 alias copypath='pwd | tr -d "\r\n" | pbcopy'
-alias cdpaste='cd `paste`'
 alias clearclip='echo -n "" | pbcopy'
 
 # hash
@@ -174,9 +173,9 @@ alias sha1='openssl sha1'
 alias md5='openssl md5'
 
 # networking
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias headers="curl -I"
-alias speedtest="wget -O /dev/null http://184.82.225.2/bigtest.tgz"
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias headers='curl -I'
+alias speedtest='wget -O /dev/null http://184.82.225.2/bigtest.tgz'
 
 # ruby/rails
 alias rs='rails s'
@@ -184,8 +183,7 @@ alias rc='rails c'
 
 # Misc.
 function histail() {
-  if [ -z "$1" ]
-  then
+  if [ -z "$1" ]; then
     history | tail -10
   else
     history | tail -n "$1"
