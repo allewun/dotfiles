@@ -41,7 +41,10 @@ prompt
 
 shopt -s checkwinsize
 
+export PAGER=less
+
 # color man pages
+export LESS="-iR"
 export LESS_TERMCAP_mb=$'\E[0;36m'     # cyan
 export LESS_TERMCAP_md=$'\E[0;36m'     # cyan
 export LESS_TERMCAP_me=$'\E[0m'
