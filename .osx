@@ -26,7 +26,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 3
 #============================================================================
 
 # disable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
+defaults write com.apple.screencapture disable-shadow -bool false
 
 #============================================================================
 # Finder
