@@ -57,7 +57,7 @@ export LESS_TERMCAP_us=$'\E[0;33m'     # yellow
 # History
 #===========================================================================
 
-export HISTSIZE=100000
+export HISTSIZE=100000000
 export HISTCONTROL=ignoreboth
 export HISTIGNORE=ls:pwd:bashrc
 export PROMPT_COMMAND='history -a'
