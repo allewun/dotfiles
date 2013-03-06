@@ -41,3 +41,7 @@
 
 [core]
   excludesfile = /Users/allen/.gitignore
+
+[push]
+  default = upstream
+
