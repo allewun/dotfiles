@@ -1,5 +1,5 @@
 [user]
-  name  = Allen Wu
+  name = Allen Wu
   email = # email address #
 
 [merge]
@@ -7,6 +7,7 @@
 
 [mergetool]
   prompt = false
+  keepBackup = true
 
 [color]
   ui     = true

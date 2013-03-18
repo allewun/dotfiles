@@ -193,3 +193,14 @@ function histail() {
   fi
 }
 
+# append song to "to download" list
+function song() {
+  local __songfile="/Users/allen/Dropbox/dl.txt";
+
+  if [ -z "$1" ]; then
+    cat $__songfile
+  else
+    echo "$1" >> $__songfile
+    echo "Added: \"$1\""
+  fi
+}
