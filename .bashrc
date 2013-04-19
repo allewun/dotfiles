@@ -86,46 +86,34 @@ alias xcode="open -a Xcode"
 alias dotfiles="cd ~/Dropbox/dotfiles/"
 alias desktop="cd ~/Desktop/"
 alias iosimage="cd ~/scripts/iOSImageReport/iOSImageReport.rb"
-alias ucla="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/"
+alias ucla="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ SPRING/"
 
-alias cs151="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/CS\ M151B/"
-alias ee115c="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/EE\ 115C/"
-alias stats="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/Stats\ 105/"
-alias cadence="ssh -c arcfour,blowfish-cbc -XC wua@eeapps.seas.ucla.edu"
+alias cs131="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ SPRING/CS\ 131/"
+alias cs118="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ SPRING/CS\ 118/"
 
 # "Study" function
 function study() {
 
-  local __csDir="/Users/allen/Dropbox/UCLA/'12-'13 (4th Year)/13 WINTER/CS M151B/";
-  local __csSite="https://courseweb.seas.ucla.edu/classView.php?term=13W&srs=187650200";
-  local __csBook="/Users/allen/Dropbox/UCLA/'12-'13 (4th Year)/13 WINTER/CS M151B/MK.Computer.Organization.and.Design.4th.Edition.0123747503.pdf";
+  local __cs131Dir="/Users/allen/Dropbox/UCLA/'12-'13 (4th Year)/13 SPRING/CS 131/";
+  local __cs131Site="https://courseweb.seas.ucla.edu/classView.php?term=13S&srs=187510200";
 
-  local __statsDir="/Users/allen/Dropbox/UCLA/'12-'13 (4th Year)/13 WINTER/Stats 105/"
-  local __statsSite="https://ccle.ucla.edu/course/view/13W-STATS105-1";
-  local __statsBook="/Users/allen/Dropbox/UCLA/'12-'13 (4th Year)/13 WINTER/Stats 105/Wiley.Applied.Statistics.and.Probability.for.Engineers.5th.Edition.0470053046.pdf";
+  local __cs118Dir="/Users/allen/Dropbox/UCLA/'12-'13 (4th Year)/13 SPRING/CS 118/"
+  local __cs118Site="https://courseweb.seas.ucla.edu/classView.php?term=13S&srs=187350200";
 
-  local __eeDir="/Users/allen//Dropbox/UCLA/'12-'13 (4th Year)/13 WINTER/EE 115C/";
-  local __eeSite="http://icslwebs.ee.ucla.edu/dejan/ee115cwiki/index.php/Main";
   local __piazza="https://piazza.com/";
 
   case "$1" in
-    "stats")
-      stats;
-      firefox $__statsSite;
-      preview "$__statsBook";
-      finder "$__statsDir";
-      ;;
-    "ee")
-      ee115c;
-      firefox $__eeSite;
+    "131")
+      cs131;
+      firefox $__cs131Site;
       firefox $__piazza;
-      finder "$__eeDir";
+      finder "$__cs131Dir";
       ;;
-    "cs")
-      cs151;
-      firefox $__csSite;
-      preview "$__csBook";
-      finder "$__csDir";
+    "118")
+      cs118;
+      firefox $__cs118Site;
+      firefox $__piazza;
+      finder "$__cs118Dir";
       ;;
   esac
 }
