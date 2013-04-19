@@ -1,6 +1,6 @@
 #===========================================================================
 # .bashrc
-#  Allen Wu (2/13/2013)
+#  Allen Wu (4/19/2013)
 #===========================================================================
 
 # add ~/bin to $PATH
@@ -57,7 +57,8 @@ export LESS_TERMCAP_us=$'\E[0;33m'     # yellow
 # History
 #===========================================================================
 
-export HISTSIZE=100000000
+export HISTSIZE=
+export HISTFILESIZE=
 export HISTCONTROL=ignoreboth
 export HISTIGNORE=ls:pwd:bashrc
 export PROMPT_COMMAND='history -a'
@@ -83,7 +84,7 @@ alias xcode="open -a Xcode"
 
 # Directory shortcuts
 alias dotfiles="cd ~/Dropbox/dotfiles/"
-alias desk="cd ~/Desktop/"
+alias desktop="cd ~/Desktop/"
 alias iosimage="cd ~/scripts/iOSImageReport/iOSImageReport.rb"
 alias ucla="cd ~/Dropbox/UCLA/\'12-\'13\ \(4th\ Year\)/13\ WINTER/"
 
