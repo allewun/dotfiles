@@ -1,6 +1,6 @@
 #===========================================================================
 # .bashrc
-#  Allen Wu (4/30/2013)
+#  Allen Wu (5/19/2013)
 #===========================================================================
 
 # add ~/bin to $PATH
@@ -71,7 +71,7 @@ shopt -s histappend
 #===========================================================================
 
 # Edit dotfiles/configs
-alias bashrc="vim ~/.bashrc && source ~/.bashrc"
+alias bashrc="v ~/.bashrc && source ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
 alias gitconfig="vim ~/.gitconfig"
 
@@ -138,6 +138,9 @@ alias cd~='cd ~'
 function cd() {
   builtin cd "$*" && ls
 }
+
+# vim
+alias v='vim -c "'"'"'\""'
 
 # mkdir
 alias mkdir='mkdir -p'
