@@ -23,7 +23,13 @@ PATH=$PATH:$HOME/.rvm/bin
 source ~/.bash/git-completion.sh
 source ~/.bash/git-prompt.sh
 
-function prompt {
+function prompt_right() {
+  local __dts="`date +"%a %d-%b-%Y %I:%M %p"`"
+
+  echo -e "\033[0;35m${__dts}\033[0m"
+}
+
+function prompt_left() {
   local GREEN='\[\e[0;32m\]'
   local WHITE='\[\e[1;37m\]'
   local CYAN='\[\e[0;36m\]'
@@ -31,12 +37,17 @@ function prompt {
 
   local __dir="$GREEN\w$ENDCOLOR"
   local __git_branch='$(__git_ps1 " [%s]") '
-  local __arrow="$WHITE>$ENDCOLOR"
 
   export GIT_PS1_SHOWDIRTYSTATE=1
-  export PS1="$__dir$CYAN$__git_branch$ENDCOLOR$__arrow "
+
+  echo -e "$__dir$CYAN$__git_branch$ENDCOLOR"
 }
 
+function prompt() {
+    # http://superuser.com/a/517110
+    compensate=11
+    export PS1=$(printf "%*s\r%s\n> " "$(($(tput cols)+${compensate}))" "$(prompt_right)" "$(prompt_left)")
+}
 prompt
 
 shopt -s checkwinsize
