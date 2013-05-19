@@ -22,6 +22,7 @@ PATH=$PATH:$HOME/.rvm/bin
 
 source ~/.bash/git-completion.sh
 source ~/.bash/git-prompt.sh
+source ~/.bash/z.sh
 
 function prompt_right() {
   local __dts="`date +"%a %d-%b-%Y %I:%M %p"`"
