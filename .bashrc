@@ -35,13 +35,15 @@ function prompt_left() {
   local WHITE='\[\e[1;37m\]'
   local CYAN='\[\e[0;36m\]'
   local ENDCOLOR='\[\e[0m\]'
+  local BACKGROUND='\[\e[44m\]'
+
 
   local __dir="$GREEN\w$ENDCOLOR"
   local __git_branch='$(__git_ps1 " [%s]") '
 
   export GIT_PS1_SHOWDIRTYSTATE=1
 
-  echo -e "$__dir$CYAN$__git_branch$ENDCOLOR"
+  echo -e "\n$__dir$CYAN$__git_branch$ENDCOLOR"
 }
 
 function prompt() {
