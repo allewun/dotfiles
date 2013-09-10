@@ -23,3 +23,5 @@ DerivedData
 # Java
 *.class
 
+# SASS
+.sass-cache/
