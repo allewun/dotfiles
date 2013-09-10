@@ -12,13 +12,14 @@ autoload -U compinit && compinit
 ## case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-setopt autopushd
-setopt pushdignoredups
+setopt AUTOPUSHD
+setopt PUSHDIGNOREDUPS
 
 #==============================================================================
 # Prompt
 #==============================================================================
 
+setopt PROMPT_SUBST
 source ~/.bash/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
@@ -56,7 +57,7 @@ setopt EXTENDED_HISTORY
 # Aliases
 #==============================================================================
 
-alias zshrc="vim ~/.zshrc && source ~/.zshrc"
+alias zshrc="v ~/.zshrc && source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias gitconfig="vim ~/.gitconfig"
 
@@ -115,6 +116,9 @@ alias speedtest='wget -O /dev/null http://184.82.225.2/bigtest.tgz'
 # ruby/rails
 alias rs='rails s'
 alias rc='rails c'
+
+# vim
+alias v='vim -c "'"'"'\""' # open to last position
 
 # Misc.
 function histail() {
