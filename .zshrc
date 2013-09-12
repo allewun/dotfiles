@@ -85,6 +85,7 @@ alias tower="open -a Tower"
 # directory shortcuts
 alias dotfiles="cd ~/Dropbox/dotfiles/"
 alias desktop="cd ~/Desktop/"
+alias dropbox="cd ~/Dropbox/"
 alias originate="cd ~/Dropbox/Originate/"
 
 alias ls=' ls -AFG' # trailing slash for dirs and colors
