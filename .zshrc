@@ -1,19 +1,10 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (9/9/2013)
+# Allen Wu (9/12/2013)
 #==============================================================================
 
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
-# Add ~/bin to path
-PATH=$PATH:$HOME/bin
+export PATH=$PATH:/usr/local/bin:$HOME/bin
 
-autoload -U compinit && compinit
-## case-insensitive (all),partial-word and then substring completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-setopt AUTOPUSHD
-setopt PUSHDIGNOREDUPS
 
 #==============================================================================
 # Prompt
@@ -33,12 +24,14 @@ preexec() {
   RPROMPT="%F{magenta}$DATE%f"
 }
 
+
 #==============================================================================
 # Key bindings
 #==============================================================================
 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+
 
 #==============================================================================
 # History
@@ -52,15 +45,29 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+
+
+#==============================================================================
+# zsh completion
+#==============================================================================
+
+autoload -U compinit && compinit
+
+# case-insensitive (all), partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 
 #==============================================================================
 # Aliases
 #==============================================================================
 
+# configs
 alias zshrc="v ~/.zshrc && source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias gitconfig="vim ~/.gitconfig"
 
+# OS X applications
 alias finder="open -a Finder ."
 alias firefox="open -a Firefox"
 alias chrome="open -a Google\ Chrome"
@@ -68,20 +75,12 @@ alias preview="open -a Preview"
 alias xcode="open -a Xcode"
 alias tower="open -a Tower"
 
+# directory shortcuts
 alias dotfiles="cd ~/Dropbox/dotfiles/"
 alias desktop="cd ~/Desktop/"
 alias originate="cd ~/Dropbox/Originate/"
 
-
-export LSCOLORS=dxfxcxdxbxegedabagacad
 alias ls=' ls -AFG' # trailing slash for dirs and colors
-
-# automatically 'ls' after 'cd'
-function chpwd() {
-  emulate -L zsh
-  ls
-}
-
 
 # mkdir
 alias mkdir='mkdir -p'
@@ -91,12 +90,6 @@ alias gti='git'
 
 # grep
 alias grep='grep --color=auto'
-export GREP_COLOR='4;93' # yellow, underlined matches
-
-# ack
-export ACK_COLOR_FILENAME='underline cyan'
-export ACK_COLOR_MATCH='underline yellow'
-export ACK_COLOR_LINENO='cyan'
 
 # copy/paste
 alias copy='pbcopy'
@@ -120,14 +113,12 @@ alias rc='rails c'
 # vim
 alias v='vim -c "'"'"'\""' # open to last position
 
-# Misc.
-function histail() {
-  if [ -z "$1" ]; then
-    history | tail -10
-  else
-    history | tail -n "$1"
-  fi
-}
+# ocaml
+alias ocaml="rlwrap ocaml"
+
+#==============================================================================
+# Environment Variables
+#==============================================================================
 
 # color man pages
 export LESS="-iR"
@@ -139,6 +130,63 @@ export LESS_TERMCAP_so=$'\E[0;30;102m' # highlighted text
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[0;33m'     # yellow
 
+# ls colors
+export LSCOLORS=dxfxcxdxbxegedabagacad
+
+# grep colors
+export GREP_COLOR='4;93' # yellow, underlined matches
+
+# ack colors
+export ACK_COLOR_FILENAME='underline cyan'
+export ACK_COLOR_MATCH='underline yellow'
+export ACK_COLOR_LINENO='cyan'
 
 
+#==============================================================================
+# Functions
+#==============================================================================
+
+function histail() {
+  if [ -z "$1" ]; then
+    history 1 | tail -10
+  else
+    history 1 | tail -n "$1"
+  fi
+}
+
+# append song to "to download" list
+function song() {
+  local __songfile="/Users/allen/Dropbox/dl.txt";
+
+  if [ -z "$1" ]; then
+    cat $__songfile
+  else
+    echo "$1" >> $__songfile
+    echo "Added: \"$1\""
+  fi
+}
+
+
+#==============================================================================
+# Miscellaneous
+#==============================================================================
+
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+
+# speed up git completion
+__git_files () {
+  _wanted files expl 'local files' _files
+}
+
+# automatically 'ls' after 'cd'
+function chpwd() {
+  emulate -L zsh
+  ls
+}
+
+
+#==============================================================================
+# Temporary stuff
+#==============================================================================
 
