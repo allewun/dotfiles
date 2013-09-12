@@ -40,6 +40,8 @@
   this = !git init && git add . && git commit -m \"Initial commit\"
   email = config user.email
 
+  hub = "!zsh -c 'source ~/.zshrc && hub'"
+
 [core]
   excludesfile = /Users/allen/.gitignore
 

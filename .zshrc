@@ -107,6 +107,7 @@ alias mkdir='mkdir -p'
 
 # git
 alias gti='git'
+alias github='hub'
 
 # grep
 alias grep='grep --color=auto'
@@ -188,6 +189,8 @@ function song() {
 
 # open repository on github (modified from: http://askubuntu.com/a/243485)
 function hub {
+  github="https://github.com/"
+
   if [ -d .git ]; then
     remotes=$(git remote -v | awk -F'git@github.com:' '{print $2}')
     if [ -z "$remotes" ]; then
@@ -195,8 +198,17 @@ function hub {
     fi
 
     remote_url=$(echo $remotes | cut -d" " -f1 | head -n 1 | sed 's/.git//')
-    url="https://github.com/${remote_url}"
-    open $url
+
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    if [[ -n "$branch" && -n "$remote_url" ]]; then
+      branch="/tree/$branch"
+    else
+      branch=""
+    fi
+
+    open "${github}${remote_url}${branch}"
+  else
+    open $github
   fi
 }
 
