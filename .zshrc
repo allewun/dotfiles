@@ -186,6 +186,20 @@ function song() {
   fi
 }
 
+# open repository on github (modified from: http://askubuntu.com/a/243485)
+function hub {
+  if [ -d .git ]; then
+    remotes=$(git remote -v | awk -F'git@github.com:' '{print $2}')
+    if [ -z "$remotes" ]; then
+      remotes=$(git remote -v | awk -F'https://github.com/' '{print $2}')
+    fi
+
+    remote_url=$(echo $remotes | cut -d" " -f1 | head -n 1 | sed 's/.git//')
+    url="https://github.com/${remote_url}"
+    open $url
+  fi
+}
+
 
 #==============================================================================
 # Miscellaneous
