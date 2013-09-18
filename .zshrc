@@ -100,7 +100,13 @@ alias desktop="cd ~/Desktop/"
 alias dropbox="cd ~/Dropbox/"
 alias originate="cd ~/Dropbox/Originate/"
 
+# ls
 alias ls=' ls -AFG' # trailing slash for dirs and colors
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # mkdir
 alias mkdir='mkdir -p'
