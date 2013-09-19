@@ -143,6 +143,9 @@ alias v='vim -c "'"'"'\""' # open to last position
 # ocaml
 alias ocaml="rlwrap ocaml"
 
+# misc
+alias tree="tree | less"
+
 #==============================================================================
 # Environment Variables
 #==============================================================================
