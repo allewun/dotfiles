@@ -196,31 +196,72 @@ function song() {
   fi
 }
 
-# open repository on github (modified from: http://askubuntu.com/a/243485)
-function hub {
-  github="https://github.com/"
+# open a repository online
+# if no arguments provided, guess the hosting service
+#
+# Usage:
+#   repo(domain, branchPath)
+#     - domain     : domain of service
+#     - branchPath : URL path to reach branch
+#
+# (modified from: http://askubuntu.com/a/243485)
 
-  if [ -d .git ]; then
-    remotes=$(git remote -v | awk -F'git@github.com:' '{print $2}')
-    if [ -z "$remotes" ]; then
-      remotes=$(git remote -v | awk -F'https://github.com/' '{print $2}')
+function repo {
+  domain=$1
+  branchPath=$2
+
+  # check if valid git repo
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+
+    # guess git hosting service
+    if [[ -z $domain && -z $branchPath ]]; then
+      remotes=$(git remote -v)
+
+      if [[ $remotes =~ "github" ]]; then
+        domain="github.com"
+        branchPath="/tree/"
+      elif [[ $remotes =~ "bitbucket" ]]; then
+        domain="bitbucket.org"
+        branchPath="/commits/branch/"
+      else
+        echo "Unable to determine git hosting service."
+        return
+      fi
     fi
 
-    remote_url=$(echo $remotes | cut -d" " -f1 | head -n 1 | sed 's/.git//')
+    remotes=$(git remote -v | awk -F'git@'$domain: '{print $2}')
+    if [ -z $remotes ]; then
+      remotes=$(git remote -v | awk -F'https://'$domain/ '{print $2}')
+    fi
 
+    remoteURL=$(echo $remotes | cut -d" " -f1 | head -n 1 | sed 's/.git//')
     branch=$(git rev-parse --abbrev-ref HEAD)
-    if [[ -n "$branch" && -n "$remote_url" ]]; then
-      branch="/tree/$branch"
+
+    if [[ -n $branch && -n $remoteURL && $branch != "master" ]]; then
+      branch="${branchPath}${branch}"
     else
       branch=""
     fi
 
-    open "${github}${remote_url}${branch}"
+    open "https://${domain}/${remoteURL}${branch}"
   else
-    open $github
+    echo "Not a repository."
+
+    if [[ -n $domain ]]; then
+      open "https://${domain}/"
+    fi
   fi
 }
 
+# open repository on github
+function hub {
+  repo "github.com" "/tree/"
+}
+
+# open repository on bitbucket
+function bit {
+  repo "bitbucket.org" "/commits/branch/"
+}
 
 #==============================================================================
 # Miscellaneous
