@@ -33,9 +33,9 @@
   bi = bisect
 
   # concise log, concise log + graph, concise log with modified files
-  l = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short
-  lg = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --graph
-  lf = log --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %C(cyan)(%an, %ad)%Creset' --date=short --stat
+  l = log  --pretty=format:'%C(red)%h%Creset %C(green)%ad%Creset%C(yellow)%d%Creset %s %C(cyan)(%an)%Creset' --date=short
+  lg = log --pretty=format:'%C(red)%h%Creset %C(green)%ad%Creset%C(yellow)%d%Creset %s %C(cyan)(%an)%Creset' --date=short --graph
+  lf = log --pretty=format:'%C(red)%h%Creset %C(green)%ad%Creset%C(yellow)%d%Creset %s %C(cyan)(%an)%Creset' --date=short --stat
 
   this = !git init && git add . && git commit -m \"Initial commit\"
   email = config user.email
