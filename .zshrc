@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (9/12/2013)
+# Allen Wu (10/8/2013)
 #==============================================================================
 
 export PATH=$PATH:/usr/local/bin:$HOME/bin
@@ -70,6 +70,8 @@ setopt SHARE_HISTORY
 #==============================================================================
 
 autoload -U compinit && compinit
+setopt EXTENDED_GLOB
+setopt GLOB_COMPLETE
 
 # case-insensitive (all), partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -147,6 +149,8 @@ alias ocaml="rlwrap ocaml"
 
 # misc
 alias tree="tree | less"
+alias json="python -m json.tool | pygmentize -f terminal256 -l javascript -O style=monokai"
+
 
 #==============================================================================
 # Environment Variables
