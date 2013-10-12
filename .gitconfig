@@ -41,6 +41,7 @@
   email = config user.email
 
   hub = "!zsh -c 'source ~/.zshrc && hub'"
+  who = shortlog -n -s --no-merges
 
 [core]
   excludesfile = /Users/allen/.gitignore
