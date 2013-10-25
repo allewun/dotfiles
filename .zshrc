@@ -150,7 +150,7 @@ alias ocaml="rlwrap ocaml"
 # misc
 alias tree="tree | less"
 alias json="python -m json.tool | pygmentize -f terminal256 -l javascript -O style=monokai"
-
+alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
 
 #==============================================================================
 # Environment Variables
