@@ -269,6 +269,18 @@ function bit {
   repo "bitbucket.org" "/commits/branch/"
 }
 
+# git blame colors
+function blame {
+  red=$(echo '\033[31m')
+  green=$(echo '\033[32m')
+  cyan=$(echo '\033[36m')
+  yellow=$(echo '\033[33m')
+  magenta=$(echo '\033[35m')
+  none=$(echo '\033[0m')
+
+  git blame $1 | sed -E "s/^([0-9a-z^]+)([^(]*)( +)\(([A-Za-z ]+)( +)([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} [-+][0-9]{4})( +)([0-9]+)\)(.*)$/$red\1$none $green\2$none\3($cyan\4$none\5$yellow\6$none $magenta\8$none)\9/" | less
+}
+
 #==============================================================================
 # Miscellaneous
 #==============================================================================
