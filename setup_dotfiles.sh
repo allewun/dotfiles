@@ -4,47 +4,58 @@
 # Set up dotfile symlinks
 #==============================================================================
 
-echo -e "\nSettings up dotfiles...\n-----------------------\n"
+DOTFILE_PATH=~/Dropbox/dotfiles
+DOTFILES=".zshrc
+.zsh_history
+.bashrc
+.bash_history
+.gitconfig
+.gitignore
+.vimrc
+.tmux.conf
+.osx"
 
-# zsh
-ln -s ~/Dropbox/dotfiles/.zshrc ~/.zshrc || exit
-ln -s ~/Dropbox/dotfiles/.zsh_history ~/.zsh_history || exit
-echo ".zshrc, .zsh_history linked!"
+echo -e "
+*-----------------------------*
+|    Setting up dotfiles...   |
+*-----------------------------*\n"
 
-# source .zshrc
-source ~/.zshrc || exit
-echo ".zshrc sourced"
+# backup old dotfiles
+cd $HOME
+BACKUP_PATH="$HOME/dotfiles-"`date +%Y%m%d%H%M`
+mkdir $BACKUP_PATH
+mv $DOTFILES $BACKUP_PATH
+mv scripts $BACKUP_PATH
 
-# bash (for historical reasons)
-ln -s ~/Dropbox/dotfiles/.bashrc ~/.bashrc || exit
-ln -s ~/Dropbox/dotfiles/.bash_history ~/.bash_history || exit
-echo ".bashrc, .bash_history linked!"
+echo -e "
+*-----------------------------*
+|  Backed-up old dotfiles to  |
+|  ~/dotfiles-`date +%Y%m%d%H%M%S`  |
+*-----------------------------*\n"
 
-# git
-ln -s ~/Dropbox/dotfiles/.gitconfig ~/.gitconfig || exit
-ln -s ~/Dropbox/dotfiles/.gitignore ~/.gitignore || exit
-echo ".gitconfig, .gitignore linked!"
-
-# vim
-ln -s ~/Dropbox/dotfiles/.vimrc ~/.vimrc || exit
-echo ".vimrc linked!"
-
-# tmux
-ln -s ~/Dropbox/dotfiles/.tmux.conf ~/.tmux.conf || exit
-echo ".tmux.conf linked!"
-
-# misc. files
-mkdir ~/scripts
-for script in ~/Dropbox/dotfiles/scripts/* do
-  ln -s $script "~/scripts/`basename $script`" || exit
+# symlink dotfiles
+for i in $DOTFILES; do
+  ln -s "$DOTFILE_PATH/$i" "$HOME/$i"
 done
-echo "/scripts linked!"
 
-# OS X
-ln -s ~/Dropbox/dotfiles/.osx ~/.osx || exit
-echo ".osx linked!"
+echo -e "
+*-----------------------------*
+|     Dotfiles symlinked!     |
+*-----------------------------*\n"
 
-source ~/.osx || exit
-echo "OS X settings applied!"
+# symlink misc scripts
+mkdir ~/scripts
+for i in $DOTFILE_PATH/scripts/*; do
+  ln -s $i "$HOME/scripts/"`basename $i`
+done
 
-echo -e "\n-----------------------\nDone!"
+echo -e "
+*-----------------------------*
+|      Scripts symlinked!     |
+*-----------------------------*\n"
+
+
+echo -e "
+*-----------------------------*
+|  Done setting up dotfiles!  |
+*-----------------------------*\n"
