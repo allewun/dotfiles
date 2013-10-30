@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (10/8/2013)
+# Allen Wu (10/29/2013)
 #==============================================================================
 
 export PATH=$PATH:/usr/local/bin:$HOME/bin
@@ -11,7 +11,7 @@ export PATH=$PATH:/usr/local/bin:$HOME/bin
 #==============================================================================
 
 setopt PROMPT_SUBST
-source ~/.bash/git-prompt.sh
+source ~/scripts/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 # left prompt: path and git status
