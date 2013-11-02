@@ -1,14 +1,23 @@
 #============================================================================
 # OS X settings
-# based on: https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+# initially based on: github.com/mathiasbynens/dotfiles/blob/master/.osx
 #============================================================================
 
 #============================================================================
-# General UI/UX
+# General
 #============================================================================
 
 # always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+# expand save panel
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# expand print panel
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 #============================================================================
 # Trackpad/mouse/keyboard/input
@@ -32,11 +41,11 @@ defaults write com.apple.screencapture disable-shadow -bool false
 # Finder
 #============================================================================
 
-# show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
 # show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
+
+# show path bar
+defaults write com.apple.finder ShowPathbar -bool true
 
 # display full path in window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
@@ -47,12 +56,27 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# avoid creating .DS_Store files on network volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
 # allow text selection in QuickLook
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
+# show hidden files
+defaults write com.apple.Finder AppleShowAllFiles true
+
+#============================================================================
+# Misc
+#============================================================================
+
+# avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+#============================================================================
+# Dock
+#============================================================================
+
+# remove dock autohide delay
+defaults write com.apple.Dock autohide-delay -float 0
+
+
 killall Finder
 killall SystemUIServer
-
+killall Dock
