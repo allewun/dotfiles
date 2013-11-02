@@ -86,7 +86,8 @@ zstyle ':completion:*' menu select
 # configs
 alias zshrc="v ~/.zshrc && source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
-alias gitconfig="vim ~/.gitconfig"
+alias gitconfig="v ~/.gitconfig"
+alias osx="v ~/.osx && source ~/.osx"
 
 # OS X applications
 alias finder=" open -a Finder ."
