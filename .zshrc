@@ -89,14 +89,14 @@ alias vimrc="vim ~/.vimrc"
 alias gitconfig="vim ~/.gitconfig"
 
 # OS X applications
-alias finder="open -a Finder ."
-alias firefox="open -a Firefox"
-alias chrome="open -a Google\ Chrome"
-alias preview="open -a Preview"
-alias xcode="open -a Xcode"           # iOS 7
-alias xcode4.6="open -a Xcode4.6.app" # iOS 6
-alias xcode4.4="open -a Xcode4.4.app" # iOS 5
-alias tower="open -a Tower"
+alias finder=" open -a Finder ."
+alias firefox=" open -a Firefox"
+alias chrome=" open -a Google\ Chrome"
+alias preview=" open -a Preview"
+alias xcode=" open -a Xcode"           # iOS 7
+alias xcode4.6=" open -a Xcode4.6.app" # iOS 6
+alias xcode4.4=" open -a Xcode4.4.app" # iOS 5
+alias tower=" open -a Tower"
 
 # directory shortcuts
 alias dotfiles="cd ~/Dropbox/dotfiles/"
