@@ -75,8 +75,10 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # remove dock autohide delay
 defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.15
 
 
 killall Finder
 killall SystemUIServer
 killall Dock
+
