@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (10/29/2013)
+# Allen Wu (11/10/2013)
 #==============================================================================
 
 export PATH=/usr/local/bin:/usr/local:$PATH
@@ -11,7 +11,7 @@ export PATH=/usr/local/bin:/usr/local:$PATH
 #==============================================================================
 
 setopt PROMPT_SUBST
-source ~/scripts/git-prompt.sh
+source ~/dotfiles/scripts/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 # left prompt: path and git status
@@ -102,7 +102,7 @@ alias xcode4.4=" open -a Xcode4.4.app *.(xcworkspace|xcodeproj)" # iOS 5
 alias tower=" open -a Tower"
 
 # directory shortcuts
-alias dotfiles="cd ~/Dropbox/dotfiles/"
+alias dotfiles="cd ~/dotfiles/"
 alias desk="cd ~/Desktop/"
 alias dropbox="cd ~/Dropbox/"
 alias originate="cd ~/Dropbox/Originate/"
