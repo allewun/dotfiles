@@ -1,59 +1,66 @@
-#!/bin/bash
+#!/bin/zsh
 
 #==============================================================================
 # Set up dotfile symlinks
 #==============================================================================
 
-DOTFILE_PATH=~/Dropbox/dotfiles
-DOTFILES=".zshrc
-.zsh_history
-.bashrc
-.bash_history
-.gitconfig
-.gitignore
-.vimrc
-.tmux.conf
-.osx"
+DOTFILE_PATH=~/dotfiles
+DOTFILES_NEW=($(echo $DOTFILE_PATH/.*(^/)))
+DOTFILES_OLD_REG=($(comm -12 <(find $DOTFILE_PATH -name ".*" -type f -maxdepth 1 -exec basename {} \;) \
+                             <(find $HOME         -name ".*" -type f -maxdepth 1 -exec basename {} \;)))
+DOTFILES_OLD_SYM=($(comm -12 <(find $DOTFILE_PATH -name ".*" -type f -maxdepth 1 -exec basename {} \;) \
+                             <(find $HOME         -name ".*" -type l -maxdepth 1 -exec basename {} \;)))
+DROPBOX_HISTORY_PATH=~/Dropbox/history
 
-echo -e "
+# backup old dotfiles (regular files)
+DATE=($(date +%Y%m%d%H%M%S))
+BACKUP_PATH="$HOME/dotfiles-$DATE"
+if [[ -n $DOTFILES_OLD_REG ]]; then
+  mkdir $BACKUP_PATH && echo -e "
 *-----------------------------*
-|    Setting up dotfiles...   |
+|  Old dotfiles backed-up to  |
+|  ~/dotfiles-$DATE  |
 *-----------------------------*\n"
 
-# backup old dotfiles
-cd $HOME
-BACKUP_PATH="$HOME/dotfiles-"`date +%Y%m%d%H%M`
-mkdir $BACKUP_PATH
-mv $DOTFILES $BACKUP_PATH
-mv scripts $BACKUP_PATH
+  for i in $DOTFILES_OLD_REG; do
+    mv $HOME/$i $BACKUP_PATH/$i
+    echo "Backed-up old dotfile: $i"
+  done
 
-echo -e "
+  echo -e
+else
+  echo -e "
 *-----------------------------*
-|  Backed-up old dotfiles to  |
-|  ~/dotfiles-`date +%Y%m%d%H%M%S`  |
+|     Nothing to back up      |
 *-----------------------------*\n"
+fi
 
-# symlink dotfiles
-for i in $DOTFILES; do
-  ln -s "$DOTFILE_PATH/$i" "$HOME/$i"
+# delete old symlinked dotfiles
+for i in $DOTFILES_OLD_SYM; do
+  rm $HOME/$i && echo "Deleted old symlink: $i"
 done
 
-echo -e "
-*-----------------------------*
-|     Dotfiles symlinked!     |
-*-----------------------------*\n"
+echo -e
 
-# symlink misc scripts
-mkdir ~/scripts
-for i in $DOTFILE_PATH/scripts/*; do
-  ln -s $i "$HOME/scripts/"`basename $i`
+# symlink new dotfiles
+for i in $DOTFILES_NEW; do
+  f=`basename $i`
+  ln -s "$DOTFILE_PATH/$f" "$HOME/$f" && echo "Linked: $f"
 done
 
-echo -e "
-*-----------------------------*
-|      Scripts symlinked!     |
-*-----------------------------*\n"
+echo -e
 
+# setup .zsh_history symlink
+echo "Name of file that ~/.zsh_history will be symlinked to: "
+read HISTORY_FILE_NAME
+
+(mkdir -p "$DROPBOX_HISTORY_PATH" && mv "$HOME/.zsh_history" $_) || touch "$DROPBOX_HISTORY_PATH/$HISTORY_FILE_NAME"
+ln -s "$DROPBOX_HISTORY_PATH/$HISTORY_FILE_NAME" "$HOME/.zsh_history"
+
+  echo -e "
+*-----------------------------*
+| Setup .zsh_history syncing  |
+*-----------------------------*\n"
 
 echo -e "
 *-----------------------------*
