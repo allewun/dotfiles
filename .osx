@@ -59,8 +59,8 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # allow text selection in QuickLook
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
-# show hidden files
-defaults write com.apple.finder AppleShowAllFiles true
+# show hidden files (disabled for now -- .DS_Store is too annoying)
+defaults write com.apple.finder AppleShowAllFiles false
 
 #============================================================================
 # Misc
