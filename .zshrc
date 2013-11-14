@@ -151,7 +151,7 @@ alias v='vim -c "'"'"'\""' # open to last position
 alias ocaml="rlwrap ocaml"
 
 # misc
-alias tree="tree | less"
+alias tree="tree -C | less"
 alias json="python -m json.tool | pygmentize -f terminal256 -l javascript -O style=monokai"
 alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
 
@@ -171,6 +171,9 @@ export LESS_TERMCAP_us=$'\E[0;33m'     # yellow
 
 # ls colors
 export LSCOLORS=dxfxcxdxbxegedabagacad
+
+# tree colors
+export TREE_COLORS='di=33;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 
 # grep colors
 export GREP_COLOR='4;93' # yellow, underlined matches
