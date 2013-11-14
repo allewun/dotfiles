@@ -1,6 +1,6 @@
-#!bin/zsh
+#!/bin/zsh
 
 DOTFILE_PATH=~/dotfiles
 
-gcp -rs $DOTFILE_PATH/.vim $HOME/.vim
+gcp -rs $DOTFILE_PATH/vim $HOME/.vim
 
