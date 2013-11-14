@@ -85,10 +85,10 @@ zstyle ':completion:*' menu select
 #==============================================================================
 
 # configs
-alias zshrc="v ~/.zshrc && source ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias gitconfig="v ~/.gitconfig"
-alias osx="v ~/.osx && source ~/.osx"
+alias zshrc=" v ~/.zshrc && source ~/.zshrc"
+alias vimrc=" vim ~/.vimrc"
+alias gitconfig=" v ~/.gitconfig"
+alias osx=" v ~/dotfiles/setup_osx.sh && source ~/dotfiles/setup_osx.sh"
 
 # OS X applications
 alias finder=" open -a Finder ."
@@ -102,10 +102,10 @@ alias xcode4.4=" open -a Xcode4.4.app *.(xcworkspace|xcodeproj)" # iOS 5
 alias tower=" open -a Tower ."
 
 # directory shortcuts
-alias dotfiles="cd ~/dotfiles/"
-alias desk="cd ~/Desktop/"
-alias dropbox="cd ~/Dropbox/"
-alias originate="cd ~/Dropbox/Originate/"
+alias dotfiles=" cd ~/dotfiles/"
+alias desk=" cd ~/Desktop/"
+alias dropbox=" cd ~/Dropbox/"
+alias originate=" cd ~/Dropbox/Originate/"
 
 # ls
 alias ls=' ls -AFG' # trailing slash for dirs and colors
