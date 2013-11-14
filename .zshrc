@@ -112,8 +112,8 @@ alias ls=' ls -AFG' # trailing slash for dirs and colors
 
 # cd
 alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias ....='cd ../..'
+alias ......='cd ../../..'
 
 # mkdir
 alias mkdir='mkdir -p'
