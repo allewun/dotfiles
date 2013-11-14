@@ -4,6 +4,7 @@
 # Set up .vim folder
 #=========================
 
+(
 DOTFILE_PATH=~/dotfiles
 DATE=($(date +%Y%m%d%H%M%S))
 
@@ -13,3 +14,4 @@ if [[ -d $HOME/.vim ]]; then
 fi
 
 gcp -rs $DOTFILE_PATH/vim $HOME/.vim
+)

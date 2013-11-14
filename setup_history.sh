@@ -4,6 +4,7 @@
 # Set up history symlink
 #=========================
 
+(
 DROPBOX_HISTORY_PATH=~/Dropbox/history
 HISTORY_FILE=$HOME/.zsh_history
 DATE=($(date +%Y%m%d%H%M%S))
@@ -31,7 +32,8 @@ fi
 # update the symlink
 ln -sf "$DROPBOX_HISTORY_PATH/$HISTORY_FILE_NAME" "$HISTORY_FILE" && echo "Linked: .zsh_history -> $DROPBOX_HISTORY_PATH/$HISTORY_FILE_NAME"
 
-  echo -e "
+echo "
 *-----------------------------*
 |  .zsh_history syncing done  |
 *-----------------------------*\n"
+)
