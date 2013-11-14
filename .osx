@@ -30,6 +30,14 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 3
 
+# Turn off keyboard illumination when computer is not used for 5 minutes
+defaults write com.apple.BezelServices kDimTime -int 300
+
+# Use scroll gesture with the command-key to zoom
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 1048576
+defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+
 #============================================================================
 # Screen
 #============================================================================
@@ -62,12 +70,18 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 # show hidden files (disabled for now -- .DS_Store is too annoying)
 defaults write com.apple.finder AppleShowAllFiles false
 
+# show the ~/Library folder
+chflags nohidden ~/Library
+
 #============================================================================
 # Misc
 #============================================================================
 
 # avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 #============================================================================
 # Dock
