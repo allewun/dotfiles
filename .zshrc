@@ -154,6 +154,7 @@ alias ocaml="rlwrap ocaml"
 alias tree="tree -C | less"
 alias json="python -m json.tool | pygmentize -f terminal256 -l javascript -O style=monokai"
 alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
+alias pubkey="pbcopy < ~/.ssh/id_rsa.pub && echo Copied public ssh key."
 
 #==============================================================================
 # Environment Variables
