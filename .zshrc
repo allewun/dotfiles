@@ -288,6 +288,20 @@ function blame {
   git blame $1 | sed -E "s/^([0-9a-z^]+)([^(]*)( +)\(([A-Za-z ]+)( +)([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} [-+][0-9]{4})( +)([0-9]+)\)(.*)$/$red\1$none$green\2$none\3($cyan\4$none\5$yellow\6$none\7$magenta\8$none)\9/" | less -R
 }
 
+# objective-c repl
+function objcrepl {
+ NAME="objcrepl"
+ FILE="/tmp/$NAME.m"
+ BOILERPLATE="#import \"Foundation/Foundation.h\"\n\nint main () {\n  @autoreleasepool {\n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
+
+ if [[ ! -f $FILE ]]; then
+   echo $BOILERPLATE > $FILE
+ fi
+
+ vim $FILE && clang -framework Foundation -o $NAME $FILE && ./$NAME
+}
+
+
 #==============================================================================
 # Miscellaneous
 #==============================================================================
