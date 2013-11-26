@@ -291,14 +291,16 @@ function blame {
 # objective-c repl
 function objcrepl {
  NAME="objcrepl"
- FILE="/tmp/$NAME.m"
+ DIR="/tmp"
+ SOURCE="$DIR/$NAME.m"
+ EXE="$DIR/$NAME"
  BOILERPLATE="#import \"Foundation/Foundation.h\"\n\nint main () {\n  @autoreleasepool {\n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
 
- if [[ ! -f $FILE ]]; then
-   echo $BOILERPLATE > $FILE
+ if [[ ! -f $SOURCE ]]; then
+   echo $BOILERPLATE > $SOURCE
  fi
 
- vim $FILE && clang -framework Foundation -o $NAME $FILE && ./$NAME
+ vim $SOURCE && clang -framework Foundation -o $EXE $SOURCE && (exec $EXE)
 }
 
 
