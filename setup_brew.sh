@@ -12,3 +12,6 @@ brew install tmux
 brew install watch
 brew install tig
 brew install git-extras
+
+brew tap homebrew/versions
+brew install gcc49
