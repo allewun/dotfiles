@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Nov 2013)
+# Allen Wu (Dec 2013)
 #==============================================================================
 
 export PATH=/usr/local/bin:/usr/local:$PATH
@@ -113,9 +113,9 @@ alias originate=" cd ~/Dropbox/Originate/"
 alias ls=' ls -AFG' # trailing slash for dirs and colors
 
 # cd
-alias ..='cd ..'
-alias ....='cd ../..'
-alias ......='cd ../../..'
+alias ..=' cd ..'
+alias ....=' cd ../..'
+alias ......=' cd ../../..'
 
 # mkdir
 alias mkdir='mkdir -p'
@@ -293,17 +293,17 @@ function blame {
 
 # objective-c repl
 function objcrepl {
- NAME="objcrepl"
- DIR="/tmp"
- SOURCE="$DIR/$NAME.m"
- EXE="$DIR/$NAME"
- BOILERPLATE="#import \"Foundation/Foundation.h\"\n\nint main () {\n  @autoreleasepool {\n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
+  NAME="objcrepl"
+  DIR="/tmp"
+  SOURCE="$DIR/$NAME.m"
+  EXE="$DIR/$NAME"
+  BOILERPLATE="#import \"Foundation/Foundation.h\"\n\nint main () {\n  @autoreleasepool {\n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
 
- if [[ ! -f $SOURCE ]]; then
-   echo $BOILERPLATE > $SOURCE
- fi
+  if [[ ! -f $SOURCE ]]; then
+    echo $BOILERPLATE > $SOURCE
+  fi
 
- vim $SOURCE && clang -framework Foundation -o $EXE $SOURCE && (exec $EXE)
+  vim $SOURCE && clang -framework Foundation -o $EXE $SOURCE && (exec $EXE)
 }
 
 
