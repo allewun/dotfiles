@@ -14,7 +14,7 @@ if [[ -d $QL_PATH ]]; then
   mv $QL_PATH $QL_PATH-$DATE && echo "Backed-up old QuickLook directory to ~/Library/QuickLook-$DATE"
 fi
 
-gcp -rs $DOTFILE_PATH/QuickLook $QL_PATH
+gcp -r $DOTFILE_PATH/QuickLook $QL_PATH
 
 # reset QuickLook cache
 qlmanage -r
