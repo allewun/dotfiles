@@ -297,7 +297,7 @@ function objcrepl {
   DIR="/tmp"
   SOURCE="$DIR/$NAME.m"
   EXE="$DIR/$NAME"
-  BOILERPLATE="#import \"Foundation/Foundation.h\"\n\n@interface TestClass : NSObject\n@property (strong, nonatomic) NSString* key;\n@end\n\n@implmenetation TestClass\n@end\n\nint main () {\n  @autoreleasepool {\n    \n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
+  BOILERPLATE="#import \"Foundation/Foundation.h\"\n\n@interface TestClass : NSObject\n@property (strong, nonatomic) NSString* key;\n@end\n\n@implementation TestClass\n@end\n\nint main () {\n  @autoreleasepool {\n    \n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
 
   if [[ ! -f $SOURCE ]]; then
     echo $BOILERPLATE > $SOURCE
