@@ -214,6 +214,7 @@ function song() {
 
 # open a repository online
 # if no arguments provided, guess the hosting service
+# bonus: if branch is gh-pages, open the github.io page
 #
 # Usage:
 #   repo(domain, branchPath)
@@ -250,8 +251,16 @@ function repo {
       remotes=$(git remote -v | awk -F'https://'$domain/ '{print $2}')
     fi
 
-    remoteURL=$(echo $remotes | cut -d" " -f1 | head -n 1 | sed 's/.git//')
+    remoteClean=$(echo $remotes | head -n 1 | sed 's/.git//')
+    remoteURL=$(echo $remoteClean | cut -d" " -f1)
+    username=$(echo $remoteClean | sed 's/\/.*$//')
+    reponame=$(echo $remoteClean | sed 's/^[^/]*\/\([^ ]*\).*$/\1/')
     branch=$(git rev-parse --abbrev-ref HEAD)
+
+    if [[ $branch = "gh-pages" && -n $username && -n $reponame ]]; then
+      open "http://${username}.github.io/${reponame}"
+      return
+    fi
 
     if [[ -n $branch && -n $remoteURL && $branch != "master" ]]; then
       branch="${branchPath}${branch}"
