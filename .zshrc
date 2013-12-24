@@ -3,8 +3,8 @@
 # Allen Wu (Dec 2013)
 #==============================================================================
 
-export PATH=/usr/local/bin:/usr/local:$PATH
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:$PATH
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #==============================================================================
 # Prompt

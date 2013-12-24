@@ -12,6 +12,7 @@ brew install tmux
 brew install watch
 brew install tig
 brew install git-extras
+brew install rbenv ruby-build
 
 brew tap homebrew/versions
 brew install gcc49
