@@ -75,6 +75,7 @@ setopt SHARE_HISTORY
 autoload -U compinit && compinit
 setopt EXTENDED_GLOB
 setopt GLOB_COMPLETE
+setopt DOTGLOB
 
 # case-insensitive (all), partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -106,6 +107,7 @@ alias tower=" open -a Tower ."
 # directory shortcuts
 alias dotfiles=" cd ~/dotfiles/"
 alias desk=" cd ~/Desktop/"
+alias deks=desk
 alias dropbox=" cd ~/Dropbox/"
 alias originate=" cd ~/Dropbox/Originate/"
 
