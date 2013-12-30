@@ -196,7 +196,7 @@ export ACK_COLOR_LINENO='cyan'
 # Functions
 #==============================================================================
 
-function histail() {
+histail() {
   if [ -z "$1" ]; then
     history 1 | tail -10
   else
@@ -205,7 +205,7 @@ function histail() {
 }
 
 # append song to "to download" list
-function song() {
+song() {
   local __songfile="/Users/allen/Dropbox/dl.txt";
 
   if [ -z "$1" ]; then
@@ -227,7 +227,7 @@ function song() {
 #
 # (modified from: http://askubuntu.com/a/243485)
 
-function repo {
+repo() {
   domain=$1
   branchPath=$2
 
@@ -283,17 +283,17 @@ function repo {
 }
 
 # open repository on github
-function hub {
+hub() {
   repo "github.com" "/tree/"
 }
 
 # open repository on bitbucket
-function bit {
+bit() {
   repo "bitbucket.org" "/commits/branch/"
 }
 
 # git blame colors
-function blame {
+blame() {
   red=$(echo '\033[31m')
   green=$(echo '\033[32m')
   cyan=$(echo '\033[36m')
@@ -305,7 +305,7 @@ function blame {
 }
 
 # objective-c repl
-function objcrepl {
+objcrepl() {
   NAME="objcrepl"
   DIR="/tmp"
   SOURCE="$DIR/$NAME.m"
@@ -320,7 +320,7 @@ function objcrepl {
 }
 
 # from mathiasbynens' .functions
-function phpserver() {
+phpserver() {
   local port="${1:-4000}"
   local ip=$(ipconfig getifaddr en0)
   sleep 1 && open "http://${ip}:${port}/" &
@@ -347,7 +347,7 @@ chpwd() {
 
 # less with syntax highlighting
 cless() {
-  LESSOPEN="| pygmentize -f terminal256 -O style=native -g %s" less -R "$@";
+  LESSOPEN="| pygmentize -f terminal256 -O style=monokai -g %s" less -R "$@";
 }
 
 #==============================================================================
