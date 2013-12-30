@@ -318,6 +318,13 @@ function objcrepl {
   vim $SOURCE && clang -framework Foundation -o $EXE $SOURCE && (exec $EXE)
 }
 
+# from mathiasbynens' .functions
+function phpserver() {
+  local port="${1:-4000}"
+  local ip=$(ipconfig getifaddr en0)
+  sleep 1 && open "http://${ip}:${port}/" &
+  php -S "${ip}:${port}"
+}
 
 #==============================================================================
 # Miscellaneous
