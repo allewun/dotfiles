@@ -3,8 +3,9 @@
 # Allen Wu (Dec 2013)
 #==============================================================================
 
-export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:$PATH
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH=/usr/local/bin:/usr/local:$PATH:$HOME/.rvm/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+fpath=($rvm_path/scripts/zsh/Completion/ $fpath)
 
 #==============================================================================
 # Prompt
