@@ -332,11 +332,15 @@ __git_files () {
 }
 
 # automatically 'ls' after 'cd'
-function chpwd() {
+chpwd() {
   emulate -L zsh
   ls
 }
 
+# less with syntax highlighting
+cless() {
+  LESSOPEN="| pygmentize -f terminal256 -O style=native -g %s" less -R "$@";
+}
 
 #==============================================================================
 # Temporary stuff
