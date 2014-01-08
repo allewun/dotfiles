@@ -16,4 +16,6 @@ $cli set caps_lock_to_hyper 1
 /bin/echo -n .
 $cli set remap.controlL2fn 1
 /bin/echo -n .
+$cli set remap.eject2forwarddelete 1
+/bin/echo -n .
 /bin/echo
