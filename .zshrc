@@ -73,7 +73,6 @@ alias cd=" cd"
 alias song=" song"
 alias repo=" repo"
 alias dot=" dot"
-alias dots=" dots"
 alias notify=" notify"
 
 
@@ -339,28 +338,54 @@ function phpserver() {
 }
 
 # quick access to dotfile stuff
+#   * dot
+#       cd to dotfile directory
+#   * dot [name]
+#       try to open [file] vim
+#   * dot [cmd] [file]
+#       perform [cmd] on [file],
+#       valid commands are:
+#         - open
+#         - vim
+#         - subl
+#         - run
+#
 function dot() {
-  if [[ ! -z $1 ]]; then
-    local FILE=`find ~/dotfiles -type f -iregex ".*$1.*" -maxdepth 1 | head -n1`
-    if [[ ! -z $FILE ]]; then
-      if [[ -z $2 ]]; then
-        v $FILE
-      else
-        subl $FILE
-      fi
-    else
-      echo "No matches for $1."
-    fi
+  # determine which arg is the file
+  if [[ ! -z $1 && ! -z $2 ]]; then
+    local NEEDLE=$2
+  elif [[ ! -z $1 ]]; then
+    local NEEDLE=$1
   else
     cd ~/dotfiles
+    return 0
   fi
-}
 
-function dots() {
-  if [ ! -z $1 ]; then
-    dot $1 subl
-  else
-    dot
+  # find file matches
+  local FILE=`find ~/dotfiles -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1`
+  if [[ -z $FILE ]]; then
+    echo "No matches for $1."
+    return 1
+  fi
+
+  # dot [cmd] [file]
+  if [[ ! -z $1 && ! -z $2 ]]; then
+    local BASENAME=`basename $FILE`
+    case "$1" in
+      open) ;&
+      vim)
+        v $FILE ;;
+      subl)
+        subl $FILE ;;
+      run)
+        echo "[Running $BASENAME...]" && source $FILE && echo "[Ran $BASENAME]" || echo "[Couldn't run $BASENAME]" ;;
+      *)
+        echo "Usage: $0 [open|vim|subl|run] FILE"
+    esac
+
+  # dot [file]
+  elif [[ ! -z $1 ]]; then
+    v $FILE
   fi
 }
 
