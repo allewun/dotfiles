@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Dec 2013)
+# Allen Wu (Jan 2014)
 #==============================================================================
 
 export PATH=/usr/local/bin:/usr/local:$PATH:$HOME/.rvm/bin
@@ -89,10 +89,11 @@ zstyle ':completion:*' menu select
 #==============================================================================
 
 # configs
-alias zshrc=" v ~/.zshrc && source ~/.zshrc"
+alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
 alias osx=" v ~/dotfiles/setup_osx.sh && source ~/dotfiles/setup_osx.sh"
+alias src=" source ~/.zshrc && echo Reloaded .zshrc"
 
 # OS X applications
 alias finder=" open -a Finder ."
@@ -327,6 +328,27 @@ phpserver() {
   php -S "${ip}:${port}"
 }
 
+# quick access to dotfile stuff
+dot() {
+  if [[ ! -z $1 ]]; then
+    local FILE=`find ~/dotfiles -type f -iregex ".*$1.*" -maxdepth 1 | head -n1`
+    if [[ ! -z $FILE ]]; then
+      if [[ -z $2 ]]; then
+        v $FILE
+      else
+        subl $FILE
+      fi
+    else
+      echo "No matches for $1."
+    fi
+  else
+    cd ~/dotfiles
+  fi
+}
+
+dots() {
+  dot $1 subl
+}
 #==============================================================================
 # Miscellaneous
 #==============================================================================
