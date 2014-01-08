@@ -20,13 +20,13 @@ NEWLINE=$'\n'
 PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f$NEWLINE%F{white}>%f '
 
 # right prompt: timestamp
-preexec() {
+function preexec() {
   DATE=$(date +"%a %d-%b-%Y %I:%M %p")
   RPROMPT="%F{magenta}$DATE%f"
 }
 
 # directory in terminal tab title
-precmd() { print -Pn "\e]2;%~\a" }
+function precmd() { print -Pn "\e]2;%~\a" }
 
 #==============================================================================
 # Key bindings
@@ -42,7 +42,7 @@ bindkey "^[[B" history-beginning-search-forward-end
 bindkey "^[[3~" delete-char
 
 # ctrl-z toggle (http://serverfault.com/a/225821)
-ctrlz () {
+function ctrlz () {
   if [[ $#BUFFER -eq 0 ]]; then
     fg
     zle redisplay
@@ -197,7 +197,7 @@ export ACK_COLOR_LINENO='cyan'
 # Functions
 #==============================================================================
 
-histail() {
+function histail() {
   if [ -z "$1" ]; then
     history 1 | tail -10
   else
@@ -206,7 +206,7 @@ histail() {
 }
 
 # append song to "to download" list
-song() {
+function song() {
   local __songfile="/Users/allen/Dropbox/dl.txt";
 
   if [ -z "$1" ]; then
@@ -228,9 +228,9 @@ song() {
 #
 # (modified from: http://askubuntu.com/a/243485)
 
-repo() {
-  domain=$1
-  branchPath=$2
+function repo() {
+  local domain=$1
+  local branchPath=$2
 
   # check if valid git repo
   if git rev-parse --git-dir > /dev/null 2>&1; then
@@ -284,34 +284,34 @@ repo() {
 }
 
 # open repository on github
-hub() {
+function hub() {
   repo "github.com" "/tree/"
 }
 
 # open repository on bitbucket
-bit() {
+function bit() {
   repo "bitbucket.org" "/commits/branch/"
 }
 
 # git blame colors
-blame() {
-  red=$(echo '\033[31m')
-  green=$(echo '\033[32m')
-  cyan=$(echo '\033[36m')
-  yellow=$(echo '\033[33m')
-  magenta=$(echo '\033[35m')
-  none=$(echo '\033[0m')
+function blame() {
+  local red=$(echo '\033[31m')
+  local green=$(echo '\033[32m')
+  local cyan=$(echo '\033[36m')
+  local yellow=$(echo '\033[33m')
+  local magenta=$(echo '\033[35m')
+  local none=$(echo '\033[0m')
 
   git blame $1 | sed -E "s/^([0-9a-z^]+)([^(]*)( +)\(([A-Za-z ]+)( +)([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} [-+][0-9]{4})( +)([0-9]+)\)(.*)$/$red\1$none$green\2$none\3($cyan\4$none\5$yellow\6$none\7$magenta\8$none)\9/" | less -R
 }
 
 # objective-c repl
-objcrepl() {
-  NAME="objcrepl"
-  DIR="/tmp"
-  SOURCE="$DIR/$NAME.m"
-  EXE="$DIR/$NAME"
-  BOILERPLATE="#import \"Foundation/Foundation.h\"\n\n@interface TestClass : NSObject\n@property (strong, nonatomic) NSString* key;\n@end\n\n@implementation TestClass\n@end\n\nint main () {\n  @autoreleasepool {\n    \n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
+function objcrepl() {
+  local NAME="objcrepl"
+  local DIR="/tmp"
+  local SOURCE="$DIR/$NAME.m"
+  local EXE="$DIR/$NAME"
+  local BOILERPLATE="#import \"Foundation/Foundation.h\"\n\n@interface TestClass : NSObject\n@property (strong, nonatomic) NSString* key;\n@end\n\n@implementation TestClass\n@end\n\nint main () {\n  @autoreleasepool {\n    \n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
 
   if [[ ! -f $SOURCE ]]; then
     echo $BOILERPLATE > $SOURCE
@@ -321,7 +321,7 @@ objcrepl() {
 }
 
 # from mathiasbynens' .functions
-phpserver() {
+function phpserver() {
   local port="${1:-4000}"
   local ip=$(ipconfig getifaddr en0)
   sleep 1 && open "http://${ip}:${port}/" &
@@ -329,7 +329,7 @@ phpserver() {
 }
 
 # quick access to dotfile stuff
-dot() {
+function dot() {
   if [[ ! -z $1 ]]; then
     local FILE=`find ~/dotfiles -type f -iregex ".*$1.*" -maxdepth 1 | head -n1`
     if [[ ! -z $FILE ]]; then
@@ -346,7 +346,7 @@ dot() {
   fi
 }
 
-dots() {
+function dots() {
   dot $1 subl
 }
 #==============================================================================
@@ -362,13 +362,13 @@ __git_files () {
 }
 
 # automatically 'ls' after 'cd'
-chpwd() {
+function chpwd() {
   emulate -L zsh
   ls
 }
 
 # less with syntax highlighting
-cless() {
+function cless() {
   LESSOPEN="| pygmentize -f terminal256 -O style=monokai -g %s" less -R "$@";
 }
 
