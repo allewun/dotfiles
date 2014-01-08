@@ -162,7 +162,6 @@ alias json="python -m json.tool | pygmentize -f terminal256 -l javascript -O sty
 alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
 alias pubkey="pbcopy < ~/.ssh/id_rsa.pub && echo Copied public ssh key."
 alias gcc49="gcc-4.9 -fdiagnostics-color=auto"
-alias notify=" (terminal-notifier -message 'Done!' && afplay -v 3 /System/Library/Sounds/Hero.aiff &)"
 
 #==============================================================================
 # Environment Variables
@@ -349,6 +348,21 @@ function dot() {
 function dots() {
   dot $1 subl
 }
+
+# notify when done with operation
+function notify() {
+  local EXIT_CODE=$?
+  local MESSAGE="Failure!"
+  local SOUND="Basso"
+
+  if [ $EXIT_CODE -eq 0 ]; then;
+    MESSAGE="Success!"
+    SOUND="Glass"
+  fi
+
+  (terminal-notifier -message $MESSAGE && afplay -v 1 "/System/Library/Sounds/$SOUND.aiff" &) ; (exit $EXIT_CODE)
+}
+
 #==============================================================================
 # Miscellaneous
 #==============================================================================
