@@ -15,4 +15,7 @@ brew install git-extras
 brew install terminal-notifier
 
 brew tap homebrew/versions
+brew install apple-gcc42
+brew install gcc48
 brew install gcc49
+
