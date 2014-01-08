@@ -13,6 +13,7 @@ brew install watch
 brew install tig
 brew install git-extras
 brew install terminal-notifier
+brew install rbenv ruby-build rbenv-gem-rehash
 
 brew tap homebrew/versions
 brew install apple-gcc42
