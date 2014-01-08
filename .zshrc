@@ -68,6 +68,14 @@ setopt HIST_IGNORE_SPACE
 setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
+# history ignores
+alias cd=" cd"
+alias song=" song"
+alias repo=" repo"
+alias dot=" dot"
+alias dots=" dots"
+alias notify=" notify"
+
 
 #==============================================================================
 # zsh completion
@@ -107,19 +115,19 @@ alias xcode4.4=" open -a Xcode4.4.app *.(xcworkspace|xcodeproj)" # iOS 5
 alias tower=" open -a Tower ."
 
 # directory shortcuts
-alias dotfiles=" cd ~/dotfiles/"
-alias desk=" cd ~/Desktop/"
+alias dotfiles="cd ~/dotfiles/"
+alias desk="cd ~/Desktop/"
 alias deks=desk
-alias dropbox=" cd ~/Dropbox/"
-alias originate=" cd ~/Dropbox/Originate/"
+alias dropbox="cd ~/Dropbox/"
+alias originate="cd ~/Dropbox/Originate/"
 
 # ls
 alias ls=' ls -AFG' # trailing slash for dirs and colors
 
 # cd
-alias ..=' cd ..'
-alias ....=' cd ../..'
-alias ......=' cd ../../..'
+alias ..='cd ..'
+alias ....='cd ../..'
+alias ......='cd ../../..'
 
 # mkdir
 alias mkdir='mkdir -p'
@@ -349,7 +357,11 @@ function dot() {
 }
 
 function dots() {
-  dot $1 subl
+  if [ ! -z $1 ]; then
+    dot $1 subl
+  else
+    dot
+  fi
 }
 
 # notify when done with operation
