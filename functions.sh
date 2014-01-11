@@ -188,9 +188,9 @@ function dot() {
     case "$1" in
       open) ;&
       vim)
-        v $FILE ;;
+        v $FILE && src;;
       subl)
-        subl $FILE ;;
+        subl -w $FILE && src;;
       run)
         echo "[Running $BASENAME...]" && source $FILE && echo "[Ran $BASENAME]" || echo "[Couldn't run $BASENAME]" ;;
       *)
@@ -199,7 +199,7 @@ function dot() {
 
   # dot [file]
   elif [[ ! -z "$1" ]]; then
-    v $FILE
+    v $FILE && src
   fi
 }
 
