@@ -5,7 +5,6 @@
 
 export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-fpath=($rvm_path/scripts/zsh/Completion/ $fpath)
 
 #==============================================================================
 # Prompt
@@ -119,6 +118,7 @@ alias desk="cd ~/Desktop/"
 alias deks=desk
 alias dropbox="cd ~/Dropbox/"
 alias originate="cd ~/Dropbox/Originate/"
+alias hist="cd ~/Dropbox/history/"
 
 # ls
 alias ls=' ls -AFG' # trailing slash for dirs and colors
@@ -207,7 +207,7 @@ export ACK_COLOR_LINENO='cyan'
 #==============================================================================
 
 function histail() {
-  if [ -z "$1" ]; then
+  if [[ -z "$1" ]]; then
     history 1 | tail -10
   else
     history 1 | tail -n "$1"
@@ -218,7 +218,7 @@ function histail() {
 function song() {
   local __songfile="/Users/allen/Dropbox/dl.txt";
 
-  if [ -z "$1" ]; then
+  if [[ -z "$1" ]]; then
     cat $__songfile
   else
     echo "$1" >> $__songfile
@@ -245,18 +245,18 @@ function repo() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
 
     # guess git hosting service
-    if [[ -z $domain && -z $branchPath ]]; then
+    if [[ -z "$domain" && -z "$branchPath" ]]; then
       remotes=$(git remote -v)
 
-      if [[ $remotes =~ "github" ]]; then
+      if [[ "$remotes" =~ "github" ]]; then
         domain="github.com"
         branchPath="/tree/"
-      elif [[ $remotes =~ "bitbucket" ]]; then
+      elif [[ "$remotes" =~ "bitbucket" ]]; then
         domain="bitbucket.org"
         branchPath="/commits/branch/"
       else
         echo "Unable to determine git hosting service."
-        return
+        return 1
       fi
     fi
 
@@ -271,12 +271,12 @@ function repo() {
     reponame=$(echo $remoteClean | sed 's/^[^/]*\/\([^ ]*\).*$/\1/')
     branch=$(git rev-parse --abbrev-ref HEAD)
 
-    if [[ $branch = "gh-pages" && -n $username && -n $reponame ]]; then
+    if [[ "$branch" = "gh-pages" && -n "$username" && -n "$reponame" ]]; then
       open "http://${username}.github.io/${reponame}"
       return
     fi
 
-    if [[ -n $branch && -n $remoteURL && $branch != "master" ]]; then
+    if [[ -n "$branch" && -n "$remoteURL" && $branch != "master" ]]; then
       branch="${branchPath}${branch}"
     else
       branch=""
@@ -286,9 +286,11 @@ function repo() {
   else
     echo "Not a repository."
 
-    if [[ -n $domain ]]; then
+    if [[ -n "$domain" ]]; then
       open "https://${domain}/"
     fi
+
+    return 1
   fi
 }
 
@@ -352,9 +354,9 @@ function phpserver() {
 #
 function dot() {
   # determine which arg is the file
-  if [[ ! -z $1 && ! -z $2 ]]; then
+  if [[ ! -z "$1" && ! -z "$2" ]]; then
     local NEEDLE=$2
-  elif [[ ! -z $1 ]]; then
+  elif [[ ! -z "$1" ]]; then
     local NEEDLE=$1
   else
     cd ~/dotfiles
@@ -363,13 +365,13 @@ function dot() {
 
   # find file matches
   local FILE=`find ~/dotfiles -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1`
-  if [[ -z $FILE ]]; then
+  if [[ -z "$FILE" ]]; then
     echo "No matches for $1."
     return 1
   fi
 
   # dot [cmd] [file]
-  if [[ ! -z $1 && ! -z $2 ]]; then
+  if [[ ! -z "$1" && ! -z "$2" ]]; then
     local BASENAME=`basename $FILE`
     case "$1" in
       open) ;&
@@ -384,7 +386,7 @@ function dot() {
     esac
 
   # dot [file]
-  elif [[ ! -z $1 ]]; then
+  elif [[ ! -z "$1" ]]; then
     v $FILE
   fi
 }
@@ -395,7 +397,7 @@ function notify() {
   local MESSAGE="Failure!"
   local SOUND="Basso"
 
-  if [ $EXIT_CODE -eq 0 ]; then;
+  if (( $EXIT_CODE == 0 )); then;
     MESSAGE="Success!"
     SOUND="Glass"
   fi
