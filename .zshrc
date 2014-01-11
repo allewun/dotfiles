@@ -16,9 +16,11 @@ setopt PROMPT_SUBST
 source $DOTFILE_LOCATION/scripts/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
+source $DOTFILE_LOCATION/scripts/rbenv-prompt.sh
+
 # left prompt: path and git status
 NEWLINE=$'\n'
-PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f$NEWLINE%F{white}>%f '
+PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}>%f '
 
 # right prompt: timestamp
 function preexec() {
