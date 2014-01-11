@@ -169,6 +169,12 @@ function dot() {
     return 0
   fi
 
+  # open entire directory
+  if [[ "$NEEDLE" == "." ]]; then
+    subl $DOTFILE_LOCATION
+    return 0
+  fi
+
   # find file matches
   local FILE=`find $DOTFILE_LOCATION -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1`
   if [[ -z "$FILE" ]]; then
