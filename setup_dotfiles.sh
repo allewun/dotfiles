@@ -36,7 +36,7 @@ echo
 
 # symlink new dotfiles
 for i in $DOTFILES_NEW; do
-  f=`basename $i`
+  f=$(basename $i)
   (ln -s "$DOTFILE_PATH/$f" "$HOME/$f" > /dev/null 2>&1) && echo "Linked: ~/$f" || (ln -sf "$DOTFILE_PATH/$f" "$HOME/$f" && echo "Relinked: $f")
 done
 

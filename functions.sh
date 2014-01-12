@@ -176,7 +176,7 @@ function dot() {
   fi
 
   # find file matches
-  local FILE=`find $DOTFILE_LOCATION -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1`
+  local FILE=$(find $DOTFILE_LOCATION -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1)
   if [[ -z "$FILE" ]]; then
     echo "No matches for $1."
     return 1
@@ -184,7 +184,7 @@ function dot() {
 
   # dot [cmd] [file]
   if [[ ! -z "$1" && ! -z "$2" ]]; then
-    local BASENAME=`basename $FILE`
+    local BASENAME=$(basename $FILE)
     case "$1" in
       open) ;&
       vim)
