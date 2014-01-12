@@ -3,6 +3,7 @@
 # Allen Wu (Jan 2014)
 #==============================================================================
 
+typeset -U PATH
 export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
