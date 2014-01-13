@@ -217,3 +217,9 @@ function notify() {
 
   (terminal-notifier -message $MESSAGE && afplay -v 1 "/System/Library/Sounds/$SOUND.aiff" &) ; (exit $EXIT_CODE)
 }
+
+# mkdir then cd
+function mkcd() {
+  mkdir "$@" && cd "$@"
+}
+
