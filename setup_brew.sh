@@ -17,6 +17,7 @@ brew install ffmpeg
 brew install mysql
 brew install p7zip
 brew install rbenv ruby-build rbenv-gem-rehash rbenv-gemset
+brew install heroku
 
 brew tap homebrew/versions
 brew install apple-gcc42
