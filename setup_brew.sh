@@ -18,6 +18,7 @@ brew install mysql
 brew install p7zip
 brew install rbenv ruby-build rbenv-gem-rehash rbenv-gemset
 brew install heroku
+brew install ctags
 
 brew tap homebrew/versions
 brew install apple-gcc42

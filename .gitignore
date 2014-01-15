@@ -24,3 +24,5 @@ DerivedData
 
 # SASS
 .sass-cache/
+
+.tags*
