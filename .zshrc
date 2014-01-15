@@ -14,14 +14,18 @@ export DOTFILE_LOCATION=~/dotfiles
 #==============================================================================
 
 setopt PROMPT_SUBST
-source $DOTFILE_LOCATION/scripts/git-prompt.sh
-export GIT_PS1_SHOWDIRTYSTATE=1
 
-source $DOTFILE_LOCATION/scripts/rbenv-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUPSTREAM=auto
+
+# source -prompt.sh files
+for p in $DOTFILE_LOCATION/scripts/*-prompt.sh;
+  do source $p
+done
 
 # left prompt: path and git status
 NEWLINE=$'\n'
-PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}>%f '
+PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f%F{magenta}$(__heroku_ps1)%f$NEWLINE%F{white}>%f '
 
 # right prompt: timestamp
 function preexec() {
@@ -73,11 +77,9 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-alias cd=" cd"
-alias song=" song"
-alias repo=" repo"
-alias dot=" dot"
-alias notify=" notify"
+for cmd (cd song repo dot notify);
+  do alias $cmd=" $cmd";
+done
 
 
 #==============================================================================
