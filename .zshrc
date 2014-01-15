@@ -7,7 +7,8 @@ typeset -U PATH
 export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export DOTFILE_LOCATION=~/dotfiles
+export DOTFILE_PATH=~/dotfiles
+
 
 #==============================================================================
 # Prompt
@@ -19,7 +20,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
 # source -prompt.sh files
-for p in $DOTFILE_LOCATION/scripts/*-prompt.sh;
+for p in $DOTFILE_PATH/scripts/*-prompt.sh;
   do source $p
 done
 
@@ -35,6 +36,7 @@ function preexec() {
 
 # directory in terminal tab title
 function precmd() { print -Pn "\e]2;%~\a" }
+
 
 #==============================================================================
 # Key bindings
@@ -97,6 +99,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 # menu selection
 zstyle ':completion:*' menu select
 
+
 #==============================================================================
 # Aliases
 #==============================================================================
@@ -105,7 +108,7 @@ zstyle ':completion:*' menu select
 alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
-alias osx=" v $DOTFILE_LOCATION/setup_osx.sh && source $DOTFILE_LOCATION/setup_osx.sh"
+alias osx=" v $DOTFILE_PATH/setup_osx.sh && source $DOTFILE_PATH/setup_osx.sh"
 alias src=" source ~/.zshrc && echo Reloaded .zshrc"
 
 # OS X applications
@@ -121,7 +124,7 @@ alias tower=" open -a Tower ."
 alias mou=" open -a Mou"
 
 # directory shortcuts
-alias dotfiles="cd $DOTFILE_LOCATION"
+alias dotfiles="cd $DOTFILE_PATH"
 alias desk="cd ~/Desktop/"
 alias deks=desk
 alias dropbox="cd ~/Dropbox/"
@@ -182,6 +185,7 @@ alias gcc48="gcc-4.8"
 alias gcc46="gcc-4.6"
 alias gcc42="gcc-4.2"
 
+
 #==============================================================================
 # Environment Variables
 #==============================================================================
@@ -214,7 +218,8 @@ export ACK_COLOR_LINENO='cyan'
 #==============================================================================
 # Functions
 #==============================================================================
-source $DOTFILE_LOCATION/functions.sh
+source $DOTFILE_PATH/functions.sh
+
 
 #==============================================================================
 # Miscellaneous
@@ -238,6 +243,7 @@ function chpwd() {
 function cless() {
   LESSOPEN="| pygmentize -f terminal256 -O style=monokai -g %s" less -R "$@";
 }
+
 
 #==============================================================================
 # Temporary stuff

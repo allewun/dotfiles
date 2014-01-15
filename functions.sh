@@ -165,18 +165,18 @@ function dot() {
   elif [[ ! -z "$1" ]]; then
     local NEEDLE=$1
   else
-    cd $DOTFILE_LOCATION
+    cd $DOTFILE_PATH
     return 0
   fi
 
   # open entire directory
   if [[ "$NEEDLE" == "." ]]; then
-    subl $DOTFILE_LOCATION
+    subl $DOTFILE_PATH
     return 0
   fi
 
   # find file matches
-  local FILE=$(find $DOTFILE_LOCATION -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1)
+  local FILE=$(find $DOTFILE_PATH -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1)
   if [[ -z "$FILE" ]]; then
     echo "No matches for $1."
     return 1
