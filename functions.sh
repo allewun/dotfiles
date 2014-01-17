@@ -198,8 +198,8 @@ function dot() {
     esac
 
   # dot [file]
-  elif [[ ! -z "$1" ]]; then
-    v $FILE && src
+  elif [[ ! -z "$FILE" ]]; then
+    v $FILE && src 
   fi
 }
 

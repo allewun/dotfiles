@@ -109,7 +109,7 @@ alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
 alias osx=" v $DOTFILE_PATH/setup_osx.sh && source $DOTFILE_PATH/setup_osx.sh"
-alias src=" source ~/.zshrc && echo Reloaded .zshrc"
+alias src=" source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
 
 # OS X applications
 alias finder=" open -a Finder ."
@@ -249,3 +249,7 @@ function cless() {
 # Temporary stuff
 #==============================================================================
 
+alias classscanner="cd ~/Desktop/ClassScanner"
+alias hkn="cd ~/ucla-hkn"
+alias work="cd ~/work"
+alias temp="cd ~/temp"
