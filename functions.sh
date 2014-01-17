@@ -228,3 +228,17 @@ function forget() {
   (echo -e "$(cat $HISTFILE | wc -l)->\c" && sed -i.bak '$d' $HISTFILE && [[ -s $HISTFILE ]] && rm $HISTFILE.bak) && echo $(cat $HISTFILE | wc -l) || echo "!"
 }
 
+# superman
+function manz() {
+  command man -P "less -p '       $1'" zshbuiltins
+}
+
+# override default `man` to search zshbuiltins when necessary
+function man() {
+  if command man $1 2>/dev/null | head -n2 | fgrep -q BUILTIN && [[ $1 != "builtin" ]]; then
+    manz $1
+  else
+    command man $1
+  fi
+}
+
