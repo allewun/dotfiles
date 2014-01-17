@@ -10,9 +10,9 @@
 # defaults to 10
 function histail() {
   if [[ -z "$1" ]]; then
-    history 1 | tail -10
+    cat $HISTFILE | tail -10
   else
-    history 1 | tail -n "$1"
+    cat $HISTFILE | tail -n "$1"
   fi
 }
 
@@ -221,5 +221,10 @@ function notify() {
 # mkdir then cd
 function mkcd() {
   mkdir "$@" && cd "$@"
+}
+
+# remove last line from history
+function forget() {
+  (echo -e "$(cat $HISTFILE | wc -l)->\c" && sed -i.bak '$d' $HISTFILE && [[ -s $HISTFILE ]] && rm $HISTFILE.bak) && echo $(cat $HISTFILE | wc -l) || echo "!"
 }
 
