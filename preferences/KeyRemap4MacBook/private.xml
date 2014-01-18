@@ -14,4 +14,28 @@
       ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
     </autogen>
   </item>
+
+  <item>
+    <name>Double-Shift to Caps Lock</name>
+    <appendix>Double-tap ⇧ to Caps Lock</appendix>
+    <identifier>double_tap_shift_to_caps_lock</identifier>
+    <autogen>
+      --DoublePressModifier--
+      KeyCode::SHIFT_L,
+      KeyCode::SHIFT_L,
+      KeyCode::CAPSLOCK
+    </autogen>
+  </item>
+
+  <item>
+    <name>Double-Command to F18</name>
+    <appendix>Double-tap ⌘ to F18</appendix>
+    <identifier>double_tap_command_to_f18</identifier>
+    <autogen>
+      --DoublePressModifier--
+      KeyCode::COMMAND_L,
+      KeyCode::COMMAND_L,
+      KeyCode::F18
+    </autogen>
+  </item>
 </root>
