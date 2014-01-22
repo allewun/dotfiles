@@ -168,6 +168,7 @@ alias speedtest='wget -O /dev/null http://184.82.225.2/bigtest.tgz'
 alias rs='rails s'
 alias rc='rails c'
 alias irb='irb -r irb/completion'
+alias be='bundle exec'
 
 # vim
 alias v='vim -c "'"'"'\""' # open to last position
