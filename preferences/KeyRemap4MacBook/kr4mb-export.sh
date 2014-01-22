@@ -16,11 +16,11 @@ $cli set double_tap_shift_to_caps_lock 1
 /bin/echo -n .
 $cli set caps_lock_to_hyper 1
 /bin/echo -n .
-$cli set remap.fn2controlL 1
+$cli set remap.eject2forwarddelete 1
 /bin/echo -n .
 $cli set remap.controlL2fn 1
 /bin/echo -n .
-$cli set remap.eject2forwarddelete 1
+$cli set remap.fn2controlL 1
 /bin/echo -n .
 $cli set double_tap_command_to_f18 1
 /bin/echo -n .
