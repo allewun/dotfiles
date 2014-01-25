@@ -242,3 +242,7 @@ function man() {
   fi
 }
 
+function trash() {
+  mv "$1" ~/.Trash && echo "Moved \"$1\" to Trash"
+}
+
