@@ -40,6 +40,9 @@ for i in $DOTFILES_NEW; do
   (ln -s "$DOTFILE_PATH/$f" "$HOME/$f" > /dev/null 2>&1) && echo "Linked: ~/$f" || (ln -sf "$DOTFILE_PATH/$f" "$HOME/$f" && echo "Relinked: $f")
 done
 
+# others
+ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/bin/airport && echo "Added \`airport\` command"
+
 echo "
 *-----------------------------*
 |  Done setting up dotfiles!  |
