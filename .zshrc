@@ -179,7 +179,8 @@ alias ocaml="rlwrap ocaml"
 
 # misc
 alias tree="tree -C | less"
-alias json="python -m json.tool | pygmentize -f terminal256 -l javascript -O style=monokai"
+alias json="python -m json.tool"
+alias jsonc="json | pygmentize -f terminal256 -l javascript -O style=monokai"
 alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
 alias pubkey="pbcopy < ~/.ssh/id_rsa.pub && echo Copied public ssh key."
 alias gcc49="gcc-4.9 -fdiagnostics-color=auto"
