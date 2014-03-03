@@ -3,6 +3,13 @@
 brew update
 brew upgrade
 
+# brew-cask
+brew tap phinze/cask
+brew install brew-cask
+brew upgrade brew-cask
+brew cask install xquartz
+
+brew install zsh
 brew install ack
 brew install wget
 brew install coreutils
@@ -19,9 +26,9 @@ brew install p7zip
 brew install rbenv ruby-build rbenv-gem-rehash rbenv-gemset
 brew install heroku
 brew install ctags
+brew install gifsicle
 
 brew tap homebrew/versions
 brew install apple-gcc42
 brew install gcc48
 brew install gcc49
-

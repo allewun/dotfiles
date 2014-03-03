@@ -1,10 +1,10 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Jan 2014)
+# Allen Wu (Feb 2014)
 #==============================================================================
 
 typeset -U PATH
-export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:$PATH
+export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export DOTFILE_PATH=~/dotfiles
@@ -79,7 +79,7 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-for cmd (cd song repo dot notify histail forget man manz);
+for cmd (cd song repo notify histail forget man manz);
   do alias $cmd=" $cmd";
 done
 
