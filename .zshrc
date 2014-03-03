@@ -143,6 +143,7 @@ alias ......='cd ../../..'
 alias mkdir='mkdir -p'
 
 # git
+alias g='git'
 alias gti='git'
 alias github='hub'
 
