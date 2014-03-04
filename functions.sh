@@ -133,7 +133,7 @@ function objcrepl() {
     echo $BOILERPLATE > $SOURCE
   fi
 
-  vim $SOURCE && clang -framework Foundation -o $EXE $SOURCE && (exec $EXE)
+  vim $SOURCE && clang -framework Foundation -o $EXE $SOURCE && echo "---------- $SOURCE ----------" && (exec $EXE)
 }
 
 
