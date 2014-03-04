@@ -199,7 +199,7 @@ export LESS_TERMCAP_mb=$'\E[0;36m'     # cyan
 export LESS_TERMCAP_md=$'\E[0;36m'     # cyan
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[0;30;102m' # highlighted text
+export LESS_TERMCAP_so=$'\E[0;30;103m' # highlighted text
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[0;33m'     # yellow
 
@@ -243,7 +243,7 @@ function chpwd() {
 }
 
 # less with syntax highlighting
-function cless() {
+function lessc() {
   LESSOPEN="| pygmentize -f terminal256 -O style=monokai -g %s" less -R "$@";
 }
 
