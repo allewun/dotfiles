@@ -26,7 +26,7 @@ done
 
 # left prompt: path and git status
 NEWLINE=$'\n'
-PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f%F{magenta}$(__heroku_ps1)%f$NEWLINE%F{white}$(__arrow_ps1)%f '
+PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f%F{magenta}$(__heroku_ps1)%f$NEWLINE%F{white}>%f '
 
 # right prompt: timestamp
 function preexec() {
