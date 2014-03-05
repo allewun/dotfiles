@@ -124,16 +124,16 @@ function blame() {
 # objective-c repl
 function objcrepl() {
   local NAME="objcrepl"
-  local DIR="/tmp"
+  local DIR="/tmp/objcrepl"
   local SOURCE="$DIR/$NAME.m"
   local EXE="$DIR/$NAME"
   local BOILERPLATE="#import \"Foundation/Foundation.h\"\n\n@interface TestClass : NSObject\n@property (strong, nonatomic) NSString* key;\n@end\n\n@implementation TestClass\n@end\n\nint main () {\n  @autoreleasepool {\n    \n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
 
   if [[ ! -f $SOURCE ]]; then
-    echo $BOILERPLATE > $SOURCE
+    mkdir -p $DIR && echo $BOILERPLATE > $SOURCE
   fi
 
-  v $SOURCE && clang -framework Foundation -o $EXE $SOURCE && echo "---------- $SOURCE ----------" && (exec $EXE)
+  v $SOURCE && clang -framework Foundation -o $EXE $DIR/*.m && echo "----------[ /tmp/objcrepl ]----------" && (exec $EXE)
 }
 
 
