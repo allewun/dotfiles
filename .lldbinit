@@ -2,7 +2,7 @@
 # Importing the script below will make the 'ql' and 'qlf' available to you in LLDB.
 # IMPORTANT: Update the path to the script depending on where you decide place it.
 
-command script import ~/dotfiles/scripts/LLDB-QuickLook/lldb_quick_look.py
+command script import ~/dotfiles/xcode/lldb/LLDB-QuickLook/lldb_quick_look.py
 command alias ql quicklook
 
 # reveal.app
