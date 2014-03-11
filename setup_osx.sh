@@ -36,7 +36,7 @@ defaults write com.apple.BezelServices kDimTime -int 300
 # Use scroll gesture with the command-key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 1048576
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool false
 
 #============================================================================
 # Screen
