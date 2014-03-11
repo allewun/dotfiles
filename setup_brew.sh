@@ -27,6 +27,7 @@ brew install rbenv ruby-build rbenv-gem-rehash rbenv-gemset
 brew install heroku
 brew install ctags
 brew install gifsicle
+brew install pv
 
 brew tap homebrew/versions
 brew install apple-gcc42
