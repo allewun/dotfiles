@@ -133,7 +133,7 @@ function objcrepl() {
     mkdir -p $DIR && echo $BOILERPLATE > $SOURCE
   fi
 
-  v $SOURCE && clang -Weverything -Wno-newline-eof -framework Foundation -o $EXE $DIR/*.m && echo "----------[ /tmp/objcrepl ]----------" && (exec $EXE)
+  v $SOURCE && clang -fobjc-arc -Weverything -Wno-newline-eof -framework Foundation -o $EXE $DIR/*.m && echo "----------[ /tmp/objcrepl ]----------" && (exec $EXE)
 }
 
 
