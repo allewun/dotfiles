@@ -188,6 +188,7 @@ alias gcc49="gcc-4.9 -fdiagnostics-color=auto"
 alias gcc48="gcc-4.8"
 alias gcc46="gcc-4.6"
 alias gcc42="gcc-4.2"
+alias pythonserver="python -m SimpleHTTPServer"
 
 
 #==============================================================================
