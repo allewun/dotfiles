@@ -162,6 +162,7 @@ alias md5='openssl md5'
 
 # networking
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias lip='ifconfig | grep "inet " | grep -v "127.0.0.1" | cut -d" " -f2'
 alias headers='curl -I'
 alias speedtest='wget -O /dev/null http://184.82.225.2/bigtest.tgz'
 
