@@ -251,6 +251,8 @@ function trash() {
 #   adhoc(file, bundleID, version, title)
 function adhoc() {
   if [[ -n $1 && -n $2 && -n $3 && -n $4 ]]; then
+    if [[ -f $1 ]]; then
+
     local FILENAME=$1
     local BUNDLEID=$2
     local VERSION=$3
@@ -259,16 +261,17 @@ function adhoc() {
     local TIMESTAMP=$(date +%Y%m%d%H%M)
     local TIMESTAMP_CLEAN="$(date "+%Y/%m/%d%n @ %l:%M:%S %p")"
     local DIR="/tmp/adhoc/$TIMESTAMP"
-
-    local SERVER="http://$(lip):8000"
+    local SERVER="https://$(lip):4443"
+    local FILESIZE=$(ls -lh $FILENAME | tr -s ' ' | cut -d" " -f5)
 
     local HTML="
 <html>
   <head><title>$TITLE -- Ad Hoc Distribution</title></head>
   <body>
-    <h1 style='font-size: 100px'><a href=\"itms-services://?action=download-manifest&amp;url=$SERVER/manifest\">$TITLE</a></h1>
+    <h1 style='font-size: 100px'><a href=\"itms-services://?action=download-manifest&amp;url=$SERVER/manifest\">$TITLE ($FILESIZE)</a></h1>
     <ul><li>Bundle ID: $BUNDLEID</li><li>Version: $VERSION</li></ul>
     <h2>Generated on $TIMESTAMP_CLEAN</h2>
+    <h2>Address of this page: $SERVER/download.html</h2>
   </body>
 </html>"
 
@@ -297,7 +300,6 @@ function adhoc() {
   </dict>
 </plist>"
 
-    if [[ -f $1 ]]; then
       mkdir -p $DIR
       cp $FILENAME $DIR/$1
       echo $HTML > "$DIR/download.html"
@@ -305,9 +307,10 @@ function adhoc() {
 
       echo "  * Creating local iOS Ad Hoc distribution server at:"
       echo "  * $SERVER/download.html\n\n"
-      open $SERVER/download.html
 
-      pushd $DIR; python -m SimpleHTTPServer 8000; popd
+      pushd $DIR; pythonhttpsserver $(lip); popd
+
+      open $SERVER/download.html
     fi
   else
     echo "Usage: adhoc [FILENAME.ipa] [Bundle ID] [Version] [Title]"

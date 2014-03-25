@@ -189,6 +189,7 @@ alias gcc48="gcc-4.8"
 alias gcc46="gcc-4.6"
 alias gcc42="gcc-4.2"
 alias pythonserver="python -m SimpleHTTPServer"
+alias pythonhttpsserver="python3 ~/dotfiles/scripts/https-server/pythonhttpsserver.py"
 
 
 #==============================================================================
