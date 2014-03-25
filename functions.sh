@@ -150,7 +150,7 @@ function phpserver() {
 #   * dot
 #       cd to dotfile directory
 #   * dot [name]
-#       try to open [file] vim
+#       try to open [file] in vim
 #   * dot [cmd] [file]
 #       perform [cmd] on [file],
 #       valid commands are:
@@ -199,12 +199,13 @@ function dot() {
 
   # dot [file]
   elif [[ ! -z "$FILE" ]]; then
-    v $FILE && src 
+    v $FILE && src
   fi
 }
 
 
-# notify when done with operation
+# notify when done with operation (and returns the previous command's exit code)
+# use with a ";" before the previous command
 function notify() {
   local EXIT_CODE=$?
   local MESSAGE="Failure!"
@@ -246,3 +247,69 @@ function trash() {
   mv "$1" ~/.Trash && echo "Moved \"$1\" to Trash"
 }
 
+# iOS local ad hoc distribution server
+#   adhoc(file, bundleID, version, title)
+function adhoc() {
+  if [[ -n $1 && -n $2 && -n $3 && -n $4 ]]; then
+    local FILENAME=$1
+    local BUNDLEID=$2
+    local VERSION=$3
+    local TITLE=$4
+
+    local TIMESTAMP=$(date +%Y%m%d%H%M)
+    local TIMESTAMP_CLEAN="$(date "+%Y/%m/%d%n @ %l:%M:%S %p")"
+    local DIR="/tmp/adhoc/$TIMESTAMP"
+
+    local SERVER="http://$(lip):8000"
+
+    local HTML="
+<html>
+  <head><title>$TITLE -- Ad Hoc Distribution</title></head>
+  <body>
+    <h1 style='font-size: 100px'><a href=\"itms-services://?action=download-manifest&amp;url=$SERVER/manifest\">$TITLE</a></h1>
+    <ul><li>Bundle ID: $BUNDLEID</li><li>Version: $VERSION</li></ul>
+    <h2>Generated on $TIMESTAMP_CLEAN</h2>
+  </body>
+</html>"
+
+    local MANIFEST="
+<plist version=\"1.0\">
+  <dict>
+    <key>items</key>
+    <array>
+      <dict>
+        <key>assets</key>
+        <array>
+          <dict>
+            <key>kind</key><string>software-package</string>
+            <key>url</key><string>$SERVER/$FILENAME</string>
+          </dict>
+        </array>
+        <key>metadata</key>
+        <dict>
+          <key>bundle-identifier</key><string>$BUNDLEID</string>
+          <key>bundle-version</key><string>$VERSION</string>
+          <key>kind</key><string>software</string>
+          <key>title</key><string>$TITLE</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>"
+
+    if [[ -f $1 ]]; then
+      mkdir -p $DIR
+      cp $FILENAME $DIR/$1
+      echo $HTML > "$DIR/download.html"
+      echo $MANIFEST > "$DIR/manifest"
+
+      echo "  * Creating local iOS Ad Hoc distribution server at:"
+      echo "  * $SERVER/download.html\n\n"
+      open $SERVER/download.html
+
+      pushd $DIR; python -m SimpleHTTPServer 8000; popd
+    fi
+  else
+    echo "Usage: adhoc [FILENAME.ipa] [Bundle ID] [Version] [Title]"
+  fi
+}
