@@ -28,6 +28,7 @@ brew install heroku
 brew install ctags
 brew install gifsicle
 brew install pv
+brew install python3
 
 brew tap homebrew/versions
 brew install apple-gcc42
