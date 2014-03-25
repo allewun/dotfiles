@@ -132,7 +132,7 @@ alias hist="cd ~/Dropbox/history/"
 alias sim="cd ~/Library/Application\ Support/iPhone\ Simulator/"
 
 # ls
-alias ls=' ls -AFG' # trailing slash for dirs and colors
+alias ls=' ls -AFGh' # trailing slash for dirs and colors, human-readable filesizes
 
 # cd
 alias ..='cd ..'
