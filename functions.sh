@@ -302,7 +302,7 @@ function adhoc() {
 
       mkdir -p $DIR
       cp $FILENAME $DIR/$1
-      echo $HTML > "$DIR/"
+      echo $HTML > "$DIR/index.html"
       echo $MANIFEST > "$DIR/manifest"
 
       echo "  * Creating local iOS Ad Hoc distribution server at:"

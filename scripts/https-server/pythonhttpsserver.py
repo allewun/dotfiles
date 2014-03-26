@@ -5,12 +5,14 @@ import socket
 import ssl
 import http.server
 import sys
+import mimetypes
 from os.path import expanduser
 
 PORT = 4443
 
 def do_request(connstream, from_addr):
     x = object()
+    http.server.SimpleHTTPRequestHandler.extensions_map = {'.ipa': 'application/octet-stream', '.html': 'text/html', '': 'text/xml'}
     http.server.SimpleHTTPRequestHandler(connstream, from_addr, x)
 
 def serve(host):
