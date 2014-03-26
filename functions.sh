@@ -248,7 +248,15 @@ function trash() {
 }
 
 # iOS local ad hoc distribution server
+#
+# uses Dropbox instead of localhost, since
+# iOS 7.1 requires SSL, and I couldn't figure
+# out how to get HTTPS to work successfully with
+# pythonserver. It almost worked though...
+#
+# Usage:
 #   adhoc(file, bundleID, version, title)
+#
 function adhoc() {
   if [[ -n $1 && -n $2 && -n $3 && -n $4 ]]; then
     if [[ -f $1 ]]; then
@@ -258,20 +266,23 @@ function adhoc() {
     local VERSION=$3
     local TITLE=$4
 
+    local DROPBOXID=$(kDropboxID)
     local TIMESTAMP=$(date +%Y%m%d%H%M)
-    local TIMESTAMP_CLEAN="$(date "+%Y/%m/%d%n @ %l:%M:%S %p")"
-    local DIR="/tmp/adhoc/$TIMESTAMP"
-    local SERVER="https://$(lip):4443"
+    local TIMESTAMP_CLEAN="$(date "+%B %d @ %l:%M:%S %p")"
+    local DIR="$HOME/Dropbox/Public/adhoc/$TIMESTAMP"
+    local SERVER="https://dl.dropboxusercontent.com/u/$DROPBOXID/adhoc/$TIMESTAMP"
     local FILESIZE=$(ls -lh $FILENAME | tr -s ' ' | cut -d" " -f5)
 
     local HTML="
 <html>
-  <head><title>$TITLE -- Ad Hoc Distribution</title></head>
+  <head>
+    <title>$TITLE -- Ad Hoc Distribution</title>
+    <style>*{margin:0;padding:0;font-family:'Gill Sans';font-size:50px}body{background:#e9edf2;background:linear-gradient(to bottom,#fff 0,#e2e7ee 20%,#e2e7ee 100%);color:#333}a{border:1px solid #284352;background:#00ff7e;color:#fff;box-shadow:inset 0 0 20px rgba(0,0,0,.4),0 8px 0 #fff;text-shadow:0 5px 0 #007c3c,0 -1px 2px rgba(0,0,0,.3);font-size:80px;text-align:center;margin:40px auto;width:600px;height:600px;display:block;border-radius:300px;line-height:600px;text-decoration:none}ul{margin-left:30px;padding:50px}li{padding-left:20px}footer{font-style:italic;color:#284352;padding:50px}</style>
+  </head>
   <body>
-    <h1 style='font-size: 100px'><a href=\"itms-services://?action=download-manifest&amp;url=$SERVER/manifest\">$TITLE ($FILESIZE)</a></h1>
-    <ul><li>Bundle ID: $BUNDLEID</li><li>Version: $VERSION</li></ul>
-    <h2>Generated on $TIMESTAMP_CLEAN</h2>
-    <h2>Address of this page: $SERVER/</h2>
+    <a href=\"itms-services://?action=download-manifest&amp;url=$SERVER/manifest\">$TITLE</a>
+    <ul><li>Bundle ID: $BUNDLEID</li><li>Version: $VERSION</li><li>File size: ${FILESIZE}B</li></ul>
+    <footer>Generated on $TIMESTAMP_CLEAN</footer>
   </body>
 </html>"
 
@@ -305,12 +316,15 @@ function adhoc() {
       echo $HTML > "$DIR/index.html"
       echo $MANIFEST > "$DIR/manifest"
 
-      echo "  * Creating local iOS Ad Hoc distribution server at:"
-      echo "  * $SERVER/\n\n"
-
-      open "$SERVER/"
-
-      pushd $DIR; pythonhttpsserver $(lip); popd
+      echo ""
+      echo "  * Creating iOS Ad Hoc distribution server at:"
+      echo "     - $(tput setaf 6)$SERVER/index.html$(tput sgr 0)"
+      echo "     - $(tput setaf 3)$DIR$(tput sgr 0)"
+      echo ""
+      echo "  * $TITLE"
+      echo "     - $FILENAME (${FILESIZE}B)"
+      echo "     - Bundle ID: $BUNDLEID"
+      echo "     - Version  : $VERSION"
     fi
   else
     echo "Usage: adhoc [FILENAME.ipa] [Bundle ID] [Version] [Title]"
