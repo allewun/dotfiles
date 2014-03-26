@@ -1,6 +1,9 @@
 *.DS_Store
 *.swp
 
+# Personal
+constants-private.sh
+
 # Xcode
 # (https://github.com/github/gitignore)
 */build/*

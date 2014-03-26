@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Feb 2014)
+# Allen Wu (Mar 2014)
 #==============================================================================
 
 typeset -U PATH
@@ -9,6 +9,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export DOTFILE_PATH=~/dotfiles
 
+# constants
+source $DOTFILE_PATH/constants/constants-public.sh
+source $DOTFILE_PATH/constants/constants-private.sh
 
 #==============================================================================
 # Prompt
