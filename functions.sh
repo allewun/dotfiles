@@ -325,6 +325,9 @@ function adhoc() {
       echo "     - $FILENAME (${FILESIZE}B)"
       echo "     - Bundle ID: $BUNDLEID"
       echo "     - Version  : $VERSION"
+    else
+      echo "\"$1\" not found"
+      (exit 1)
     fi
   else
     echo "Usage: adhoc [FILENAME.ipa] [Bundle ID] [Version] [Title]"
