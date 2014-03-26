@@ -31,6 +31,7 @@
   c  = commit
   b  = branch
   bi = bisect
+  cp = cherry-pick
 
   # concise log, concise log + graph, concise log with modified files
   l = log  --pretty=format:'%C(red)%h%Creset %C(green)%ad%Creset%C(yellow)%d%Creset %s %C(cyan)(%an)%Creset' --date=short

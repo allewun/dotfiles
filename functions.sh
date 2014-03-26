@@ -271,7 +271,7 @@ function adhoc() {
     <h1 style='font-size: 100px'><a href=\"itms-services://?action=download-manifest&amp;url=$SERVER/manifest\">$TITLE ($FILESIZE)</a></h1>
     <ul><li>Bundle ID: $BUNDLEID</li><li>Version: $VERSION</li></ul>
     <h2>Generated on $TIMESTAMP_CLEAN</h2>
-    <h2>Address of this page: $SERVER/download.html</h2>
+    <h2>Address of this page: $SERVER/</h2>
   </body>
 </html>"
 
@@ -302,15 +302,15 @@ function adhoc() {
 
       mkdir -p $DIR
       cp $FILENAME $DIR/$1
-      echo $HTML > "$DIR/download.html"
+      echo $HTML > "$DIR/"
       echo $MANIFEST > "$DIR/manifest"
 
       echo "  * Creating local iOS Ad Hoc distribution server at:"
-      echo "  * $SERVER/download.html\n\n"
+      echo "  * $SERVER/\n\n"
+
+      open "$SERVER/"
 
       pushd $DIR; pythonhttpsserver $(lip); popd
-
-      open $SERVER/download.html
     fi
   else
     echo "Usage: adhoc [FILENAME.ipa] [Bundle ID] [Version] [Title]"
