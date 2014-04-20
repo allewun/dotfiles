@@ -223,6 +223,9 @@ export ACK_COLOR_FILENAME='underline cyan'
 export ACK_COLOR_MATCH='underline yellow'
 export ACK_COLOR_LINENO='cyan'
 
+# term
+export TERM="xterm-256color"
+
 
 #==============================================================================
 # Functions
