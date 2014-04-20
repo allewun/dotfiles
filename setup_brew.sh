@@ -8,6 +8,7 @@ brew tap phinze/cask
 brew install brew-cask
 brew upgrade brew-cask
 brew cask install xquartz
+brew cask install easysimbl
 
 brew install zsh
 brew install ack
