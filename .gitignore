@@ -6,7 +6,7 @@ constants-private.sh
 
 # Xcode
 # (https://github.com/github/gitignore)
-*/build/*
+build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -16,11 +16,12 @@ constants-private.sh
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
-profile
+*.xccheckout
 *.moved-aside
 DerivedData
-.idea/
 *.hmap
+*.ipa
+*.xcuserstate
 
 # Java
 *.class
