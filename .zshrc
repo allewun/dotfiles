@@ -161,6 +161,8 @@ alias clearclip='echo -n "" | pbcopy'
 
 # hash
 alias sha1='openssl sha1'
+alias sha256='shasum -a 256'
+alias sha512='shasum -a 512'
 alias md5='openssl md5'
 
 # networking
