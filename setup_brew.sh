@@ -9,6 +9,7 @@ brew install brew-cask
 brew upgrade brew-cask
 brew cask install xquartz
 brew cask install easysimbl
+brew cask install powerkey
 
 brew install zsh
 brew install ack

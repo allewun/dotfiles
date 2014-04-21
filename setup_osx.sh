@@ -83,6 +83,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
+# Prevent power key from triggering sleep
+defaults write com.apple.loginwindow PowerButtonSleepsSystem -bool NO
+
 #============================================================================
 # Dock
 #============================================================================
