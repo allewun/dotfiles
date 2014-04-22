@@ -32,6 +32,7 @@ brew install gifsicle
 brew install pv
 brew install python3
 brew install reattach-to-user-namespace
+brew install htop
 
 brew tap homebrew/versions
 brew install apple-gcc42
