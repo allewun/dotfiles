@@ -1,0 +1,86 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+
+.tabs-newtab-button,
+#new-tab-button {
+  display: none !important;
+}
+
+/* Firefox 29 + Tree Style Tabs UI fix */
+#nav-bar {
+    background-image: url("chrome://browser/skin/Toolbar-background-noise.png"), linear-gradient(rgb(215, 215, 215), rgb(211, 211, 211));
+}
+
+#main-window:-moz-window-inactive #nav-bar {
+    background-image: url("chrome://browser/skin/Toolbar-background-noise.png"), linear-gradient(rgb(239, 239, 239), rgb(211, 211, 211));
+}
+
+/* Firefox 29 - always show forward button */
+
+#forward-button {
+  visibility: visible !important;
+  display: block !important;
+  opacity: 1 !important;
+  width: 32px !important;
+}
+
+#forward-button:hover:active[disabled="true"] {
+    background-image: linear-gradient(hsla(0,0%,100%,.73), hsla(0,0%,100%,.05) 85%);
+    border-color: hsla(0,0%,0%,.35) hsla(0,0%,0%,.25) hsla(0,0%,0%,.2);
+    box-shadow: inset 0 1px 0 hsla(0,0%,100%,.2),
+                inset 0 0 1px hsla(0,0%,100%,.1),
+                0 1px 0 hsla(0,0%,100%,.2);
+}
+
+#urlbar {
+  transition: none !important;;
+  margin-left: 0 !important;
+}
+
+#identity-box {
+    padding-left: 5px !important;
+}
+
+/* Remove customization hamburger (FF29+) */
+#PanelUI-button {
+    display: none;
+}
+
+@-moz-document url("about:addons") {
+  #categories {width: 210px; font-size: 85%;}
+}
+
+/* Status-bar tweaks */
+#stylish-toolbar-button > dropmarker,
+#abp-toolbarbutton > dropmarker {display: none !important;}
+
+#stylish-toolbar-button > image,
+#abp-toolbarbutton > image {width: 0 !important; height: 0 !important; padding: 8px !important;}
+
+#stylish-toolbar-button > image {background: url('file:///Users/allen/firefox/stylish-active.png') !important;}
+#stylish-toolbar-button[styles-applied=""] > image {background: url('file:///Users/allen/firefox/stylish-inactive.png') !important;}
+#abp-toolbarbutton[abpstate="disabled"] > image {background: url('file:///Users/allen/firefox/abp-inactive.png') !important;}
+#abp-toolbarbutton[abpstate="active"] > image {background: url('file:///Users/allen/firefox/abp-active.png') !important;}
+
+#status4evar-status-widget > label {
+  color: rgb(34,34,34) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4) !important;
+}
+
+
+/* Findbar tweaks */
+
+/* move "Highlight All" and "Match Case" buttons to the left side (by moving the description to the end) */
+.findbar-container spacer {display: none !important;}
+.findbar-container description {-moz-box-ordinal-group: 10;}
+
+.findbar-find-previous label:after {content: "Previous"; padding-left: 4px;}
+.findbar-find-next label:after {content: "Next"; padding-left: 4px;}
+.findbar-textbox {width: 25em;}
+
+/* Progress bar in url bar */
+#urlbar-progress-alt {margin-right: -4px !important;}
+#urlbar-progress-alt .progress-remainder {transform: scaleY(-1) !important;}
+
+/* Hide 1Password button */
+#onepassword-toolbar-button {display: none !important;}
