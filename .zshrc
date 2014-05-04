@@ -228,6 +228,9 @@ export ACK_COLOR_LINENO='cyan'
 # term
 export TERM="xterm-256color"
 
+# zsh
+autoload -U colors && colors
+
 
 #==============================================================================
 # Functions
