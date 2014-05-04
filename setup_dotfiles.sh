@@ -5,7 +5,6 @@
 #==========================
 
 (
-DOTFILE_PATH=~/dotfiles
 DOTFILES_NEW=($(find $DOTFILE_PATH -not -name '.DS_Store' -name ".*" -type f -maxdepth 1 -exec basename {} \;))
 DOTFILES_OLD_REG=($(comm -12 <(find $HOME         -not -name '.DS_Store' -name ".*" -type f -maxdepth 1 -exec basename {} \;) \
                              <(find $DOTFILE_PATH -not -name '.DS_Store' -name ".*" -type f -maxdepth 1 -exec basename {} \;)))

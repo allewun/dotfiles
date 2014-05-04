@@ -5,7 +5,6 @@
 #=========================
 
 (
-DOTFILE_PATH=~/dotfiles
 DATE=($(date +%Y%m%d%H%M%S))
 
 # backup source history file if it exists already
