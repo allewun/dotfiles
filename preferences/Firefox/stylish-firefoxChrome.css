@@ -41,8 +41,25 @@
     padding-left: 5px !important;
 }
 
+#notification-popup-box {
+    margin-right: 0 !important;
+}
+
+
 /* Remove customization hamburger (FF29+) */
 #PanelUI-button {
+    display: none;
+}
+
+/* Move bookmark button back into urlbar */
+#bookmarks-menu-button .toolbarbutton-menubutton-button {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0 !important;;
+    margin: -8px 0 !important;;
+}
+#bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
     display: none;
 }
 
@@ -79,7 +96,7 @@
 .findbar-textbox {width: 25em;}
 
 /* Progress bar in url bar */
-#urlbar-progress-alt {margin-right: -4px !important;}
+#urlbar-progress-alt {margin-right: -4px !important; margin-bottom: -1px !important;}
 #urlbar-progress-alt .progress-remainder {transform: scaleY(-1) !important;}
 
 /* Hide 1Password button */
