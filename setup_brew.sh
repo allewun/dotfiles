@@ -4,7 +4,7 @@ brew update
 brew upgrade
 
 # brew-cask
-brew tap phinze/cask
+brew tap caskroom/cask
 brew install brew-cask
 brew upgrade brew-cask
 brew cask install xquartz
