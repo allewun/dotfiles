@@ -34,6 +34,14 @@ brew install python3
 brew install reattach-to-user-namespace
 brew install htop
 
+# quicklook
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install suspicious-package
+brew cask install ipaql
+
 brew tap homebrew/versions
 brew install apple-gcc42
 brew install gcc48
