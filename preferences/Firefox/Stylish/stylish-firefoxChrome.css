@@ -74,10 +74,10 @@
 #stylish-toolbar-button > image,
 #abp-toolbarbutton > image {width: 0 !important; height: 0 !important; padding: 8px !important;}
 
-#stylish-toolbar-button > image {background: url('file:///Users/allen/firefox/stylish-active.png') !important;}
-#stylish-toolbar-button[styles-applied=""] > image {background: url('file:///Users/allen/firefox/stylish-inactive.png') !important;}
-#abp-toolbarbutton[abpstate="disabled"] > image {background: url('file:///Users/allen/firefox/abp-inactive.png') !important;}
-#abp-toolbarbutton[abpstate="active"] > image {background: url('file:///Users/allen/firefox/abp-active.png') !important;}
+#stylish-toolbar-button > image {background: url('file:///Users/allen/dotfiles/preferences/Firefox/Icons/stylish-active.png') !important;}
+#stylish-toolbar-button[styles-applied=""] > image {background: url('file:///Users/allen/dotfiles/preferences/Firefox/Icons/stylish-inactive.png') !important;}
+#abp-toolbarbutton[abpstate="disabled"] > image {background: url('file:///Users/allen/dotfiles/preferences/Firefox/Icons/abp-inactive.png') !important;}
+#abp-toolbarbutton[abpstate="active"] > image {background: url('file:///Users/allen/dotfiles/preferences/Firefox/Icons/abp-active.png') !important;}
 
 #status4evar-status-widget > label {
   color: rgb(34,34,34) !important;

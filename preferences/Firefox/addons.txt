@@ -1,0 +1,73 @@
+﻿Application: Firefox 29.0 (20140421221237)
+Operating System: Darwin (x86_64-gcc3)
+
+May 4, 2014
+
+- 1Password 4.1.0
+	https://agilebits.com/onepassword
+- Adblock Plus 2.6
+	http://adblockplus.org/en/
+- Adobe Acrobat - Create PDF 1.2 (Disabled)
+	http://www.adobe.com/
+- Always Ask 2.1
+	https://addons.mozilla.org/en-US/firefox/addon/always-ask/?src=api
+- Change Search Shortcut 0.22
+	https://addons.mozilla.org/en-US/firefox/addon/change-search-shortcut/?src=api
+- Config Descriptions 1.0
+	https://addons.mozilla.org/en-US/firefox/addon/config-descriptions/?src=api
+- DOM Inspector 2.0.14
+	http://www.mozilla.org/projects/inspector/
+- Extension List Dumper 1.15.2
+	http://www.sogame.cat/
+- FindBar Tweak 1.4.18
+	https://addons.mozilla.org/en-US/firefox/addon/findbar-tweak/
+- FireGestures 1.8.6
+	http://www.xuldev.org/firegestures/
+- Flat Bookmarks 1.11
+	http://www.xuldev.org/flatbm/
+- Google/Yandex search link fix 1.4.1
+	https://addons.mozilla.org/addon/google-search-link-fix/
+- HN Utility Suite initial.rev20.1
+	https://addons.mozilla.org/en-US/firefox/addon/hn-utility-suite/?src=api
+- HTTPS-Everywhere 3.5.1
+	https://www.eff.org/https-everywhere
+- JSONView 0.7
+	http://jsonview.com/
+- Linkification 1.3.8
+	http://yellow5.us/firefox/linkification/
+- Live Edit 1.0 (Disabled)
+	http://hamzeen.wordpress.com
+- Mozilla Archive Format 3.0.1
+	http://maf.mozdev.org/
+- Open in Private Browsing Mode 1.1
+	https://github.com/fwenzel/open-private
+- Open With 5.5
+	http://www.darktrojan.net/software/addons/openwith/
+- Re-Pagination 2013.03.18
+	https://github.com/nmaier/repagination
+- Reddit Enhancement Suite 4.3.2.1
+	https://addons.mozilla.org/en-US/firefox/addon/reddit-enhancement-suite/?src=api
+- Restartless Restart 9
+	http://github.com/erikvold/restartless-restart-ffext
+- Session Manager 0.8.1.1 (Disabled)
+	http://sessionmanager.mozdev.org/
+- Star-Button In Urlbar 1.0.5a
+	https://addons.mozilla.org/addon/starbuttoninurlbar/
+- Status-4-Evar 2014.02.18.00b
+	http://forums.mozillazine.org/viewtopic.php?f=48&t=2001965
+- Stylish 1.4.3
+	http://userstyles.org/
+- Tile Tabs 11.7 (Disabled)
+	https://addons.mozilla.org/firefox/addon/tile-tabs/
+- Tree Style Tab 0.14.2014050102
+	http://piro.sakura.ne.jp/xul/_treestyletab.html.en
+- Update Scanner 3.1.13
+	http://updatescanner.sourceforge.net
+- User Agent Switcher 0.7.3
+	http://chrispederick.com/work/user-agent-switcher/
+- View Source Chart 3.05
+	http://zigrat.com
+- ViewSourceWith 0.9.4.2
+	http://dafizilla.sourceforge.net/viewsourcewith
+- YouTube Center 2.1.0
+	http://userscripts.org/scripts/show/114002
