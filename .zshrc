@@ -133,6 +133,7 @@ alias dropbox="cd ~/Dropbox/"
 alias originate="cd ~/Dropbox/Originate/"
 alias hist="cd ~/Dropbox/history/"
 alias sim="cd ~/Library/Application\ Support/iPhone\ Simulator/"
+alias ff="cd ~/Library/Application\ Support/Firefox/Profiles/*.default/"
 
 # ls
 alias ls=' ls -AFGh' # trailing slash for dirs and colors, human-readable filesizes
