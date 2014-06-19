@@ -48,7 +48,7 @@
   excludesfile = /Users/allen/.gitignore
 
 [push]
-  default = upstream
+  default = simple
 
 [diff]
   algorithm = patience
