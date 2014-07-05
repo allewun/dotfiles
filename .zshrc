@@ -140,8 +140,9 @@ alias ls=' ls -AFGh' # trailing slash for dirs and colors, human-readable filesi
 
 # cd
 alias ..='cd ..'
-alias ....='cd ../..'
-alias ......='cd ../../..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # mkdir
 alias mkdir='mkdir -p'
