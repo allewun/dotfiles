@@ -137,6 +137,33 @@ function objcrepl() {
 }
 
 
+# xcode
+function xc() {
+  currentPath=$(pwd)
+  while true; do
+    fileXCW=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcworkspace" | head -1)
+    fileXCP=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcodeproj" | head -1)
+    
+    if [[ -n $fileXCW ]]; then
+      open -a Xcode $fileXCW
+      break
+    elif [[ -n $fileXCP ]]; then
+      open -a Xcode $fileXCP
+      break
+    else
+      nextPath=$(find $currentPath -mindepth 1 -maxdepth 1 -name $(basename $currentPath) | head -1)
+
+      if [[ -d $nextPath ]]; then
+        currentPath=$nextPath
+      else
+        echo "Unable to find Xcode project"
+        return 1
+      fi  
+    fi
+  done
+}
+
+
 # from mathiasbynens' .functions
 function phpserver() {
   local port="${1:-4000}"

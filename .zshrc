@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Mar 2014)
+# Allen Wu (July 2014)
 #==============================================================================
 
 typeset -U PATH
@@ -82,7 +82,7 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-for cmd (cd song repo notify histail forget man manz);
+for cmd (cd song repo notify histail forget man manz xc);
   do alias $cmd=" $cmd";
 done
 
@@ -119,9 +119,6 @@ alias finder=" open -a Finder ."
 alias firefox=" open -a Firefox"
 alias chrome=" open -a Google\ Chrome"
 alias preview=" open -a Preview"
-alias xc=xcode
-alias xcode=" open -a Xcode *.xcworkspace || open -a Xcode *.xcodeproj"              # iOS 7
-alias xcode4.6=" open -a Xcode4.6.app *.xcworkspace || open -a Xcode4.6 *.xcodeproj" # iOS 6
 alias tower=" open -a Tower ."
 alias mou=" open -a Mou"
 
