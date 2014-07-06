@@ -107,6 +107,8 @@ zstyle ':completion:*' menu select
 # Aliases
 #==============================================================================
 
+alias sudo="sudo " # allow sudo with aliases
+
 # configs
 alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
