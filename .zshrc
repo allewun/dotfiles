@@ -120,7 +120,7 @@ alias firefox=" open -a Firefox"
 alias chrome=" open -a Google\ Chrome"
 alias preview=" open -a Preview"
 alias tower=" open -a Tower ."
-alias mou=" open -a Mou"
+alias md=" open -a MacDown"
 
 # directory shortcuts
 alias dotfiles="cd $DOTFILE_PATH"
