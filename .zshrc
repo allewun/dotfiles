@@ -123,6 +123,7 @@ alias chrome=" open -a Google\ Chrome"
 alias preview=" open -a Preview"
 alias tower=" open -a Tower ."
 alias md=" open -a MacDown"
+alias xcode="open -a Xcode"
 
 # directory shortcuts
 alias dotfiles="cd $DOTFILE_PATH"
