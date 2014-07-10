@@ -82,7 +82,7 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-for cmd (cd song repo notify histail forget man manz xc);
+for cmd (cd song repo notify histail forget man manz xc md);
   do alias $cmd=" $cmd";
 done
 
@@ -122,7 +122,6 @@ alias firefox=" open -a Firefox"
 alias chrome=" open -a Google\ Chrome"
 alias preview=" open -a Preview"
 alias tower=" open -a Tower ."
-alias md=" open -a MacDown"
 alias xcode="open -a Xcode"
 
 # directory shortcuts

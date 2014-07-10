@@ -2,7 +2,7 @@
 
 #==============================================================================
 # functions.sh
-# Allen Wu (Jan 2014)
+# Allen Wu (July 2014)
 #==============================================================================
 
 
@@ -163,6 +163,36 @@ function xc() {
   done
 }
 
+
+# markdown
+function md() {
+  if [[ ! -z "$1"  ]]; then
+    open -a Macdown "$1"
+  else
+    currentPath=$(pwd)
+    while true; do
+      fileReadme=$(find -E $currentPath -maxdepth 1 -iregex "readme\.md" | head -1)
+      fileMarkdown=$(find -E $currentPath -maxdepth 1 -iregex ".*\.md" | head -1)
+
+      if [[ -n "$fileReadme" ]]; then
+        open -a Macdown "$fileReadme"
+        break
+      elif [[ -n "$fileMarkdown" ]]; then
+        open -a Macdown "$fileMarkdown"
+        break
+      else
+        nextPath=$(find $currentPath -mindepth 1 -maxdepth 1 -name $(basename $currentPath) | head -1)
+
+        if [[ -d "$nextPath" ]]; then
+          currentPath=$nextPath
+        else
+          echo "Unable to find a Markdown file."
+          return 1
+        fi
+      fi
+    done
+  fi
+}
 
 # from mathiasbynens' .functions
 function phpserver() {
