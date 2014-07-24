@@ -10,4 +10,10 @@
     cp -f $MISC_PATH/index_encrypted.html $QL_PATH/
     echo "Fixed BetterZipQL styles"
   fi
+
+  # fix ugly/barely-visible xcode i-beam cursor
+  XCODE_CURSOR_PATH=/Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework/Resources
+  sudo cp "$XCODE_CURSOR_PATH/DVTIbeamCursor.tiff" "$XCODE_CURSOR_PATH/DVTIbeamCursor-backup.tiff"
+  sudo cp -f "$DOTFILE_PATH/misc/cursors/DVTIbeamCursor.tiff" "$XCODE_CURSOR_PATH/"
+  echo "Fixed ugly/barely-visible xcode i-beam cursor"
 )
