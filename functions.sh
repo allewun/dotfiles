@@ -170,8 +170,9 @@ function xc() {
 
 # markdown
 function md() {
-  if [[ ! -z "$1"  ]]; then
-    open -a Macdown "$1"
+  local MD_EDITOR="Mou"
+  if [[ ! -z "$1" ]]; then
+    open -a $MD_EDITOR "$1"
   else
     currentPath=$(pwd)
     while true; do
@@ -179,10 +180,10 @@ function md() {
       fileMarkdown=$(find -E $currentPath -maxdepth 1 -iregex ".*\.md" | head -1)
 
       if [[ -n "$fileReadme" ]]; then
-        open -a Macdown "$fileReadme"
+        open -a $MD_EDITOR "$fileReadme"
         break
       elif [[ -n "$fileMarkdown" ]]; then
-        open -a Macdown "$fileMarkdown"
+        open -a $MD_EDITOR "$fileMarkdown"
         break
       else
         nextPath=$(find $currentPath -mindepth 1 -maxdepth 1 -name $(basename $currentPath) | head -1)
