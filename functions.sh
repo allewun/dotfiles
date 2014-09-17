@@ -2,7 +2,7 @@
 
 #==============================================================================
 # functions.sh
-# Allen Wu (July 2014)
+# Allen Wu (Sept 2014)
 #==============================================================================
 
 
@@ -278,6 +278,10 @@ function notify() {
     SOUND="Glass"
   fi
 
+  if [[ -n "$1" ]]; then
+    MESSAGE="$1"
+  fi
+
   (terminal-notifier -message $MESSAGE && afplay -v 1 "/System/Library/Sounds/$SOUND.aiff" &) ; (exit $EXIT_CODE)
 }
 
@@ -393,5 +397,18 @@ function adhoc() {
     fi
   else
     echo "Usage: adhoc [FILENAME.ipa] [Bundle ID] [Version] [Title]"
+  fi
+}
+
+# alert when website is up
+#   15 sec timeout on `curl`,
+#   15 sec delay before reattempting
+#
+function upalert() {
+  if [[ -n $1 ]]; then
+    echo "Will notify when $1 comes back online..."
+    for i in {1..1000}; do curl -Is -m 30 $1 && notify "$1 is back up!" && break; sleep 15; done
+  else
+    echo "Usage: upalert [address]"
   fi
 }
