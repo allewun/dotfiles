@@ -1,11 +1,12 @@
 #!/bin/zsh
 
+brew cleanup
 brew update
 brew upgrade
 
 # brew-cask
-brew tap caskroom/cask
-brew install brew-cask
+brew install caskroom/cask/brew-cask
+brew cask cleanup
 brew upgrade brew-cask
 brew cask install xquartz
 brew cask install easysimbl
