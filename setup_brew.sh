@@ -49,3 +49,7 @@ brew tap homebrew/versions
 brew install apple-gcc42
 brew install gcc48
 brew install gcc49
+
+brew tap originate/gittown
+brew install git-town
+
