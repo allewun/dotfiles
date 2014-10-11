@@ -44,6 +44,9 @@
   hub = "!zsh -c 'source ~/.zshrc && hub'"
   who = shortlog -n -s --no-merges
 
+  sh = !git stash save "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]"
+  list = stash list
+
 [core]
   excludesfile = /Users/allen/.gitignore
 
