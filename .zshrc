@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Aug 2014)
+# Allen Wu (Oct 2014)
 #==============================================================================
 
 typeset -U PATH
@@ -118,6 +118,7 @@ alias src=" source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
 
 # OS X applications
 alias finder=" open -a Finder ."
+alias f="finder"
 alias firefox=" open -a Firefox"
 alias chrome=" open -a Google\ Chrome"
 alias preview=" open -a Preview"
