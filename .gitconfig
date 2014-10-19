@@ -46,6 +46,7 @@
 
   sh = !git stash save "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]"
   list = stash list
+  snapshot = !git stash save "[SNAPSHOT] $(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]" && git stash apply "stash@{0}"
 
 [core]
   excludesfile = /Users/allen/.gitignore
