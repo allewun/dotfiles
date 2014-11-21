@@ -1,20 +1,21 @@
 #!/bin/sh
 
 # run this to export settings and replace this file
-# /Applications/KeyRemap4MacBook.app/Contents/Applications/KeyRemap4MacBook_cli.app/Contents/MacOS/KeyRemap4MacBook_cli export > ~/dotfiles/preferences/KeyRemap4MacBook/kr4mb-export.sh
+# /Applications/Karabiner.app/Contents/Library/bin/karabiner export > ~/dotfiles/preferences/Karabiner/kr4mb-export.sh
 
 # run this to import settings
-# . ~/dotfiles/preferences/KeyRemap4MacBook/kr4mb-export.sh
+# . ~/dotfiles/preferences/Karabiner/karabiner-export.sh
 
-cli=/Applications/KeyRemap4MacBook.app/Contents/Applications/KeyRemap4MacBook_cli.app/Contents/MacOS/KeyRemap4MacBook_cli
 
-$cli set remap.fn_consumer_to_fkeys_f5 1
+cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
+
+$cli set double_tap_alt_to_f17 1
 /bin/echo -n .
-$cli set repeat.initial_wait 333
-/bin/echo -n .
-$cli set parameter.doublepressmodifier_threshold 200
+$cli set repeat.initial_wait 400
 /bin/echo -n .
 $cli set remap.fn_consumer_to_fkeys_f7 1
+/bin/echo -n .
+$cli set parameter.doublepressmodifier_threshold 200
 /bin/echo -n .
 $cli set double_tap_shift_to_caps_lock 1
 /bin/echo -n .
@@ -30,12 +31,14 @@ $cli set repeat.wait 20
 /bin/echo -n .
 $cli set remap.fn_consumer_to_fkeys_f3 1
 /bin/echo -n .
+$cli set general.workaround_stuck_keyboards 1
+/bin/echo -n .
 $cli set caps_lock_to_hyper 1
 /bin/echo -n .
 $cli set remap.eject2forwarddelete 1
 /bin/echo -n .
-$cli set double_tap_alt_to_f17 1
-/bin/echo -n .
 $cli set remap.fn2controlL 1
+/bin/echo -n .
+$cli set remap.fn_consumer_to_fkeys_f5 1
 /bin/echo -n .
 /bin/echo
