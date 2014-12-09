@@ -30,3 +30,6 @@ DerivedData
 .sass-cache/
 
 .tags*
+
+# Ruby
+.ruby-version
