@@ -44,7 +44,7 @@
   hub = "!zsh -c 'source ~/.zshrc && hub'"
   who = shortlog -n -s --no-merges
 
-  sh = !git stash save "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]"
+  sh = !git stash save "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]" -u
   list = stash list
   snapshot = !git stash save "[SNAPSHOT] $(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]" && git stash apply "stash@{0}"
 
