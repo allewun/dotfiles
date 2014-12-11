@@ -412,3 +412,15 @@ function upalert() {
     echo "Usage: upalert [address]"
   fi
 }
+
+
+# base64
+function encode64 {
+  echo "$1" | base64
+}
+
+function decode64 {
+  echo "$1" | base64 -D
+}
+
+
