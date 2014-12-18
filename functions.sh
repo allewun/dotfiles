@@ -17,6 +17,11 @@ function histail() {
 }
 
 
+# search history
+function histsearch() {
+  grep -i "$1" $HISTFILE
+}
+
 # append song to "to download" list
 function song() {
   local songfile="/Users/allen/Dropbox/dl.txt";
