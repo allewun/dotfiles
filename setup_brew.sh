@@ -35,6 +35,7 @@ brew install python3
 brew install reattach-to-user-namespace
 brew install htop
 brew install mongoose
+brew install git
 
 # quicklook
 brew cask install qlcolorcode
@@ -47,7 +48,6 @@ brew cask install betterzipql
 
 brew tap homebrew/versions
 brew install apple-gcc42
-brew install gcc48
 brew install gcc49
 
 brew tap originate/gittown

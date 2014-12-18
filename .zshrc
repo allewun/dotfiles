@@ -1,6 +1,6 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Oct 2014)
+# Allen Wu (Dec 2014)
 #==============================================================================
 
 typeset -U PATH
@@ -193,8 +193,6 @@ alias jsonc="json | pygmentize -f terminal256 -l javascript -O style=monokai"
 alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
 alias pubkey="pbcopy < ~/.ssh/id_rsa.pub && echo Copied public ssh key."
 alias gcc49="gcc-4.9 -fdiagnostics-color=auto"
-alias gcc48="gcc-4.8"
-alias gcc46="gcc-4.6"
 alias gcc42="gcc-4.2"
 alias pythonserver="python -m SimpleHTTPServer"
 alias pythonhttpsserver="python3 ~/dotfiles/scripts/https-server/pythonhttpsserver.py"
