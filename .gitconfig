@@ -48,6 +48,8 @@
   list = stash list
   snapshot = !git stash save "[SNAPSHOT] $(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]" && git stash apply "stash@{0}"
 
+  hash = !git rev-parse --short HEAD | tr -d \"\\r\\n\" | pbcopy && echo "Copied SHA $(git rev-parse --short HEAD) to clipboard"
+
 [core]
   excludesfile = /Users/allen/.gitignore
 
