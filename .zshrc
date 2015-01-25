@@ -1,11 +1,12 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Dec 2014)
+# Allen Wu (Jan 2015)
 #==============================================================================
 
 typeset -U PATH
 export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
 export DOTFILE_PATH=~/dotfiles
 

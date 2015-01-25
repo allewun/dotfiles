@@ -13,7 +13,7 @@ brew cask install easysimbl
 brew cask install powerkey
 
 brew install zsh
-brew install ack
+brew install ag
 brew install wget
 brew install coreutils
 brew install tree
@@ -36,6 +36,7 @@ brew install reattach-to-user-namespace
 brew install htop
 brew install mongoose
 brew install git
+brew install autojump
 
 # quicklook
 brew cask install qlcolorcode
