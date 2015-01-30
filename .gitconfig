@@ -44,6 +44,8 @@
   hub = "!zsh -c 'source ~/.zshrc && hub'"
   who = shortlog -n -s --no-merges
 
+  pushup = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
+
   sh = !git stash save --include-untracked "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]"
   poop = stash pop
   list = stash list
