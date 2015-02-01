@@ -433,4 +433,8 @@ function xcd {
   lldb -p `ps aux | grep Xcode | grep -v grep | awk '{print $2}'`
 }
 
+# emulates ruby's Dir.mktmpdir
+function tempdir {
+  mkcd "/tmp/mktmp_$(date +%Y%m%d%H%M%S)"
+}
 
