@@ -428,4 +428,9 @@ function decode64 {
   echo "$1" | base64 -D
 }
 
+# https://coderwall.com/p/-mgtww/debugging-xcode-plugins
+function xcd {
+  lldb -p `ps aux | grep Xcode | grep -v grep | awk '{print $2}'`
+}
+
 
