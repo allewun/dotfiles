@@ -39,7 +39,7 @@ function preexec() {
 }
 
 # directory in terminal tab title
-function precmd() { print -Pn "\e]2;%~\a" }
+function precmd() { echo -ne "\e]1;${PWD##*/}\a" }
 
 
 #==============================================================================
