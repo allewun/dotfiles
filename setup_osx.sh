@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 #============================================================================
 # OS X settings
 # initially based on: github.com/mathiasbynens/dotfiles/blob/master/.osx
@@ -98,4 +100,3 @@ defaults write com.apple.dock autohide-time-modifier -float 0.15
 killall Finder
 killall SystemUIServer
 killall Dock
-

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 function __rbenv_ps1() {
   if rbenv version > /dev/null 2>&1; then

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 function __heroku_ps1() {
   if git rev-parse --is-inside-git-dir > /dev/null 2>&1; then

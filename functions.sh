@@ -1,8 +1,8 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 #==============================================================================
 # functions.sh
-# Allen Wu (Sept 2014)
+# Allen Wu (Jan 2015)
 #==============================================================================
 
 
@@ -151,7 +151,7 @@ function xc() {
     while true; do
       fileXCW=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcworkspace" | head -1)
       fileXCP=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcodeproj" | head -1)
-      
+
       if [[ -n "$fileXCW" ]]; then
         open -a Xcode "$fileXCW"
         break
@@ -166,7 +166,7 @@ function xc() {
         else
           echo "Unable to find an Xcode project."
           return 1
-        fi  
+        fi
       fi
     done
   fi

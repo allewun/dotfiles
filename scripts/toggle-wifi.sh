@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # http://apple.stackexchange.com/a/37216
 
 device=$(networksetup -listallhardwareports |

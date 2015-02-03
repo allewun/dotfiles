@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 (
   # fix ugly black background in BetterZipQL
