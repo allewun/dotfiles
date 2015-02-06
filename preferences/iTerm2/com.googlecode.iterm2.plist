@@ -128,11 +128,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>871 137 471 154 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>523 219 796 474 0 0 1680 1028 </string>
+	<string>392 233 918 498 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>436 153 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>83 337 1250 543 0 0 1680 1028 </string>
+	<string>0 1632 1680 476 -97 1050 1920 1058 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -476,7 +476,7 @@
 			<key>Rows</key>
 			<integer>30</integer>
 			<key>Screen</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
