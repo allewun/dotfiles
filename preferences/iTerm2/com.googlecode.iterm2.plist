@@ -645,6 +645,8 @@
 			<string>/Users/allen</string>
 		</dict>
 	</array>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
