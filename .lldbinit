@@ -5,11 +5,8 @@
 command script import ~/dotfiles/xcode/lldb/LLDB-QuickLook/lldb_quick_look.py
 command alias ql quicklook
 
-# reveal.app
-command alias reveal_load_sim expr (void*)dlopen("/Users/allen/Desktop/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib", 0x2);
-command alias reveal_load_dev expr (void*)dlopen([(NSString*)[(NSBundle*)[NSBundle mainBundle] pathForResource:@"libReveal" ofType:@"dylib"] cStringUsingEncoding:0x4], 0x2);
-command alias reveal_start expr (void)[(NSNotificationCenter*)[NSNotificationCenter defaultCenter] postNotificationName:@"IBARevealRequestStart" object:nil];
-command alias reveal_stop expr (void)[(NSNotificationCenter*)[NSNotificationCenter defaultCenter] postNotificationName:@"IBARevealRequestStop" object:nil];
+# Recursive description (http://jeffreysambells.com/2013/01/24/debugging-layouts-with-recursive-view-descriptions-in-xcode)
+command regex rd 's/^[[:space:]]*$/po [[[UIApplication sharedApplication] keyWindow] recursiveDescription]/' 's/^(.+)$/po [%1 recursiveDescription]/'
 
 # chisel
 command script import ~/dotfiles/xcode/lldb/chisel/fblldb.py
