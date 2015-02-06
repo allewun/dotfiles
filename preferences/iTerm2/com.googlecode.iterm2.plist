@@ -33,7 +33,7 @@
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
-	<true/>
+	<false/>
 	<key>DimOnlyText</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
@@ -128,7 +128,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>871 137 471 154 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>392 233 918 498 0 0 1680 1028 </string>
+	<string>392 244 796 474 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>436 153 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
