@@ -128,9 +128,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>871 137 471 154 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>392 244 796 474 0 0 1680 1028 </string>
+	<string>268 186 796 475 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>436 153 620 392 0 0 1680 1028 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 1632 1680 476 -97 1050 1920 1058 </string>
 	<key>New Bookmarks</key>
@@ -439,7 +441,15 @@
 				<string>telnet</string>
 			</array>
 			<key>Keyboard Map</key>
-			<dict/>
+			<dict>
+				<key>0x7f-0x80000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x17</string>
+				</dict>
+			</dict>
 			<key>Link Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -697,7 +707,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-02-06T00:18:37Z</date>
+	<date>2015-02-09T03:17:49Z</date>
 	<key>SUSkippedVersion</key>
 	<string>2.9.20150205-nightly</string>
 	<key>SavePasteHistory</key>
@@ -726,6 +736,8 @@
 	<integer>10</integer>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1423451904</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -745,6 +757,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>2.9.20150202-nightly</string>
+	<string>2.9.20150206-nightly</string>
 </dict>
 </plist>
