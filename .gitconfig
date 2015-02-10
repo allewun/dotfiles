@@ -38,7 +38,7 @@
   lg = log --pretty=format:'%C(red)%h%Creset %C(green)%ad%Creset%C(yellow)%d%Creset %s %C(cyan)(%an)%Creset' --date=short --graph
   lf = log --pretty=format:'%C(red)%h%Creset %C(green)%ad%Creset%C(yellow)%d%Creset %s %C(cyan)(%an)%Creset' --date=short --stat
 
-  this = !git init && git add . && git commit -m \"Initial commit\"
+  this = !git init && git add . && git commit --allow-empty -m \"Initial commit\"
   email = config user.email
 
   hub = "!zsh -c 'source ~/.zshrc && hub'"
