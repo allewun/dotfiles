@@ -2,18 +2,31 @@
 
 #==============================================================================
 # functions.sh
-# Allen Wu (Jan 2015)
+# Allen Wu (Feb 2015)
 #==============================================================================
 
 
 # show last N of the shell history
 # defaults to 10
 function histail() {
+  local yellow=$(echo '\033[33m')
+  local none=$(echo '\033[0m')
+
+  local lines
   if [[ -z "$1" ]]; then
-    cat $HISTFILE | tail -10
+    lines=$(tail -10 "$HISTFILE")
   else
-    cat $HISTFILE | tail -n "$1"
+    lines=$(tail -n "$1" "$HISTFILE")
   fi
+
+  # show unix timestamp as human readable timestamps
+  # color them yellow and remove other formatting
+  echo "$lines" | while read -r line; do
+    unixtime=$(echo "$line" | grep -oe "[0-9]\{10\}" | head -1)
+    timestamp=$(date -r "$unixtime" '+\[%Y\/%m\/%d %H:%M:%S\]') # backslashes for sed regex escaping
+
+    echo "$line" | sed -E "s/^: ${unixtime}:[0-9]+;/${yellow}${timestamp}${none} /"
+  done
 }
 
 

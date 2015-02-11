@@ -85,7 +85,7 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-for cmd (cd song repo notify histail forget man manz xc md);
+for cmd (cd song repo notify histail histsearch forget man manz xc md);
   do alias $cmd=" $cmd";
 done
 
