@@ -95,9 +95,9 @@
 	<key>MinTabWidth</key>
 	<integer>100</integer>
 	<key>NSColorPanelMode</key>
-	<string>6</string>
+	<string>3</string>
 	<key>NSColorPickerSlidersDefaults</key>
-	<string>1</string>
+	<string>3</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/dotfiles/preferences/iTerm2</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -180,12 +180,16 @@
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.58093565702438354</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
 				<real>1</real>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.4545554518699646</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
@@ -237,13 +241,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.21568627450980393</real>
+				<real>0.3529411764705882</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.77335196167883213</real>
+				<real>0.97254901960784312</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.12156862745098039</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
@@ -377,13 +381,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.21568627450980393</real>
+				<real>0.3529411764705882</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.77254901960784317</real>
+				<real>0.97254901960784312</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.12156862745098039</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
