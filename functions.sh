@@ -310,7 +310,7 @@ function mkcd() {
 
 # remove last line from history
 function forget() {
-  (echo -e "$(cat $HISTFILE | wc -l)->\c" && sed -i.bak '$d' $HISTFILE && [[ -s $HISTFILE ]] && rm $HISTFILE.bak) && echo $(cat $HISTFILE | wc -l) || echo "!"
+  (echo -e "$(tail -n1 "$HISTFILE")\n\n$(cat "$HISTFILE" | wc -l)->\c" && sed -i.bak '$d' $HISTFILE && [[ -s $HISTFILE ]] && rm $HISTFILE.bak) && echo $(cat $HISTFILE | wc -l) || echo "!"
 }
 
 # superman
