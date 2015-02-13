@@ -47,7 +47,7 @@
   pushup = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
 
   sh = !git stash save --include-untracked "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]"
-  poop = stash pop
+  pop = stash pop
   list = stash list
   snapshot = !git stash save "[SNAPSHOT] $(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]" && git stash apply "stash@{0}"
 
@@ -63,5 +63,5 @@
   algorithm = patience
 
 [diff "plist"]
-	textconv = plutil -convert xml1 -o -
+  textconv = plutil -convert xml1 -o -
 
