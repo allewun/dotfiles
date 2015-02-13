@@ -451,3 +451,11 @@ function tempdir {
   mkcd "/tmp/mktmp_$(date +%Y%m%d%H%M%S)"
 }
 
+# http://www.reddit.com/r/commandline/comments/2tjqz2/favorite_aliases/cnznumu
+function g {
+  if (( $# > 0 )); then
+    git "$@"
+  else
+    git status
+  fi
+}

@@ -105,6 +105,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 # menu selection
 zstyle ':completion:*' menu select
 
+compdef g=git
 
 #==============================================================================
 # Aliases
@@ -150,9 +151,7 @@ alias .....='cd ../../../..'
 alias mkdir='mkdir -p'
 
 # git
-alias g='git'
 alias gti='git'
-alias github='hub'
 
 # grep
 alias grep='grep --color=auto'
