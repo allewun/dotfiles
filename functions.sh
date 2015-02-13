@@ -10,6 +10,7 @@
 # defaults to 10
 function histail() {
   local yellow=$(echo '\033[33m')
+  local magenta=$(echo '\033[35m')
   local none=$(echo '\033[0m')
 
   local lines
@@ -18,6 +19,8 @@ function histail() {
   else
     lines=$(tail -n "$1" "$HISTFILE")
   fi
+
+  echo "${magenta}$(wc -l "$HISTFILE" | sed -e 's/^[ ]*//')${none}"
 
   # show unix timestamp as human readable timestamps
   # color them yellow and remove other formatting
