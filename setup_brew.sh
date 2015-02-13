@@ -37,6 +37,7 @@ brew install htop
 brew install mongoose
 brew install git
 brew install autojump
+brew install git-cal
 
 # quicklook
 brew cask install qlcolorcode
