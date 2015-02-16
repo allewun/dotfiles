@@ -462,3 +462,21 @@ function g {
     git status
   fi
 }
+
+function pomodoro {
+  while true; do;
+    for i in {1..4}; do;
+      afplay "/System/Library/Sounds/Submarine.aiff"
+      echo "WORK" && say "Work"
+      for j in {1..1500}; do sleep 1; done;
+      
+      afplay "/System/Library/Sounds/Submarine.aiff"
+      echo "SHORT BREAK" && say "Short break"
+      for j in {1..300}; do sleep 1; done;
+    done;
+
+    afplay "/System/Library/Sounds/Submarine.aiff"
+    echo "LONG BREAK" && say "Long break"
+    for i in {1..1200}; do sleep 1; done;
+  done;
+}
