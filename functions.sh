@@ -464,19 +464,34 @@ function g {
 }
 
 function pomodoro {
-  while true; do;
-    for i in {1..4}; do;
-      afplay "/System/Library/Sounds/Submarine.aiff"
-      echo "WORK" && say "Work"
-      for j in {1..1500}; do sleep 1; done;
-      
-      afplay "/System/Library/Sounds/Submarine.aiff"
-      echo "SHORT BREAK" && say "Short break"
-      for j in {1..300}; do sleep 1; done;
-    done;
+  function echo_say {
+    echo "$1"; say "$1"
+  }
 
+  function sleep_minutes {
+    sleep $(($1 * 60))
+  }
+
+  function chime {
     afplay "/System/Library/Sounds/Submarine.aiff"
-    echo "LONG BREAK" && say "Long break"
-    for i in {1..1200}; do sleep 1; done;
+  }
+
+  echo "🍅  Pomodoro Timer 🍅"
+
+  while true; do;
+    for i in {1..5}; do;
+      chime
+      echo_say "WORK"
+      sleep_minutes 25
+     
+      chime
+      if (( i == 5 )); then
+        echo_say "LONG BREAK"
+        sleep_minutes 20
+      else
+        echo_say "SHORT BREAK"
+        sleep_minutes 5
+      fi;  
+    done;
   done;
 }
