@@ -38,6 +38,7 @@ brew install mongoose
 brew install git
 brew install autojump
 brew install git-cal
+brew install npm
 
 # quicklook
 brew cask install qlcolorcode
