@@ -46,7 +46,7 @@
 
   pushup = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
 
-  sh = !git stash save --include-untracked "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]"
+  sh = !git stash save --include-untracked "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD | head -1) [$(date +'%a %m/%d %H:%M')]"
   pop = stash pop
   list = stash list
   snap = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshot "$@"; }; f"
