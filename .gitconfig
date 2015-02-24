@@ -49,7 +49,8 @@
   sh = !git stash save --include-untracked "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]"
   pop = stash pop
   list = stash list
-  snapshot = !git stash save "[SNAPSHOT] $(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD) [$(date +'%a %m/%d %H:%M')]" && git stash apply "stash@{0}"
+  snap = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshot "$@"; }; f"
+  snapply = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshotapply "$@"; }; f"
 
   hash = !git rev-parse --short HEAD | tr -d \"\\r\\n\" | pbcopy && echo "Copied SHA $(git rev-parse --short HEAD) to clipboard -- $(git show -s --format=%s HEAD)"
 
