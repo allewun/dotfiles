@@ -7,10 +7,10 @@ function gitsnapshot {
   fi
 
   local hash="$(git rev-parse --short HEAD)"
-  local commit_msg="$(git log --format=%B -n1 HEAD)"
+  local commit_msg="$(git log --format=%B -n1 HEAD | head -1)"
   local date="$(date +'%a %m/%d %H:%M')"
 
-  git stash save --include-untracked "$tag $hash $commit_msg [$date]" && git stash apply "stash@{0}"
+  git stash save --include-untracked "$tag $hash $commit_msg [$date]" && git stash apply "stash@{0}" > /dev/null
 }
 
 function gitsnapshotapply {
@@ -18,7 +18,7 @@ function gitsnapshotapply {
   if [[ -n "$results" ]]; then
     git stash apply $(echo "$results" | head -1 | grep -oe "^stash@{[0-9]\{1,\}}")
   else
-    echo "Couldn't find snapshot matching \"$1\""
+    echo "Couldn't find git snapshot matching \"$1\""
   fi
 }
 
