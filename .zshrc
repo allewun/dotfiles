@@ -152,6 +152,7 @@ alias mkdir='mkdir -p'
 
 # git
 alias gti='git'
+alias git--=' git checkout -- .'
 
 # grep
 alias grep='grep --color=auto'
