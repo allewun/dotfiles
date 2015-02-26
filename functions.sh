@@ -118,17 +118,6 @@ function repo() {
   fi
 }
 
-# open repository on github
-function hub() {
-  repo "github.com" "/tree/"
-}
-
-# open repository on bitbucket
-function bit() {
-  repo "bitbucket.org" "/commits/branch/"
-}
-
-
 # git blame colors
 function blame() {
   local red=$(echo '\033[31m')
