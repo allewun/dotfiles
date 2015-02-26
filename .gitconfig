@@ -51,6 +51,7 @@
   list = stash list
   snap = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshot "$@"; }; f"
   snapply = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshotapply "$@"; }; f"
+  snapundo = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshotundo "$@"; }; f"
 
   hash = !git rev-parse --short HEAD | tr -d \"\\r\\n\" | pbcopy && echo "Copied SHA $(git rev-parse --short HEAD) to clipboard -- $(git show -s --format=%s HEAD)"
 

@@ -14,11 +14,26 @@ function gitsnapshot {
 }
 
 function gitsnapshotapply {
-  results=$(git stash list | grep "\[GIT SNAPSHOT: $1\]")
-  if [[ -n "$results" ]]; then
-    git stash apply $(echo "$results" | head -1 | grep -oe "^stash@{[0-9]\{1,\}}")
+  ref=$(gitsnapshotref $@)
+  if [[ -n "$ref" ]]; then
+    git stash apply "$ref"
   else
     echo "Couldn't find git snapshot matching \"$1\""
   fi
 }
 
+function gitsnapshotundo {
+  ref=$(gitsnapshotref $@)
+  if [[ -n "$ref" ]]; then
+    git stash show -p "$ref" | git apply --reverse
+  else
+    echo "Couldn't find git snapshot matching \"$1\""
+  fi
+}
+
+function gitsnapshotref {
+  results=$(git stash list | grep "\[GIT SNAPSHOT: $1\]")
+  if [[ -n "$results" ]]; then
+    echo "$results" | head -1 | grep -oe "^stash@{[0-9]\{1,\}}"
+  fi
+}
