@@ -16,7 +16,7 @@ function gitsnapshot {
 function gitsnapshotapply {
   ref=$(gitsnapshotref $@)
   if [[ -n "$ref" ]]; then
-    git stash apply "$ref"
+    git stash show -p "$ref" | git apply
   else
     echo "Couldn't find git snapshot matching \"$1\""
   fi
