@@ -484,3 +484,19 @@ function pomodoro {
     done;
   done;
 }
+
+function xcode_plugin_fix {
+  local XCODE_UUID=$(defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID)
+  
+  echo "Updating Xcode plugin compatibility with latest UUID\n  $XCODE_UUID\n"
+
+  for plugin in ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/*; do
+   local plist="${plugin}/Contents/Info.plist"
+   basename $plugin
+   if ! grep -q $XCODE_UUID $plist; then
+     defaults write "${plugin}/Contents/Info" DVTPlugInCompatibilityUUIDs -array-add $XCODE_UUID
+     echo "  \033[32mFixed\033[0m"
+   fi
+  done
+}
+
