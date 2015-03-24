@@ -180,7 +180,7 @@ function xc() {
 
 # markdown
 function md() {
-  local MD_EDITOR="Mou"
+  local MD_EDITOR="MacDown"
   if [[ ! -z "$1" ]]; then
     open -a $MD_EDITOR "$1"
   else
