@@ -163,6 +163,7 @@ alias copy='pbcopy'
 alias paste='pbpaste'
 alias copypath='pwd | tr -d "\r\n" | pbcopy'
 alias clearclip='echo -n "" | pbcopy'
+alias clipclear='clearclip'
 
 # hash
 alias sha1='openssl sha1'
