@@ -72,6 +72,8 @@
 	<true/>
 	<key>Hotkey</key>
 	<true/>
+	<key>HotkeyAutoHides</key>
+	<false/>
 	<key>HotkeyChar</key>
 	<integer>63253</integer>
 	<key>HotkeyCode</key>
@@ -128,9 +130,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>871 137 471 154 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>518 487 796 474 0 0 1920 1178 </string>
+	<string>366 554 796 474 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>436 153 620 392 0 0 1680 1028 </string>
+	<string>530 491 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -446,6 +448,13 @@
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
+				<key>0x70-0x180000</key>
+				<dict>
+					<key>Action</key>
+					<integer>43</integer>
+					<key>Text</key>
+					<string></string>
+				</dict>
 				<key>0x7f-0x80000</key>
 				<dict>
 					<key>Action</key>
@@ -711,9 +720,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-02-10T17:34:50Z</date>
-	<key>SUSkippedVersion</key>
-	<string>2.9.20150205-nightly</string>
+	<date>2015-03-26T22:44:59Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -761,6 +768,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>2.9.20150206-nightly</string>
+	<string>2.9.20150324-nightly</string>
 </dict>
 </plist>
