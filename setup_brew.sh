@@ -50,6 +50,7 @@ brew cask install suspicious-package
 brew cask install ipaql
 brew cask install betterzipql
 brew cask install qlimagesize
+brew cask install provisionql
 
 brew tap homebrew/versions
 brew install apple-gcc42
