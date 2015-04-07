@@ -45,6 +45,7 @@
   who = shortlog -n -s --no-merges
 
   pushup = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
+  pr = pull-request
 
   sh = !git stash save --include-untracked "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD | head -1) [$(date +'%a %m/%d %H:%M')]"
   pop = stash pop
