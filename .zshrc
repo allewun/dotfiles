@@ -127,6 +127,7 @@ alias firefox=" open -a Firefox"
 alias chrome=" open -a Google\ Chrome"
 alias preview=" open -a Preview"
 alias tower=" open -a Tower ."
+alias ql=' qlmanage -p "$@" > /dev/null 2>&1'
 
 # directory shortcuts
 alias dotfiles="cd $DOTFILE_PATH"
