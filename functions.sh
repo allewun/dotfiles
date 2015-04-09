@@ -441,6 +441,9 @@ function xcd {
 # emulates ruby's Dir.mktmpdir
 function tempdir {
   mkcd "/tmp/mktmp_$(date +%Y%m%d%H%M%S)"
+  if [[ -n "$1" ]]; then
+    mkcd "$1"
+  fi
 }
 
 # http://www.reddit.com/r/commandline/comments/2tjqz2/favorite_aliases/cnznumu
