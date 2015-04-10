@@ -153,6 +153,7 @@ function xc() {
     open -a Xcode "$1"
   else
     currentPath=$(pwd)
+    originalDirname=$(basename $currentPath)
     while true; do
       fileXCW=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcworkspace" | head -1)
       fileXCP=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcodeproj" | head -1)
@@ -164,10 +165,13 @@ function xc() {
         open -a Xcode "$fileXCP"
         break
       else
-        nextPath=$(find $currentPath -mindepth 1 -maxdepth 1 -name $(basename $currentPath) | head -1)
+        nextPath=$(find $currentPath -mindepth 1 -maxdepth 1 -name $(basename $originalDirname) | head -1)
+        allDirs=$(find $currentPath -mindepth 1 -maxdepth 1 -type d | grep -v "/.git$")
 
         if [[ -d $nextPath ]]; then
           currentPath=$nextPath
+        elif [[ $(echo $allDirs | wc -l | tr -d ' ') == "1" ]]; then
+          currentPath=$allDirs
         else
           echo "Unable to find an Xcode project."
           return 1
