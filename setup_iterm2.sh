@@ -5,10 +5,16 @@
 #=========================
 
 (
+local appname="iTerm.app"
+if [[ -n "$1" ]]; then
+  appname="$1"
+  echo "Override: modifying $appname rather than iTerm.app"
+fi
+
 echo "NOTE: iTerm2 needs to be closed"
 
 # Remove iTerm from dock
-/usr/libexec/PlistBuddy -c 'Add :LSUIElement bool true' /Applications/iTerm.app/Contents/Info.plist
+/usr/libexec/PlistBuddy -c 'Add :LSUIElement bool true' "/Applications/${appname}/Contents/Info.plist"
 
 # Restore iTerm in dock
 # /usr/libexec/PlistBuddy -c 'Delete :LSUIElement' /Applications/iTerm.app/Contents/Info.plist
