@@ -352,7 +352,10 @@ function adhoc() {
     local TIMESTAMP_CLEAN="$(date "+%B %d @ %l:%M:%S %p")"
     local DIR="$HOME/Dropbox/Public/adhoc/$TIMESTAMP"
     local SERVER="https://dl.dropboxusercontent.com/u/$DROPBOXID/adhoc/$TIMESTAMP"
+    local DROPBOXURL="$SERVER/index.html"
     local FILESIZE=$(ls -lh $FILENAME | tr -s ' ' | cut -d" " -f5)
+
+    local SHORTURL="$(curl -s http://tinyurl.com/api-create.php?url=$DROPBOXURL)"
 
     local HTML="
 <html>
@@ -399,7 +402,8 @@ function adhoc() {
 
       echo ""
       echo "  * Creating iOS Ad Hoc distribution server at:"
-      echo "     - $(tput setaf 6)$SERVER/index.html$(tput sgr 0)"
+      echo "     - $(tput setaf 6)$DROPBOXURL$(tput sgr 0)"
+      echo "     - $(tput setaf 2)$SHORTURL$(tput sgr 0)"
       echo "     - $(tput setaf 3)$DIR$(tput sgr 0)"
       echo ""
       echo "  * $TITLE"
