@@ -40,6 +40,7 @@ brew install autojump
 brew install git-cal
 brew install npm
 brew install hub
+brew install jq
 
 # quicklook
 brew cask install qlcolorcode
