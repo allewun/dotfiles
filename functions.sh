@@ -380,7 +380,7 @@ function adhoc() {
         <array>
           <dict>
             <key>kind</key><string>software-package</string>
-            <key>url</key><string>$SERVER/$FILENAME</string>
+            <key>url</key><string>$SERVER/$(urlencode "$FILENAME")</string>
           </dict>
         </array>
         <key>metadata</key>
