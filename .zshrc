@@ -203,7 +203,8 @@ alias gcc42="gcc-4.2"
 alias pythonserver="python -m SimpleHTTPServer"
 alias pythonhttpsserver="python3 ~/dotfiles/scripts/https-server/pythonhttpsserver.py"
 alias cats="pygmentize -g -f terminal256"
-
+alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 
 #==============================================================================
 # Environment Variables
