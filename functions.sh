@@ -522,3 +522,28 @@ function xcode_plugin_fix {
   done
 }
 
+function gemedit {
+  local gemname=$1
+  local cmd=$2
+  local gemlocation
+
+  if [[ -n "$gemname" ]]; then
+    gemlocation="$(dirname $(gem which $gemname))"
+  fi
+
+  if [[ -n "$gemname" && -n "$cmd" ]]; then
+    case "$cmd" in
+      finder)
+        finder "$gemlocation";;
+      cd)
+        cd "$gemlocation";;
+      subl)
+        subl "$gemlocation";;
+    esac
+  elif [[ -n "$gemname" && -z "$cmd" ]]; then
+    subl "$gemlocation"
+  else
+    echo "usage: gemedit <gemname> [subl | cd | finder]"
+  fi
+}
+
