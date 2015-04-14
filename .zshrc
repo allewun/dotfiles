@@ -121,7 +121,6 @@ alias osx=" v $DOTFILE_PATH/setup_osx.sh && source $DOTFILE_PATH/setup_osx.sh"
 alias src=" source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
 
 # OS X applications
-alias finder=" open -a Finder ."
 alias f="finder"
 alias firefox=" open -a Firefox"
 alias chrome=" open -a Google\ Chrome"

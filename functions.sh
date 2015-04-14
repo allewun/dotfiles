@@ -50,6 +50,16 @@ function song() {
   fi
 }
 
+function finder {
+  local directory=$1
+
+  if [[ -z "$directory" ]]; then
+    directory="$(pwd)"
+  fi
+
+  open -a Finder "$directory"
+}
+
 
 # open a repository online
 # if no arguments provided, guess the hosting service
