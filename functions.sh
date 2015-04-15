@@ -356,6 +356,11 @@ function adhoc() {
     local BUNDLEID=$2
     local VERSION=$3
     local TITLE=$4
+    local NOTES="None"
+
+    if [[ -n "$5" ]]; then
+      NOTES=$5
+    fi
 
     local DROPBOXID=$(kDropboxID)
     local TIMESTAMP=$(date +%Y%m%d%H%M)
@@ -375,7 +380,7 @@ function adhoc() {
   </head>
   <body>
     <a href=\"itms-services://?action=download-manifest&amp;url=$SERVER/manifest\">$TITLE</a>
-    <ul><li>Bundle ID: $BUNDLEID</li><li>Version: $VERSION</li><li>File size: ${FILESIZE}B</li></ul>
+    <ul><li>Bundle ID: $BUNDLEID</li><li>Version: $VERSION</li><li>File size: ${FILESIZE}B</li><li>Notes: ${NOTES}</li></ul>
     <footer>Generated on $TIMESTAMP_CLEAN</footer>
   </body>
 </html>"
@@ -420,12 +425,13 @@ function adhoc() {
       echo "     - $FILENAME (${FILESIZE}B)"
       echo "     - Bundle ID: $BUNDLEID"
       echo "     - Version  : $VERSION"
+      echo "     - Notes    : $NOTES"
     else
       echo "\"$1\" not found"
       (exit 1)
     fi
   else
-    echo "Usage: adhoc [FILENAME.ipa] [Bundle ID] [Version] [Title]"
+    echo "Usage: adhoc [FILENAME.ipa] [Bundle ID] [Version] [Title] [Notes (optional)]"
   fi
 }
 
