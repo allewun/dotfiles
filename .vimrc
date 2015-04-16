@@ -1,3 +1,12 @@
+" Plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
+
+
 syntax on
 colorscheme made_of_code
 
