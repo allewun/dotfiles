@@ -47,6 +47,8 @@
   pushup = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
   pr = pull-request
 
+  amend = !git commit -a -C HEAD --amend
+
   sh = !git stash save --include-untracked "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD | head -1) [$(date +'%a %m/%d %H:%M')]"
   pop = stash pop
   list = stash list
