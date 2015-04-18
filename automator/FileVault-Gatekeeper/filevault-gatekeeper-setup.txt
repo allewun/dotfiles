@@ -1,7 +1,8 @@
 1. From main account, create new admin account (the gatekeeper)
 2. Log out, go to gatekeeper account
-3. Remove main user account from the filevault list of users (`fdesetup remove -user <main>`)
-4. Compile keys.m, create Automator app with auto-logout.applescript
-5. System Preferences > Users & Groups > Login Items > Add the script
+3. View list of users (`fdesetup list -verbose`)
+4. Remove main user account from the filevault list of users (`fdesetup remove -user <main>`)
+5. Compile keys.m, create Automator app with auto-logout.applescript
+6. System Preferences > Users & Groups > Login Items > Add the script
 
 Now when starting up computer, FileVault will go thru gatekeeper, gatekeeper will log itself out (unless CMD is held down)
