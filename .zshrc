@@ -99,8 +99,8 @@ setopt EXTENDED_GLOB
 setopt GLOB_COMPLETE
 setopt DOTGLOB
 
-# case-insensitive (all), partial-word and then substring completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 
 # menu selection
 zstyle ':completion:*' menu select
