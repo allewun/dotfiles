@@ -471,6 +471,14 @@ function tempdir {
   fi
 }
 
+function wrapdir {
+  newdir=$1
+  tempdir="tempdir_$(date +%Y%m%d%H%M%S)"
+  mkdir "$tempdir"
+  mv $(ls -A | grep -v "$tempdir") "$tempdir"
+  mv "$tempdir" "$newdir"
+}
+
 # http://www.reddit.com/r/commandline/comments/2tjqz2/favorite_aliases/cnznumu
 function g {
   if (( $# > 0 )); then
