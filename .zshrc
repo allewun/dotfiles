@@ -122,7 +122,7 @@ alias src=" source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
 
 # OS X applications
 alias f="finder"
-alias firefox=" open -a Firefox"
+alias ff=" open -a Firefox"
 alias chrome=" open -a Google\ Chrome"
 alias preview=" open -a Preview"
 alias tower=" open -a Tower ."
@@ -136,7 +136,7 @@ alias dropbox="cd ~/Dropbox/"
 alias originate="cd ~/Dropbox/Originate/"
 alias hist="cd ~/Dropbox/history/"
 alias sim="cd ~/Library/Application\ Support/iPhone\ Simulator/"
-alias ff="cd ~/Library/Application\ Support/Firefox/Profiles/*.default/"
+alias firefox="cd ~/Library/Application\ Support/Firefox/Profiles/*.default/"
 alias pwdcp="pwd | tr -d '\n' | pbcopy"
 
 # ls
