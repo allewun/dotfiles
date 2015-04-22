@@ -536,6 +536,17 @@ function xcode_plugin_fix {
   done
 }
 
+function xcode_clean_derived_data {
+  local dd_dir=~/Library/Developer/Xcode/DerivedData
+  if [ -d $dd_dir ]; then
+    local filesize="$(du -hcs $dd_dir | tr "	" " " | cut -d " " -f2 | head -1)"
+    echo "Removing ${dd_dir} (${filesize})..."
+    rm -rf $dd_dir
+  else
+    echo "$dd_dir has already been cleaned"
+  fi
+}
+
 function gemedit {
   local gemname=$1
   local cmd=$2
