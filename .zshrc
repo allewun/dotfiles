@@ -236,6 +236,9 @@ export ACK_COLOR_LINENO='cyan'
 # term
 export TERM="xterm-256color"
 
+# editor
+export EDITOR="vim"
+
 # zsh
 autoload -U colors && colors
 
