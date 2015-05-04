@@ -582,3 +582,11 @@ function gemedit {
   fi
 }
 
+function indent {
+  local count=$1
+  if [ -z "$1" ]; then count=2; fi
+  local spaces="$(printf "%${count}s")"
+
+  sed -e "s/^/${spaces}/"
+}
+
