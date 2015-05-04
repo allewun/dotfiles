@@ -468,9 +468,14 @@ function xcd {
   lldb -p `ps aux | grep Xcode | grep -v grep | awk '{print $2}'`
 }
 
+# generate random temp directory
+function randomtempdir {
+  echo "/tmp/mktmp_$(date +%Y%m%d%H%M%S)"
+}
+
 # emulates ruby's Dir.mktmpdir
 function tempdir {
-  mkcd "/tmp/mktmp_$(date +%Y%m%d%H%M%S)"
+  mkcd "$(randomtempdir)"
   if [[ -n "$1" ]]; then
     mkcd "$1"
   fi
