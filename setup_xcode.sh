@@ -15,10 +15,14 @@
   local randomtempdir="$(randomtempdir)"
   mkdir "$randomtempdir"
   mv ~/Library/Developer/Xcode/UserData/CodeSnippets/* "$randomtempdir"
-  echo "Old snippets temporarily backed up to $randomtempdir"
+  echo "Old snippets temporarily backed up to $randomtempdir" | indent
 
   for snippet in $DOTFILE_PATH/xcode/snippets/*; do
     echo "Installing snippet \"$(basename $snippet)\""
-    xcodesnippet install $snippet
+    xcodesnippet install $snippet | indent
   done
+
+  # install color theme
+  cp "$DOTFILE_PATH/xcode/Made of Code.dvtcolortheme" ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+  echo "Installed Made of Code color theme"
 )
