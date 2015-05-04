@@ -1,11 +1,9 @@
 ---
 title: "#pragma mark"
-summary: ""
-platform: iOS
-completion-scope:
-  - Class Interface Methods
-  - Class Implementation
-  - Top Level
+completion-scopes:
+  - TopLevel
+  - ClassImplementation
+  - ClassInterfaceMethods
 ---
 
 #pragma mark - 

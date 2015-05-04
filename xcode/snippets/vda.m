@@ -1,8 +1,8 @@
 ---
 title: "viewDidAppear"
-summary: ""
 platform: iOS
-completion-scope: Class Implementation
+completion-scopes:
+  - ClassImplementation
 ---
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -1,11 +1,11 @@
 ---
 title: "viewWillAppear"
-summary: ""
 platform: iOS
-completion-scope: Class Implementation
+completion-scopes:
+  - ClassImplementation
 ---
 
-- (void)viewWillAppear {
-  [super viewWillAppear];
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
   
 }

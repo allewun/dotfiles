@@ -1,8 +1,7 @@
 ---
 title: "NSLocalizedString"
-summary: ""
-platform: iOS
-completion-scope: All
+completion-scopes:
+  - All
 ---
 
-NSLocalizedString(@"<#key#>", nil)
+NSLocalizedString(@"<#key#>", nil);

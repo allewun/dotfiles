@@ -1,8 +1,8 @@
 ---
 title: "Lazy getter - UIView"
-summary: "Lazy-loaded getter for UIView"
 platform: iOS
-completion-scope: Class Implementation
+completion-scopes:
+  - ClassImplementation
 ---
 
 - (UIView *)<#name#> {

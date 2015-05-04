@@ -1,11 +1,11 @@
 ---
 title: "viewWillDisappear"
-summary: ""
 platform: iOS
-completion-scope: Class Implementation
+completion-scopes:
+  - ClassImplementation
 ---
 
-- (void)viewWillDisappear {
-  [super viewWillDisappear];
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
   
 }

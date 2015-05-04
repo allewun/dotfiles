@@ -1,8 +1,7 @@
 ---
 title: "- (instancetype)init"
-summary: ""
-platform: iOS
-completion-scope: Class Implementation
+completion-scopes:
+  - ClassImplementation
 ---
 
 - (instancetype)init {
