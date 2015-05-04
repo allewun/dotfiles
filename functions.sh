@@ -279,7 +279,12 @@ function dot() {
         subl -w $FILE && src;;
       run)
         shift 2
-        echo "[Running $BASENAME...]" && source $FILE $@ && echo "[Ran $BASENAME]" || echo "[Couldn't run $BASENAME]" ;;
+        if [[ -x "$FILE" ]]; then
+          echo "[Running $BASENAME...]" && source $FILE $@ && echo "[Ran $BASENAME]" || echo "[Couldn't run $BASENAME]"
+        else
+          echo "[\"$BASENAME\" not executable]"
+        fi
+        ;;
       *)
         echo "Usage: $0 [open|vim|subl|run] FILE"
     esac
