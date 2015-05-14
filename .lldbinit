@@ -11,3 +11,7 @@ command regex rd 's/^[[:space:]]*$/po [[[UIApplication sharedApplication] keyWin
 # chisel
 command script import ~/dotfiles/xcode/lldb/chisel/fblldb.py
 
+# modules
+command alias uikit expr @import UIKit
+command alias foundation expr @import Foundation
+
