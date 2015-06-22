@@ -41,6 +41,7 @@ brew install git-cal
 brew install npm
 brew install hub
 brew install jq
+brew install httpie
 
 # quicklook
 brew cask install qlcolorcode
