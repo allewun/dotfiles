@@ -46,3 +46,5 @@ hi User0 guifg=#ffffff  guibg=#094afe
 
 set mouse=a
 
+" CocoaPods syntax highlighting
+au BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
