@@ -1,10 +1,10 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Feb 2015)
+# Allen Wu (Sept 2015)
 #==============================================================================
 
 typeset -U PATH
-export PATH=~/.rbenv/shims:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH
+export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
