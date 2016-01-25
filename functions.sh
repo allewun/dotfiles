@@ -563,7 +563,10 @@ function gemedit {
   local gemlocation
 
   if [[ -n "$gemname" ]]; then
-    gemlocation="$(dirname $(gem which $gemname) > /dev/null 2>&1)" 
+    gem which $gemname > /dev/null 2>&1
+    if (($? == 0)); then
+      gemlocation="$(dirname $(gem which $gemname))"
+    fi
   fi
 
   if [[ -n "$gemname" && -n "$cmd" && -n "$gemlocation" ]]; then
@@ -578,7 +581,7 @@ function gemedit {
   elif [[ -n "$gemname" && -z "$cmd" && -n "$gemlocation" ]]; then
     subl "$gemlocation"
   elif [[ -z "$gemlocation" ]]; then
-   echo "Can't find gem location for \"$gemname\"" 
+   echo "Can't find gem location for \"$gemname\""
   else
     echo "usage: gemedit <gemname> [subl | cd | finder]"
   fi
