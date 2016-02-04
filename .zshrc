@@ -9,6 +9,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
 export DOTFILE_PATH=~/dotfiles
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # constants
 source $DOTFILE_PATH/constants/constants-public.sh
