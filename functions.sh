@@ -595,3 +595,24 @@ function indent {
   sed -e "s/^/${spaces}/"
 }
 
+function playground {
+  local playground="<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
+    <playground version='5.0' target-platform='ios'>
+      <timeline fileName='timeline.xctimeline'/>
+    </playground>"
+  local swift="import UIKit"
+  local timeline="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+    <Timeline version = \"3.0\">
+      <TimelineItems></TimelineItems>
+    </Timeline>"
+
+  tempdir
+  mkcd "Temp.playground"
+
+  echo $swift > Contents.swift
+  echo $playground > contents.xcplayground
+  echo $timeline > timeline.xctimeline
+
+  cd ..
+  open "Temp.playground"
+}
