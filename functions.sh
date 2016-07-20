@@ -140,6 +140,17 @@ function blame() {
   git blame $1 | sed -E "s/^([0-9a-z^]+)([^(]*)( +)\(([A-Za-z ]+)( +)([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} [-+][0-9]{4})( +)([0-9]+)\)(.*)$/$red\1$none$green\2$none\3($cyan\4$none\5$yellow\6$none\7$magenta\8$none)\9/" | less -R
 }
 
+# git list colors
+function list() {
+  local red=$(echo '\033[31m')
+  local green=$(echo '\033[32m')
+  local cyan=$(echo '\033[36m')
+  local yellow=$(echo '\033[33m')
+  local magenta=$(echo '\033[35m')
+  local none=$(echo '\033[0m')
+
+  git list | sed -E "s/^(stash@\{[0-9]+\})(: On)([^:]+)(: )([0-9a-z]+)(.*)(\[)([A-Z]{1}[a-z]{2} [0-9]{2}\/[0-9]{2} [0-2][0-9]:[0-5][0-9])(\])$/$green\1$none\2$cyan\3$none\4$red\5$none\6$yellow\7\8\9$none/" | less -R
+}
 
 # objective-c repl
 function objcrepl() {
