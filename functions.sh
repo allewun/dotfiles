@@ -627,3 +627,16 @@ function playground {
   cd ..
   open "Temp.playground"
 }
+
+function prdiff {
+  if [[ -n $1 && -n $2 && -n $3 && -n $4 ]]; then
+    local REPONAME=$1
+    local PRNUMBER=$2
+    local LASTSHA=$3
+    local CURRENTSHA=$4
+
+    open "https://github.com/${REPONAME}/pull/${PRNUMBER}/files/${LASTSHA}..${CURRENTSHA}"
+  else
+    echo "Usage: prdiff [repo name] [pull request #] [old SHA] [current SHA]"
+  fi
+}
