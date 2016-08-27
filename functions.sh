@@ -611,7 +611,10 @@ function playground {
     <playground version='5.0' target-platform='ios'>
       <timeline fileName='timeline.xctimeline'/>
     </playground>"
-  local swift="import UIKit"
+  local swift="import UIKit
+import XCPlayground
+
+XCPlaygroundPage.currentPage.liveView"
   local timeline="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     <Timeline version = \"3.0\">
       <TimelineItems></TimelineItems>
