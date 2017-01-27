@@ -33,12 +33,6 @@ done
 NEWLINE=$'\n'
 PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f%F{magenta}$(__heroku_ps1)%f$NEWLINE%F{white}$%f '
 
-# right prompt: timestamp
-function preexec() {
-  DATE=$(date +"%a %d-%b-%Y %I:%M %p")
-  RPROMPT="%F{magenta}$DATE%f"
-}
-
 # directory in terminal tab title
 function precmd() { echo -ne "\e]1;${PWD##*/}\a" }
 
