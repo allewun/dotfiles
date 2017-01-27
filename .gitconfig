@@ -45,7 +45,7 @@
   who = shortlog -n -s --no-merges
 
   pushup = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
-  pr = pull-request
+  pr = town-new-pull-request
 
   amend = !git commit -a -C HEAD --amend
 
@@ -57,6 +57,16 @@
   snapundo = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshotundo "$@"; }; f"
 
   hash = !git rev-parse --short HEAD | tr -d \"\\r\\n\" | pbcopy && echo "Copied SHA $(git rev-parse --short HEAD) to clipboard -- $(git show -s --format=%s HEAD)"
+	append = town-append
+	hack = town-hack
+	kill = town-kill
+	new-pull-request = town-new-pull-request
+	prepend = town-prepend
+	prune-branches = town-prune-branches
+	rename-branch = town-rename-branch
+	repo = town-repo
+	ship = town-ship
+	sync = town-sync
 
 [core]
   excludesfile = /Users/allen/.gitignore
@@ -65,6 +75,7 @@
   default = simple
 
 [diff]
+  tool = araxis
   algorithm = patience
 
 [diff "plist"]
