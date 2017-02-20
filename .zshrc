@@ -199,6 +199,7 @@ alias pythonhttpsserver="python3 ~/dotfiles/scripts/https-server/pythonhttpsserv
 alias cats="pygmentize -g -f terminal256"
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias uuid='uuidgen | tee "$(tty)" | tr -d "\n" | pbcopy'
 
 #==============================================================================
 # Environment Variables
