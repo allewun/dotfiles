@@ -200,6 +200,7 @@ alias cats="pygmentize -g -f terminal256"
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias uuid='uuidgen | tee "$(tty)" | tr -d "\n" | pbcopy'
+alias bepi='bundle exec pod install'
 
 #==============================================================================
 # Environment Variables
@@ -277,3 +278,9 @@ alias classscanner="cd ~/Desktop/ClassScanner"
 alias hkn="cd ~/ucla-hkn"
 alias work="cd ~/work"
 alias temp="cd ~/temp"
+
+export NVM_DIR="/Users/allen/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by travis gem
+[ -f /Users/allen/.travis/travis.sh ] && source /Users/allen/.travis/travis.sh
