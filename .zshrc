@@ -201,6 +201,7 @@ alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias uuid='uuidgen | tee "$(tty)" | tr -d "\n" | pbcopy'
 alias bepi='bundle exec pod install'
+alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) -- "*.png"'
 
 #==============================================================================
 # Environment Variables
