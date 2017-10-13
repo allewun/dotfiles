@@ -37,3 +37,12 @@ function gitsnapshotref {
     echo "$results" | head -1 | grep -oe "^stash@{[0-9]\{1,\}}"
   fi
 }
+
+function gitahead {
+  if [[ -n "$1" ]]; then
+    local current_branch="$(git rev-parse --abbrev-ref HEAD)"
+    git rev-list --left-right --count "$1"..."$current_branch"
+  else
+    echo "Provide a base branch to compare with (e.g. master, dev)"
+  fi
+}

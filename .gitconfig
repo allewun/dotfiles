@@ -56,6 +56,8 @@
   snapply = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshotapply "$@"; }; f"
   snapundo = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshotundo "$@"; }; f"
 
+  ahead = "!f() { source ~/dotfiles/functions_git.sh; gitahead "$@"; }; f"
+
   hash = !git rev-parse --short HEAD | tr -d \"\\r\\n\" | pbcopy && echo "Copied SHA $(git rev-parse --short HEAD) to clipboard -- $(git show -s --format=%s HEAD)"
 	append = town-append
 	hack = town-hack
