@@ -5,12 +5,6 @@
 #=========================
 
 (
-  # fix ugly/barely-visible xcode i-beam cursor
-  XCODE_CURSOR_PATH=/Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework/Resources
-  sudo cp "$XCODE_CURSOR_PATH/DVTIbeamCursor.tiff" "$XCODE_CURSOR_PATH/DVTIbeamCursor-backup.tiff"
-  sudo cp -f "$DOTFILE_PATH/misc/cursors/DVTIbeamCursor.tiff" "$XCODE_CURSOR_PATH/"
-  echo "* Fixed ugly/barely-visible xcode i-beam cursor"
-
   # install color theme
   cp "$DOTFILE_PATH/xcode/Made of Code.dvtcolortheme" ~/Library/Developer/Xcode/UserData/FontAndColorThemes
   echo "* Installed Made of Code color theme (~/Library/Developer/Xcode/UserData/FontAndColorThemes)"
