@@ -2,13 +2,6 @@
   name = Allen Wu
   email = # email address #
 
-[merge]
-  tool = p4merge
-
-[mergetool]
-  prompt = false
-  keepBackup = true
-
 [color]
   ui     = true
   diff   = auto
@@ -76,10 +69,14 @@
 [push]
   default = simple
 
-[diff]
-  tool = araxis
-  algorithm = patience
-
 [diff "plist"]
   textconv = plutil -convert xml1 -o -
 
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+  prompt = false
+
+[diff]
+  tool = Kaleidoscope
