@@ -167,6 +167,20 @@ function objcrepl() {
   v $SOURCE && clang -fobjc-arc -Weverything -Wno-newline-eof -framework Foundation -o $EXE $DIR/*.m && echo "----------[ /tmp/objcrepl ]----------" && (exec $EXE)
 }
 
+# swift repl
+function swiftrepl() {
+  local NAME="swiftrepl"
+  local DIR="/tmp/swiftrepl"
+  local SOURCE="$DIR/$NAME.swift"
+  local BOILERPLATE="#!/usr/bin/swift\n\nimport Foundation\n\n"
+
+  if [[ ! -f $SOURCE ]]; then
+    mkdir -p $DIR && echo $BOILERPLATE > $SOURCE
+    chmod +x $SOURCE
+  fi
+
+  v $SOURCE && echo "----------[ /tmp/swiftrepl ]----------" && (exec "$SOURCE")
+}
 
 # xcode
 function xc() {
