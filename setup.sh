@@ -17,5 +17,6 @@ logsetup "macOS"    && ./setup/mac.sh      | indent 4
 logsetup "vim"      && ./setup/vim.sh      | indent 4
 logsetup "misc"     && ./setup/misc.sh     | indent 4
 logsetup "Xcode"    && ./setup/xcode.sh    | indent 4
+logsetup "Sublime"  && ./setup/sublime.sh  | indent 4
 
 ensure_installed "brew" && (logsetup "Homebrew" && brew bundle --verbose) || echo "Homebrew not installed, skipping setup."

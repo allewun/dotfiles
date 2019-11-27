@@ -124,6 +124,7 @@ alias dropbox="cd ~/Dropbox/"
 alias hist="cd ~/Dropbox/history/"
 alias sim="cd ~/Library/Application\ Support/iPhone\ Simulator/"
 alias firefox="cd ~/Library/Application\ Support/Firefox/Profiles/*.default/"
+alias sublime="cd ~/Library/Application\ Support/Sublime\ Text\ 3/"
 alias pwdcp="pwd | tr -d '\n' | pbcopy"
 
 # ls
