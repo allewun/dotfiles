@@ -30,7 +30,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 3
+defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
