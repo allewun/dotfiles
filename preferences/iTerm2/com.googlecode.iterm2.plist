@@ -58,8 +58,10 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
-	<key>HideMenuBarInFullscreen</key>
+	<key>HideFromDockAndAppSwitcher</key>
 	<true/>
+	<key>HideMenuBarInFullscreen</key>
+	<false/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -717,9 +719,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{1440, -55}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{368, 713}</string>
+		<string>{1844, 599}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>5C1387D2-9E8B-4ED8-A7AC-4CF99BD37F7C</string>
