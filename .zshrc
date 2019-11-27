@@ -1,23 +1,19 @@
 #==============================================================================
 # .zshrc
-# Allen Wu (Sept 2015)
+# Allen Wu (2019/11)
 #==============================================================================
 
 typeset -U PATH
-export PATH=~/temp/git-town/src:~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin
+export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
 export DOTFILE_PATH=~/dotfiles
-export ANDROID_HOME=/usr/local/opt/android-sdk
 
-# constants
-source $DOTFILE_PATH/constants/constants-public.sh
-source $DOTFILE_PATH/constants/constants-private.sh
 
-#==============================================================================
+#======================================
 # Prompt
-#==============================================================================
+#======================================
 
 setopt PROMPT_SUBST
 
@@ -25,21 +21,21 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
 # source -prompt.sh files
-for p in $DOTFILE_PATH/scripts/*-prompt.sh;
+for p in $DOTFILE_PATH/zsh/*-prompt.sh;
   do source $p
 done
 
 # left prompt: path and git status
 NEWLINE=$'\n'
-PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f%F{magenta}$(__heroku_ps1)%f$NEWLINE%F{white}$%f '
+PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}$%f '
 
 # directory in terminal tab title
 function precmd() { echo -ne "\e]1;${PWD##*/}\a" }
 
 
-#==============================================================================
+#======================================
 # Key bindings
-#==============================================================================
+#======================================
 
 autoload -U history-search-end
 
@@ -65,9 +61,9 @@ zle -N ctrlz
 bindkey '^Z' ctrlz
 
 
-#==============================================================================
+#======================================
 # History
-#==============================================================================
+#======================================
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000000
@@ -80,14 +76,14 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-for cmd (cd song repo notify histail histsearch forget man manz xc md j);
+for cmd (cd repo notify histail histsearch forget man manz xc md j src ls);
   do alias $cmd=" $cmd";
 done
 
 
-#==============================================================================
+#======================================
 # zsh completion
-#==============================================================================
+#======================================
 
 autoload -U compinit && compinit
 setopt EXTENDED_GLOB
@@ -102,9 +98,10 @@ zstyle ':completion:*' menu select
 
 compdef g=git
 
-#==============================================================================
+
+#======================================
 # Aliases
-#==============================================================================
+#======================================
 
 alias sudo="sudo " # allow sudo with aliases
 
@@ -112,13 +109,9 @@ alias sudo="sudo " # allow sudo with aliases
 alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
-alias osx=" v $DOTFILE_PATH/setup_osx.sh && source $DOTFILE_PATH/setup_osx.sh"
-alias src=" source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
+alias src="source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
 
-# OS X applications
-alias f="finder"
-alias ff=" open -a Firefox"
-alias chrome=" open -a Google\ Chrome"
+# macOS applications
 alias preview=" open -a Preview"
 alias tower=" open -a Tower ."
 alias ql=' qlmanage -p "$@" > /dev/null 2>&1'
@@ -128,14 +121,13 @@ alias dotfiles="cd $DOTFILE_PATH"
 alias desk="cd ~/Desktop/"
 alias deks=desk
 alias dropbox="cd ~/Dropbox/"
-alias originate="cd ~/Dropbox/Originate/"
 alias hist="cd ~/Dropbox/history/"
 alias sim="cd ~/Library/Application\ Support/iPhone\ Simulator/"
 alias firefox="cd ~/Library/Application\ Support/Firefox/Profiles/*.default/"
 alias pwdcp="pwd | tr -d '\n' | pbcopy"
 
 # ls
-alias ls=' ls -AFGh' # trailing slash for dirs and colors, human-readable filesizes
+alias ls='ls -AFGh' # trailing slash for dirs and colors, human-readable filesizes
 
 # cd
 alias ..='cd ..'
@@ -203,9 +195,10 @@ alias uuid='uuidgen | tee "$(tty)" | tr -d "\n" | pbcopy'
 alias bepi='bundle exec pod install'
 alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) -- "*.png"'
 
-#==============================================================================
+
+#======================================
 # Environment Variables
-#==============================================================================
+#======================================
 
 # color man pages
 export LESS="-iRc"
@@ -241,15 +234,15 @@ export EDITOR="vim"
 autoload -U colors && colors
 
 
-#==============================================================================
+#======================================
 # Functions
-#==============================================================================
-source $DOTFILE_PATH/functions.sh
+#======================================
+source $DOTFILE_PATH/zsh/functions.sh
 
 
-#==============================================================================
+#======================================
 # Miscellaneous
-#==============================================================================
+#======================================
 
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
@@ -271,17 +264,12 @@ function lessc() {
 }
 
 
-#==============================================================================
+#======================================
 # Temporary stuff
-#==============================================================================
+#======================================
 
-alias classscanner="cd ~/Desktop/ClassScanner"
-alias hkn="cd ~/ucla-hkn"
-alias work="cd ~/work"
 alias temp="cd ~/temp"
 
 export NVM_DIR="/Users/allen/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# added by travis gem
-[ -f /Users/allen/.travis/travis.sh ] && source /Users/allen/.travis/travis.sh

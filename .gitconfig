@@ -45,11 +45,11 @@
   sh = !git stash save --include-untracked "$(git rev-parse --short HEAD) $(git log --format=%B -n1 HEAD | head -1) [$(date +'%a %m/%d %H:%M')]"
   pop = stash pop
   list = stash list
-  snap = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshot "$@"; }; f"
-  snapply = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshotapply "$@"; }; f"
-  snapundo = "!f() { source ~/dotfiles/functions_git.sh; gitsnapshotundo "$@"; }; f"
+  snap = "!f() { source ~/dotfiles/functions/git.sh; gitsnapshot "$@"; }; f"
+  snapply = "!f() { source ~/dotfiles/functions/git.sh; gitsnapshotapply "$@"; }; f"
+  snapundo = "!f() { source ~/dotfiles/functions/git.sh; gitsnapshotundo "$@"; }; f"
 
-  ahead = "!f() { source ~/dotfiles/functions_git.sh; gitahead "$@"; }; f"
+  ahead = "!f() { source ~/dotfiles/functions/git.sh; gitahead "$@"; }; f"
 
   hash = !git rev-parse --short HEAD | tr -d \"\\r\\n\" | pbcopy && echo "Copied SHA $(git rev-parse --short HEAD) to clipboard -- $(git show -s --format=%s HEAD)"
 	append = town-append

@@ -1,16 +1,21 @@
 #!/usr/bin/env zsh
 
-echo "Ensure that .zshrc has been sourced first. Press any key to continue."
-read
-
 autoload -U colors && colors
 
-echo "$fg[cyan]Setting up brew...$reset_color"      && ./setup_brew.sh
-echo "$fg[cyan]Setting up dotfiles...$reset_color"  && ./setup_dotfiles.sh
-echo "$fg[cyan]Setting up ruby gems...$reset_color" && ./setup_gem.sh
-echo "$fg[cyan]Setting up npm...$reset_color"       && ./setup_npm.sh
-echo "$fg[cyan]Setting up vim...$reset_color"       && ./setup_vim.sh
-echo "$fg[cyan]Setting up osx...$reset_color"       && ./setup_osx.sh
-echo "$fg[cyan]Setting up history...$reset_color"   && ./setup_history.sh
-echo "$fg[cyan]Setting up misc...$reset_color"      && ./setup_misc.sh
-echo "$fg[cyan]Setting up iTerm...$reset_color"     && ./setup_iterm2.sh
+source $DOTFILE_PATH/zsh/functions.sh
+source .zshrc
+
+# Guard dotfiles repo
+if [[ "$(pwd)" != ~/dotfiles ]]; then
+  echo "Ensure that this repo lives in ~/dotfiles"
+  exit 1
+fi
+
+# Call subscripts
+logsetup "dotfiles" && ./setup/dotfiles.sh | indent 4
+logsetup "macOS"    && ./setup/mac.sh      | indent 4
+logsetup "vim"      && ./setup/vim.sh      | indent 4
+logsetup "misc"     && ./setup/misc.sh     | indent 4
+logsetup "Xcode"    && ./setup/xcode.sh    | indent 4
+
+ensure_installed "brew" && (logsetup "Homebrew" && brew bundle --verbose) || echo "Homebrew not installed, skipping setup."

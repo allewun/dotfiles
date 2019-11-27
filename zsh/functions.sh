@@ -1,10 +1,6 @@
 #!/usr/bin/env zsh
 
-#==============================================================================
-# functions.sh
-# Allen Wu (Feb 2015)
-#==============================================================================
-
+source $DOTFILE_PATH/zsh/utility.sh
 
 # show last N of the shell history
 # defaults to 10
@@ -36,18 +32,6 @@ function histail() {
 # search history
 function histsearch() {
   grep -i "$1" $HISTFILE
-}
-
-# append song to "to download" list
-function song() {
-  local songfile="/Users/allen/Dropbox/dl.txt";
-
-  if [[ -z "$1" ]]; then
-    cat $songfile
-  else
-    echo "$1" >> $songfile
-    echo "Added: \"$1\""
-  fi
 }
 
 function finder {
@@ -610,14 +594,6 @@ function gemedit {
   else
     echo "usage: gemedit <gemname> [subl | cd | finder]"
   fi
-}
-
-function indent {
-  local count=$1
-  if [ -z "$1" ]; then count=2; fi
-  local spaces="$(printf "%${count}s")"
-
-  sed -e "s/^/${spaces}/"
 }
 
 function playground {

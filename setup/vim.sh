@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-#=========================
-# Set up .vim folder
-#=========================
-
 (
 DATE=($(date +%Y%m%d%H%M%S))
 
