@@ -1,192 +1,25 @@
-﻿Application: Firefox 49.0.2 (20161019084923)
-Operating System: Darwin (x86_64-gcc3)
-
-October 30, 2016
-
-Total number of items: 27
-
-- 1Password 4.6.1
-	onepassword4@agilebits.com
-	https://agilebits.com/onepassword
-	October 29, 2016 17:59:19
-	Firefox 40.* - 43.0
-	Password and identity manager for Mac, Windows, iOS and Android.
-- Adobe Acrobat - Create PDF 1.2 (Disabled)
-	web2pdfextension@web2pdf.adobedotcom
-	http://www.adobe.com/
-	November 11, 2013 02:31:23
-	Firefox 3.6 - *.*
-	Converts a web page to PDF
-- Always Ask 2.1.2
-	alwaysask@zpao.com
-	https://addons.mozilla.org/en-US/firefox/addon/always-ask/?src=api
-	October 29, 2016 16:08:20
-	Firefox 4.0 - 50.*
-	Adds an additional quit dialog that will appear when Firefox would not normally prompt (for example, when you have session restore on). This is meant to capture the accidental ⌘Q keystroke.
-- Asynchronous Plugin Rendering 2.0
-	asyncrendering@mozilla.org
-	October 29, 2016 15:11:10
-	Firefox 49.0 - 49.*
-	Enables asynchronous drawing mode for plugins.
-- Change Search Shortcut 0.22.1-signed.1-signed
-	change-search-shortcut@skagon.com
-	https://addons.mozilla.org/en-US/firefox/addon/change-search-shortcut/?src=api
-	October 29, 2016 16:08:20
-	Firefox 4.0b10pre - 13.*
-	Allows to change the search shortcut.
-- Config Descriptions 1.0.1-signed.1-signed
-	{1823e248-6bf4-f6f1-7901-65a68e8b6c1e}
-	https://addons.mozilla.org/en-US/firefox/addon/config-descriptions/?src=api
-	October 29, 2016 22:57:40
-	Firefox 10.0 - 50.*
-	SeaMonkey 2.7 - 2.13a2
-	Shows source comments for advanced application preferences in about:config
-- Extension List Dumper 2 1.0.1
-	extension_list_dumper_2@iceberg.it
-	https://addons.mozilla.org/en-US/firefox/addon/extension-list-dumper-2/?src=api
-	October 30, 2016 02:07:29
-	Firefox 17.0 - 42.0
-	SeaMonkey 2.26 - 2.39
-	Thunderbird 31.0 - 42.0
-	Dumps a list of the installed extensions.
-- FindBar Tweak 2.1.10
-	fbt@quicksaver
-	http://fasezero.com/
-	October 29, 2016 16:08:20
-	Firefox 45.0 - 50.*
-	Between simple tweaks such as placing the findbar in the top corner, to the powerful "Find in All Tabs" tool, it has everything to make the Find Toolbar a powerful and accessible research tool!
-- FireGestures 1.10.13
-	firegestures@xuldev.org
-	http://www.xuldev.org/firegestures/
-	October 29, 2016 16:08:43
-	Firefox 45.0 - 51.0a1
-	Executes various commands with mouse gestures.
-- Google search link fix 1.5.4
-	jid0-XWJxt5VvCXkKzQK99PhZqAn7Xbg@jetpack
-	https://github.com/palant/searchlinkfix
-	October 29, 2016 16:09:02
-	Firefox 38.0a1 - 52.0
-	SeaMonkey 2.42 - 2.49
-	{aa3c5121-dab2-40e2-81ca-7ea25febc110} 38.0a1 - 52.0
-	Prevents Google and Yandex search pages from modifying search result links when you click them. This is useful when copying links but it also helps privacy by preventing the search engines from recording your clicks.
-- HTTPS Everywhere 5.2.6
-	https-everywhere@eff.org
-	https://www.eff.org/https-everywhere
-	October 29, 2016 16:10:17
-	Firefox 26.0 - 52.0
-	SeaMonkey 2.17 - 2.32
-	Thunderbird 17.* - 35.*
-	{a79fe89b-6662-4ff4-8e88-09950ad4dfde} 0.1 - 40.0
-	{aa3c5121-dab2-40e2-81ca-7ea25febc110} 26.0 - 40.0
-	Encrypt the Web! Automatically use HTTPS security on many sites.
-- Min Vid 0.3.3
-	@min-vid
-	https://github.com/meandavejustice/min-vid
-	October 30, 2016 02:00:31
-	Firefox 38.0a1 - *
-	Minimize a web video into a small always-on-top panel in Firefox.
-- Multi-process staged rollout 1.3
-	e10srollout@mozilla.org
-	October 22, 2016 21:26:39
-	Firefox 49.0.2 - 49.*
-	Staged rollout of Firefox multi-process feature.
-- Open in Private Browsing Mode 1.1.1-signed.1-signed
-	jid1-0FHdJAAQ7Nb73Q@jetpack
-	https://github.com/fwenzel/open-private
-	October 29, 2016 16:09:52
-	Firefox 17.0 - 43.*
-	Right-click on a link to instantly open it in Private Browsing mode.
-- Open With 6.7.2
-	openwith@darktrojan.net
-	https://github.com/darktrojan/openwith
-	October 29, 2016 16:10:17
-	Firefox 45.0 - 51.0a1
-	SeaMonkey 2.40 - 2.40.*
-	Thunderbird 38.0 - 51.0a1
-	Quickly test out your web pages in Internet Explorer, Chrome, Safari, or Opera. Open With opens the current page in your other browsers with just one click.
-- Places Maintenance 2.0.2
-	places-maintenance@bonardo.net
-	https://addons.mozilla.org/en-US/firefox/addon/places-maintenance/?src=api
-	October 29, 2016 18:33:14
-	Firefox 38.0 - 51.*
-	Allows to run maintenance tasks on the Places database, the bookmarks and history component behind Firefox.
-- Pocket 1.0.4
-	firefox@getpocket.com
-	October 22, 2016 21:26:39
-	Firefox 49.0.2 - 49.*
-	When you find something you want to view later, put it in Pocket.
-- Print Edit 17.3
-	printedit@DW-dev
-	https://addons.mozilla.org/firefox/addon/print-edit/
-	October 29, 2016 16:11:15
-	Firefox 4.0 - 52.0
-	Print preview with integrated edit capability.
-- Reddit Enhancement Suite 5.0.3
-	jid1-xUfzOsOFlzSOXg@jetpack
-	http://redditenhancementsuite.com/
-	October 29, 2016 18:17:08
-	Firefox 48.0 - *
-	A suite of modules that enhance your Reddit browsing experience
-- restartFox 0.1.9
-	restartfox@bleed
-	https://addons.mozilla.org/en-US/firefox/addon/restartfox/?src=api
-	October 30, 2016 01:51:08
-	Firefox 38.0a1 - *
-	Fastest way to restart Firefox
-- Status-4-Evar 2016.10.11.01
-	status4evar@caligonstudios.com
-	http://forums.mozillazine.org/viewtopic.php?f=48&t=2001965
-	October 29, 2016 16:12:31
-	Firefox 45.0 - 52.0a1
-	Status widgets and progress indicators for Firefox 4+
-- Stylish 2.0.7
-	{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}
-	https://userstyles.org/
-	October 29, 2016 18:13:27
-	express@postbox-inc.com 1.0b13 - 6.*
-	Firefox 19.0 - 51.0
-	postbox@postbox-inc.com 1.0b13 - 6.*
-	SeaMonkey 2.16 - 2.48
-	Thunderbird 24.0 - 51.0
-	toolkit@mozilla.org 19.0 - 51.0
-	{36E66FA0-F259-11D9-850E-000D935D3368} 7.* - 9.*
-	{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4} 25.0 - 25.*
-	{aa3c5121-dab2-40e2-81ca-7ea25febc110} 19.0 - 51.0
-	{b1042fb5-9e9c-11db-b107-000d935d3368} 7.* - 9.*
-	Restyle the web with Stylish, a user styles manager.
-- Test Pilot 0.8.9-dev-64c00d1
-	@testpilot-addon
-	https://testpilot.firefox.com/
-	October 30, 2016 02:00:24
-	Firefox 38.0a1 - *
-	{aa3c5121-dab2-40e2-81ca-7ea25febc110} 38.0a1 - *
-	Test Pilot is a privacy-sensitive user research program focused on getting new features into Firefox faster.
-- Text Link 5.0.2016031501
-	{54BB9F3F-07E5-486c-9B39-C7398B99391C}
-	http://piro.sakura.ne.jp/xul/_textlink.html.en
-	October 30, 2016 01:53:16
-	Firefox 31.0 - 48.0a1
-	Thunderbird 31.0 - 38.*
-	Allows URI texts written in webpages to be loaded by double clicks.
-- Tree Style Tab 0.18.2016090802
-	treestyletab@piro.sakura.ne.jp
-	http://piro.sakura.ne.jp/xul/_treestyletab.html.en
-	October 30, 2016 00:42:08
-	Firefox 45.0 - 51.0a1
-	Show tabs like a tree.
-- uBlock Origin 1.9.16
-	uBlock0@raymondhill.net
-	https://github.com/gorhill/uBlock
-	October 29, 2016 16:14:05
-	Firefox 24.0 - *
-	SeaMonkey 2.21 - 2.40.*
-	Thunderbird 31.0 - 45.*
-	{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4} 25.0 - 26.*
-	{a79fe89b-6662-4ff4-8e88-09950ad4dfde} 0.1 - 9.9
-	{aa3c5121-dab2-40e2-81ca-7ea25febc110} 24.0 - *
-	Finally, an efficient blocker. Easy on CPU and memory.
-- Web Compat 1.0
-	webcompat@mozilla.org
-	October 22, 2016 21:26:39
-	Firefox 49.0.2 - 49.*
-	Urgent post-release fixes for web compatibility.
+﻿Name 	Version 	Enabled 	ID
+1Password extension (desktop app required)	4.7.5.90	true	onepassword4@agilebits.com
+Amazon.com	1.1	true	amazondotcom@search.mozilla.org
+Bing	1.0	true	bing@search.mozilla.org
+DuckDuckGo	1.0	true	ddg@search.mozilla.org
+eBay	1.0	true	ebay@search.mozilla.org
+Facebook Container	2.0.3	true	@contain-facebook
+Foxy Gestures	1.2.4	true	{e839c3f9-298e-4cd0-99e0-464431cb7c34}
+Google	1.0	true	google@search.mozilla.org
+HTTPS Everywhere	2019.11.7	true	https-everywhere@eff.org
+Octotree	4.0.4	true	jid1-Om7eJGwA1U8Akg@jetpack
+Old Reddit Redirect	1.1.2	true	{9063c2e9-e07c-4c2c-9646-cfe7ca8d0498}
+Open With	7.2.1	true	openwith@darktrojan.net
+Reddit Enhancement Suite	5.18.7	true	jid1-xUfzOsOFlzSOXg@jetpack
+Save Page WE	16.3	true	savepage-we@DW-dev
+Side View	0.4.3710	true	side-view@mozilla.org
+Stylus	1.5.6	true	{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}
+Tab flip for Tree Style Tab	1.4.0	true	{724545b6-7e17-4fa2-96e0-71eddf3c3319}
+Test Pilot	3.0.6vaaa6330	true	@testpilot-addon
+Tree Style Tab	3.2.5	true	treestyletab@piro.sakura.ne.jp
+Twitter	1.0	true	twitter@search.mozilla.org
+uBlock Origin	1.24.2	true	uBlock0@raymondhill.net
+View Image	3.2.2	true	{287dcf75-bec6-4eec-b4f6-71948a2eea29}
+Wikipedia (en)	1.0	true	wikipedia@search.mozilla.org
+Text Link	6.0.3	false	{54BB9F3F-07E5-486c-9B39-C7398B99391C}
