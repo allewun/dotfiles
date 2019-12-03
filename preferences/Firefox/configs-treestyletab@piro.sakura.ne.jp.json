@@ -1,0 +1,25 @@
+{
+  "applyBrowserTheme": false,
+  "autoCollapseExpandSubtreeOnSelect": false,
+  "cachedExternalAddons": [
+    "{724545b6-7e17-4fa2-96e0-71eddf3c3319}"
+  ],
+  "closeParentBehaviorMode": 1,
+  "configsVersion": 7,
+  "context_bookmarkTree": false,
+  "context_collapseAll": false,
+  "context_expandAll": false,
+  "lastConfirmedToCloseTabs": 1573799482384,
+  "notifiedFeaturesVersion": 4,
+  "optionsExpandedSections": [
+    "section-appearance",
+    "section-contextMenu",
+    "section-treeBehavior",
+    "section-advanced",
+    "section-debug",
+    "section-newTab"
+  ],
+  "scrollbarMode": 1,
+  "style": "highcontrast",
+  "userStyleRules": "/* Show title of unread tabs with red and italic font */\n/*\n.tab.unread .label {\n  color: red !important;\n  font-style: italic !important;\n}\n*/\n\n/* Add private browsing indicator per tab */\n/*\n.tab.private-browsing .label:before {\n  content: \"🕶\";\n}\n*/\n\n.tab .twisty {\n  margin-left: 3px;\n  margin-right: 5px;\n  padding: 9px;\n  border-radius: 10px;\n}\n\n.tab:not(.active) .twisty:hover {\n  background-color: #3277cf;\n  color: white;\n}\n\n.tab .twisty:hover {\n  background-color: #8caeda;\n}"
+}
