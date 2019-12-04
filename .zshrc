@@ -20,12 +20,12 @@ setopt PROMPT_SUBST
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
-# source -prompt.sh files
-for p in $DOTFILE_PATH/zsh/*-prompt.sh;
+# source prompt files
+for p in $DOTFILE_PATH/zsh/prompts/*.sh;
   do source $p
 done
 
-# left prompt: path and git status
+# prompt: path, git status, rbenv status
 NEWLINE=$'\n'
 PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}$%f '
 
