@@ -15,8 +15,11 @@ source $DOTFILE_PATH/zsh/functions.sh
 
   # add duplicate line key binding
   echo
-  echo "* Add \"Duplicate Line\" key binding. Specify the Xcode app filename (e.g. Xcode.app or Xcode-11.0.app):"
+  echo '* Add "Duplicate Line" key binding.'
+  echo '  Currently active:' $(xcode-select -p | grep -oE 'Xcode[^/]+')
+  echo '  Specify the Xcode version to add binding to:\n'
   ls /Applications | grep Xcode | indent 4
+  echo
   read XCODE_FILENAME
   KEYBINDING_FILE="/Applications/$XCODE_FILENAME/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist"
   cp $KEYBINDING_FILE ~/Desktop/IDETextKeyBindingSet-backup.plist # backup
