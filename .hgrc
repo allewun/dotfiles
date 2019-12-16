@@ -1,0 +1,13 @@
+[ui]
+username = # Name <email@domain.com>
+
+[pager]
+pager = less -iRc
+
+[extensions]
+sparse =
+
+[alias]
+co = checkout
+c = commit
+s = status
