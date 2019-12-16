@@ -109,6 +109,7 @@ alias sudo="sudo " # allow sudo with aliases
 alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
+alias hgrc=" v ~/.hgrc"
 alias src="source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
 
 # macOS applications
