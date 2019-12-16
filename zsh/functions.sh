@@ -169,7 +169,7 @@ function swiftrepl() {
 # xcode
 function xc() {
   if [[ ! -z "$1" ]]; then
-    open -a Xcode "$1"
+    open -a "$CURRENT_XCODE" "$1"
   else
     currentPath=$(pwd)
     originalDirname=$(basename $currentPath)
@@ -178,10 +178,10 @@ function xc() {
       fileXCP=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcodeproj" | head -1)
 
       if [[ -n "$fileXCW" ]]; then
-        open -a Xcode "$fileXCW"
+        open -a "$CURRENT_XCODE" "$fileXCW"
         break
       elif [[ -n "$fileXCP" ]]; then
-        open -a Xcode "$fileXCP"
+        open -a "$CURRENT_XCODE" "$fileXCP"
         break
       else
         nextPath=$(find $currentPath -mindepth 1 -maxdepth 1 -name $(basename $originalDirname) | head -1)
