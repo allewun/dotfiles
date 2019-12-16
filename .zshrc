@@ -201,6 +201,11 @@ alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) --
 # Environment Variables
 #======================================
 
+# common
+export TERM="xterm-256color"
+export EDITOR="vim"
+export PAGER="less"
+
 # color man pages
 export LESS="-iRc"
 export LESS_TERMCAP_mb=$'\E[0;36m'     # cyan
@@ -225,15 +230,8 @@ export ACK_COLOR_FILENAME='underline cyan'
 export ACK_COLOR_MATCH='underline yellow'
 export ACK_COLOR_LINENO='cyan'
 
-# term
-export TERM="xterm-256color"
-
-# editor
-export EDITOR="vim"
-
 # zsh
 autoload -U colors && colors
-
 
 #======================================
 # Functions
