@@ -2,6 +2,7 @@
 brew "ag"
 brew "autojump"
 brew "coreutils"
+brew "duti"
 brew "ffmpeg"
 brew "git-cal"
 brew "httpie"
