@@ -168,6 +168,7 @@ function swiftrepl() {
 
 # xcode
 function xc() {
+  echo "Using $CURRENT_XCODE"
   if [[ ! -z "$1" ]]; then
     open -a "$CURRENT_XCODE" "$1"
   else
