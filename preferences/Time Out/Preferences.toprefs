@@ -1,0 +1,123 @@
+{
+  "breakPriorities" : [
+    "Normal",
+    "Micro"
+  ],
+  "frontExclusions" : [
+    "file:\/\/\/Applications\/Photo%20Booth.app",
+    "file:\/\/\/Applications\/FaceTime.app",
+    "file:\/\/\/Applications\/QuickTime%20Player.app",
+    "file:\/\/\/Applications\/MPlayerX.app",
+    "file:\/\/\/Applications\/zoom.us.app",
+    "file:\/\/\/Applications\/DVD%20Player.app",
+    "file:\/\/\/Applications\/VLC.app",
+    "file:\/\/\/Applications\/Skype.app"
+  ],
+  "openExclusions" : [
+
+  ],
+  "shortcuts" : {
+    "postpone2" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "skip" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "start" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "resume" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "reset" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "stopSound" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "postpone1" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "version" : 1,
+    "representedClassName" : "Shortcuts",
+    "pauseIndefinitely" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    }
+  },
+  "activity" : {
+    "trackBreaks" : 1,
+    "trackApps" : 0,
+    "scale" : 5,
+    "representedClassName" : "ActivitySettings",
+    "version" : 1
+  },
+  "log" : {
+    "showSchedule" : 1,
+    "showOther" : 1,
+    "representedClassName" : "Log",
+    "recordActivity" : 0,
+    "showBreaks" : 1,
+    "version" : 1
+  },
+  "advanced" : {
+    "idleSeconds" : 60,
+    "version" : 2,
+    "schedulerOnlyInteresting" : 1,
+    "skipDuringSleep" : 1,
+    "disableTermination" : 0,
+    "mainLogging" : 0,
+    "resetPositionStatusToSettings" : 0,
+    "animateStatusToSettings" : 1,
+    "statusLogging" : 0,
+    "skipDuringScreensaver" : 1,
+    "representedClassName" : "Advanced",
+    "alertOfAnotherApp" : 1,
+    "breakLogging" : 0,
+    "memoryLogging" : 0,
+    "idleDetector" : 2,
+    "schedulerLogging" : 0
+  },
+  "statistics" : {
+    "breakIdentifier" : "",
+    "representedClassName" : "Statistics",
+    "show" : 2,
+    "version" : 1
+  },
+  "options" : {
+    "statusOnlyLong" : 0,
+    "automaticallyStart" : 1,
+    "statusTitle" : 1,
+    "statusIcon" : 5,
+    "showDockIcon" : 0,
+    "version" : 2,
+    "showStatusMenu" : 1,
+    "representedClassName" : "Options",
+    "sidebarFormat" : 1
+  },
+  "other" : {
+    "scriptsBookmark" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "representedClassName" : "Other",
+    "adDays" : 7,
+    "version" : 1
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "actions" : [
+    {
+      "source" : 20,
+      "volume" : 0.66000000000000003,
+      "offsetInterval" : {
+        "usingRange" : 0,
+        "secondAmount" : 0,
+        "representedClassName" : "DejalInterval",
+        "firstAmount" : 0,
+        "units" : 0,
+        "version" : 1
+      },
+      "loops" : 0,
+      "identifier" : "EDAA91F9-30CC-4453-B3B5-54B7F07D7372",
+      "filename" : "Bell.aiff",
+      "version" : 1,
+      "stage" : 12,
+      "representedClassName" : "SoundAction"
+    }
+  ],
+  "config" : {
+    "startShortcut" : {
+      "version" : 1,
+      "representedClassName" : "DejalData",
+      "length" : 0
+    },
+    "labelAsPie" : 0,
+    "postponeMinutes1" : 5,
+    "otherBackground" : {
+      "green" : 0.5,
+      "red" : 0.5,
+      "representedClassName" : "DejalColor",
+      "alpha" : 0.75,
+      "blue" : 0.5,
+      "version" : 1
+    },
+    "dailySkipLimit" : 3,
+    "due" : 1,
+    "representedClassName" : "Config",
+    "postponeMinutes2" : 10,
+    "adjustment" : 0,
+    "themeBackgroundTransparency" : 0.90000000000000002,
+    "skipForHigherPriority" : 1,
+    "comments" : "The main rest opportunities throughout the day.  You should stand up and move around if possible, or at least sit back from your computer; change your eye focus level and relax your muscles.",
+    "resetWhenFinishingHigherPriority" : 0,
+    "screenID" : 0,
+    "label" : {
+      "green" : 0.152,
+      "red" : 0.86399999999999999,
+      "representedClassName" : "DejalColor",
+      "alpha" : 1,
+      "blue" : 0.21099999999999999,
+      "version" : 1
+    },
+    "endingSeconds" : 3,
+    "version" : 5,
+    "resetWhenIdleInterval" : {
+      "usingRange" : 0,
+      "secondAmount" : 20,
+      "representedClassName" : "DejalInterval",
+      "firstAmount" : 10,
+      "units" : 1,
+      "version" : 1
+    },
+    "showPostpone2" : 1,
+    "deferDelaySeconds" : 2,
+    "durationInterval" : {
+      "usingRange" : 0,
+      "secondAmount" : 5,
+      "representedClassName" : "DejalInterval",
+      "firstAmount" : 5,
+      "units" : 1,
+      "version" : 1
+    },
+    "showDeferCounters" : 1,
+    "limitSkip" : 1,
+    "dailyPostponeLimit" : 10,
+    "exceptWeekdays" : "",
+    "deferDelay" : 1,
+    "themeBackground" : {
+      "green" : 0,
+      "red" : 0,
+      "representedClassName" : "DejalColor",
+      "alpha" : 0.90000000000000002,
+      "blue" : 0,
+      "version" : 1
+    },
+    "name" : "Normal",
+    "skipForHigherPriorityInterval" : {
+      "usingRange" : 0,
+      "secondAmount" : 5,
+      "representedClassName" : "DejalInterval",
+      "firstAmount" : 5,
+      "units" : 1,
+      "version" : 1
+    },
+    "themeName" : "[BLANK]",
+    "otherBackgroundTransparency" : 0.75,
+    "showSkip" : 1,
+    "identifier" : "Normal",
+    "availability" : 0,
+    "adjustmentMinutes" : 0,
+    "resetWhenIdle" : 1,
+    "frequencyInterval" : {
+      "usingRange" : 0,
+      "secondAmount" : 90,
+      "representedClassName" : "DejalInterval",
+      "firstAmount" : 90,
+      "units" : 1,
+      "version" : 1
+    },
+    "idle" : 2,
+    "limitPostpone" : 0,
+    "toTime" : {
+      "hour" : 17,
+      "second" : 0,
+      "representedClassName" : "DejalTime",
+      "minute" : 0,
+      "version" : 1
+    },
+    "showPostpone1" : 1,
+    "beginningSeconds" : 10,
+    "fromTime" : {
+      "hour" : 8,
+      "second" : 0,
+      "representedClassName" : "DejalTime",
+      "minute" : 0,
+      "version" : 1
+    }
+  },
+  "state" : {
+    "todaySkipCount" : 0,
+    "lastPhase" : 6,
+    "todayPostponeCount" : 0,
+    "todayStartCount" : 0,
+    "nextDue" : {
+      "version" : 1,
+      "representedClassName" : "DejalDate",
+      "string" : "2019-12-21T09:22:15Z"
+    },
+    "totalStartCount" : 518,
+    "representedClassName" : "State",
+    "lastDone" : {
+      "version" : 1,
+      "representedClassName" : "DejalDate",
+      "string" : "2019-11-18T06:39:29Z"
+    },
+    "lastStarted" : {
+      "version" : 1,
+      "representedClassName" : "DejalDate",
+      "string" : "2019-12-09T23:29:37Z"
+    },
+    "version" : 2,
+    "lastAds" : {
+      "version" : 1,
+      "representedClassName" : "DejalDate",
+      "string" : "2019-12-19T09:29:59Z"
+    },
+    "totalPostponeCount" : 40,
+    "enabled" : 1,
+    "totalDoneCount" : 32,
+    "todayDuration" : 0,
+    "totalSkipCount" : 439,
+    "pausedUntil" : {
+      "version" : 1,
+      "representedClassName" : "DejalDate",
+      "string" : "2019-07-30T22:00:20Z"
+    },
+    "todayDoneCount" : 0,
+    "totalDuration" : 6637,
+    "lastDeferred" : {
+      "version" : 1,
+      "representedClassName" : "DejalDate",
+      "string" : "2019-12-09T23:31:19Z"
+    }
+  }
+}
