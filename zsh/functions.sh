@@ -3,29 +3,17 @@
 source $DOTFILE_PATH/zsh/utility.sh
 
 # show last N of the shell history
-# defaults to 10
+# defaults to 20
 function histail() {
   local yellow=$(echo '\033[33m')
   local magenta=$(echo '\033[35m')
   local none=$(echo '\033[0m')
 
-  local lines
-  if [[ -z "$1" ]]; then
-    lines=$(tail -10 "$HISTFILE")
-  else
-    lines=$(tail -n "$1" "$HISTFILE")
-  fi
+  local count=$([[ -z "$1" ]] && echo "20" || echo "$1")
+  local history=$(history -n -t '%F %T' -"$count")
 
   echo "${magenta}$(wc -l "$HISTFILE" | sed -e 's/^[ ]*//')${none}"
-
-  # show unix timestamp as human readable timestamps
-  # color them yellow and remove other formatting
-  echo "$lines" | while read -r line; do
-    unixtime=$(echo "$line" | grep -oe "[0-9]\{10\}" | head -1)
-    timestamp=$(date -r "$unixtime" '+\[%Y\/%m\/%d %H:%M:%S\]') # backslashes for sed regex escaping
-
-    echo "$line" | sed -E "s/^: ${unixtime}:[0-9]+;/${yellow}${timestamp}${none} /"
-  done
+  echo "$history" | sed -E "s/^([0-9: -]{19})(.*)$/${yellow}[\1]${none}\2/g"
 }
 
 
