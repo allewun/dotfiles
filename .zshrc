@@ -62,26 +62,6 @@ bindkey '^Z' ctrlz
 
 
 #======================================
-# History
-#======================================
-
-HISTFILE=~/.zsh_history
-HISTSIZE=100000000
-SAVEHIST=100000000
-
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt EXTENDED_HISTORY
-setopt SHARE_HISTORY
-
-# history ignores
-for cmd (cd repo notify hist histsearch forget man manz xc md j src ls); do 
-  alias $cmd=" $cmd";
-done
-
-
-#======================================
 # zsh completion
 #======================================
 
@@ -110,7 +90,7 @@ alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
 alias hgrc=" v ~/.hgrc"
-alias src="source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
+alias src=" source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
 
 # macOS applications
 alias preview=" open -a Preview"
@@ -119,8 +99,7 @@ alias ql=' qlmanage -p "$@" > /dev/null 2>&1'
 alias f=" finder"
 
 # directory shortcuts
-alias dotfiles="cd $DOTFILE_PATH"
-alias desk="cd ~/Desktop/"
+alias desk=" cd ~/Desktop/"
 alias deks=desk
 alias dropbox="cd ~/Dropbox/"
 alias sim="cd ~/Library/Application\ Support/iPhone\ Simulator/"
@@ -129,13 +108,13 @@ alias sublime="cd ~/Library/Application\ Support/Sublime\ Text\ 3/"
 alias pwdcp="pwd | tr -d '\n' | pbcopy"
 
 # ls
-alias ls='ls -AFGh' # trailing slash for dirs and colors, human-readable filesizes
+alias ls=' ls -AFGh' # trailing slash for dirs and colors, human-readable filesizes
 
 # cd
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
+alias ..=' cd ..'
+alias ...=' cd ../..'
+alias ....=' cd ../../..'
+alias .....=' cd ../../../..'
 
 # mkdir
 alias mkdir='mkdir -p'
@@ -181,7 +160,7 @@ alias v='vim -c "'"'"'\""' # open to last position
 alias ocaml="rlwrap ocaml"
 
 # misc
-alias tree="tree -C | less"
+alias tree=" tree -C | less"
 alias json="python -m json.tool"
 alias jsonc="json | pygmentize -f terminal256 -l javascript -O style=monokai"
 alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
@@ -197,6 +176,24 @@ alias uuid='uuidgen | tee "$(tty)" | tr -d "\n" | pbcopy'
 alias bepi='bundle exec pod install'
 alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) -- "*.png"'
 
+#======================================
+# History
+#======================================
+
+HISTFILE=~/.zsh_history
+HISTSIZE=100000000
+SAVEHIST=100000000
+
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+
+# history ignores
+for cmd (repo notify hist histsearch forget man manz xc md j); do 
+  alias $cmd=" $cmd";
+done
 
 #======================================
 # Environment Variables
