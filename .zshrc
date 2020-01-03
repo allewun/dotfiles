@@ -76,8 +76,8 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-for cmd (cd repo notify histail histsearch forget man manz xc md j src ls);
-  do alias $cmd=" $cmd";
+for cmd (cd repo notify hist histsearch forget man manz xc md j src ls); do 
+  alias $cmd=" $cmd";
 done
 
 
@@ -123,7 +123,6 @@ alias dotfiles="cd $DOTFILE_PATH"
 alias desk="cd ~/Desktop/"
 alias deks=desk
 alias dropbox="cd ~/Dropbox/"
-alias hist="cd ~/Dropbox/history/"
 alias sim="cd ~/Library/Application\ Support/iPhone\ Simulator/"
 alias firefox="cd ~/Library/Application\ Support/Firefox/Profiles/*.default/"
 alias sublime="cd ~/Library/Application\ Support/Sublime\ Text\ 3/"

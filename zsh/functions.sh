@@ -2,18 +2,16 @@
 
 source $DOTFILE_PATH/zsh/utility.sh
 
-# show last N of the shell history
-# defaults to 20
-function histail() {
+# show formatted history in pager
+function hist() {
   local yellow=$(echo '\033[33m')
   local magenta=$(echo '\033[35m')
   local none=$(echo '\033[0m')
 
-  local count=$([[ -z "$1" ]] && echo "20" || echo "$1")
-  local history=$(history -n -t '%F %T' -"$count")
+  local history=$(history -n -t '%F %T' 1)
 
   echo "${magenta}$(wc -l "$HISTFILE" | sed -e 's/^[ ]*//')${none}"
-  echo "$history" | sed -E "s/^([0-9: -]{19})(.*)$/${yellow}[\1]${none}\2/g"
+  echo "$history" | sed -E "s/^([0-9: -]{19})(.*)$/${yellow}[\1]${none}\2/g" | less +G
 }
 
 
