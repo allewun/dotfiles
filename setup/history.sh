@@ -5,7 +5,7 @@
 #=========================
 
 DROPBOX_HISTORY_PATH=~/Dropbox/history
-HISTORY_FILE=$HOME/.zsh_history
+HISTORY_FILE="$HOME/.zsh_history"
 DATE=($(date +%Y%m%d%H%M%S))
 
 # setup .zsh_history symlink
@@ -16,7 +16,7 @@ echo
 mkdir -p "$DROPBOX_HISTORY_PATH"
 
 # create history file if it doesn't exist
-if [[ ! -f $HISTORY_FILE ]]; then
+if [[ ! -f "$HISTORY_FILE" ]]; then
   touch "$HISTORY_FILE"
 fi
 

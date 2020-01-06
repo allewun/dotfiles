@@ -1,12 +1,12 @@
 #!/usr/bin/env zsh
 
-source $DOTFILE_PATH/zsh/utility.sh
+source "$DOTFILE_PATH/zsh/utility.sh"
 
 # show formatted history in pager
 function hist() {
-  local yellow=$(echo '\033[33m')
-  local magenta=$(echo '\033[35m')
-  local none=$(echo '\033[0m')
+  local yellow=$'\033[33m'
+  local magenta=$'\033[35m'
+  local none=$'\033[0m'
 
   echo "${magenta}$(wc -l "$HISTFILE" | sed -e 's/^[ ]*//')${none}"
   history -nt '%F %T' 1 | sed -E "s/^([0-9: -]{19})(.*)$/${yellow}[\1]${none}\2/g" | less +G
@@ -15,7 +15,7 @@ function hist() {
 
 # search history
 function histsearch() {
-  grep -i "$1" $HISTFILE
+  grep -i "$1" "$HISTFILE"
 }
 
 function finder {
@@ -63,14 +63,14 @@ function repo() {
     fi
 
     remotes=$(git remote -v | awk -F'git@'$domain: '{print $2}')
-    if [ -z $remotes ]; then
+    if [ -z "$remotes" ]; then
       remotes=$(git remote -v | awk -F'https://'$domain/ '{print $2}')
     fi
 
-    remoteClean=$(echo $remotes | head -n 1 | sed 's/.git//')
-    remoteURL=$(echo $remoteClean | cut -d" " -f1)
-    username=$(echo $remoteClean | sed 's/\/.*$//')
-    reponame=$(echo $remoteClean | sed 's/^[^/]*\/\([^ ]*\).*$/\1/')
+    remoteClean=$(echo "$remotes" | head -n 1 | sed 's/.git//')
+    remoteURL=$(echo "$remoteClean" | cut -d" " -f1)
+    username=$(echo "$remoteClean" | sed 's/\/.*$//')
+    reponame=$(echo "$remoteClean" | sed 's/^[^/]*\/\([^ ]*\).*$/\1/')
     branch=$(git rev-parse --abbrev-ref HEAD)
 
     if [[ "$branch" = "gh-pages" && -n "$username" && -n "$reponame" ]]; then
@@ -98,24 +98,24 @@ function repo() {
 
 # git blame colors
 function blame() {
-  local red=$(echo '\033[31m')
-  local green=$(echo '\033[32m')
-  local cyan=$(echo '\033[36m')
-  local yellow=$(echo '\033[33m')
-  local magenta=$(echo '\033[35m')
-  local none=$(echo '\033[0m')
+  local red=$'\033[31m'
+  local green=$'\033[32m'
+  local cyan=$'\033[36m'
+  local yellow=$'\033[33m'
+  local magenta=$'\033[35m'
+  local none=$'\033[0m'
 
-  git blame $1 | sed -E "s/^([0-9a-z^]+)([^(]*)( +)\(([A-Za-z ]+)( +)([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} [-+][0-9]{4})( +)([0-9]+)\)(.*)$/$red\1$none$green\2$none\3($cyan\4$none\5$yellow\6$none\7$magenta\8$none)\9/" | less -R
+  git blame "$1" | sed -E "s/^([0-9a-z^]+)([^(]*)( +)\(([A-Za-z ]+)( +)([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} [-+][0-9]{4})( +)([0-9]+)\)(.*)$/$red\1$none$green\2$none\3($cyan\4$none\5$yellow\6$none\7$magenta\8$none)\9/" | less -R
 }
 
 # git list colors
 function list() {
-  local red=$(echo '\033[31m')
-  local green=$(echo '\033[32m')
-  local cyan=$(echo '\033[36m')
-  local yellow=$(echo '\033[33m')
-  local magenta=$(echo '\033[35m')
-  local none=$(echo '\033[0m')
+  local red=$'\033[31m'
+  local green=$'\033[32m'
+  local cyan=$'\033[36m'
+  local yellow=$'\033[33m'
+  local magenta=$'\033[35m'
+  local none=$'\033[0m'
 
   git list | sed -E "s/^(stash@\{[0-9]+\})(: On)([^:]+)(: )([0-9a-z]+)(.*)(\[)([A-Z]{1}[a-z]{2} [0-9]{2}\/[0-9]{2} [0-2][0-9]:[0-5][0-9])(\])$/$green\1$none\2$cyan\3$none\4$red\5$none\6$yellow\7\8\9$none/" | less -R
 }
@@ -129,7 +129,7 @@ function objcrepl() {
   local BOILERPLATE="#import \"Foundation/Foundation.h\"\n\n@interface TestClass : NSObject\n@property (strong, nonatomic) NSString* key;\n@end\n\n@implementation TestClass\n@end\n\nint main () {\n  @autoreleasepool {\n    \n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
 
   if [[ ! -f $SOURCE ]]; then
-    mkdir -p $DIR && echo $BOILERPLATE > $SOURCE
+    mkdir -p $DIR && echo "$BOILERPLATE" > $SOURCE
   fi
 
   v $SOURCE && clang -fobjc-arc -Weverything -Wno-newline-eof -framework Foundation -o $EXE $DIR/*.m && echo "----------[ /tmp/objcrepl ]----------" && (exec $EXE)
@@ -143,7 +143,7 @@ function swiftrepl() {
   local BOILERPLATE="#!/usr/bin/swift\n\nimport Foundation\n\n"
 
   if [[ ! -f $SOURCE ]]; then
-    mkdir -p $DIR && echo $BOILERPLATE > $SOURCE
+    mkdir -p $DIR && echo "$BOILERPLATE" > $SOURCE
     chmod +x $SOURCE
   fi
 
@@ -157,10 +157,10 @@ function xc() {
     open -a "$CURRENT_XCODE" "$1"
   else
     currentPath=$(pwd)
-    originalDirname=$(basename $currentPath)
+    originalDirname=$(basename "$currentPath")
     while true; do
-      fileXCW=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcworkspace" | head -1)
-      fileXCP=$(find -E $currentPath -maxdepth 1 -regex ".*\.xcodeproj" | head -1)
+      fileXCW=$(find -E "$currentPath" -maxdepth 1 -regex ".*\.xcworkspace" | head -1)
+      fileXCP=$(find -E "$currentPath" -maxdepth 1 -regex ".*\.xcodeproj" | head -1)
 
       if [[ -n "$fileXCW" ]]; then
         open -a "$CURRENT_XCODE" "$fileXCW"
@@ -169,12 +169,12 @@ function xc() {
         open -a "$CURRENT_XCODE" "$fileXCP"
         break
       else
-        nextPath=$(find $currentPath -mindepth 1 -maxdepth 1 -name $(basename $originalDirname) | head -1)
-        allDirs=$(find $currentPath -mindepth 1 -maxdepth 1 -type d | grep -v "/.git$")
+        nextPath=$(find "$currentPath" -mindepth 1 -maxdepth 1 -name "$(basename "$originalDirname")" | head -1)
+        allDirs=$(find "$currentPath" -mindepth 1 -maxdepth 1 -type d | grep -v "/.git$")
 
         if [[ -d $nextPath ]]; then
           currentPath=$nextPath
-        elif [[ $(echo $allDirs | wc -l | tr -d ' ') == "1" ]]; then
+        elif [[ $(echo "$allDirs" | wc -l | tr -d ' ') == "1" ]]; then
           currentPath=$allDirs
         else
           echo "Unable to find an Xcode project."
@@ -194,8 +194,8 @@ function md() {
   else
     currentPath=$(pwd)
     while true; do
-      fileReadme=$(find -E $currentPath -maxdepth 1 -iregex "readme\.md" | head -1)
-      fileMarkdown=$(find -E $currentPath -maxdepth 1 -iregex ".*\.md" | head -1)
+      fileReadme=$(find -E "$currentPath" -maxdepth 1 -iregex "readme\.md" | head -1)
+      fileMarkdown=$(find -E "$currentPath" -maxdepth 1 -iregex ".*\.md" | head -1)
 
       if [[ -n "$fileReadme" ]]; then
         open -a $MD_EDITOR "$fileReadme"
@@ -204,7 +204,7 @@ function md() {
         open -a $MD_EDITOR "$fileMarkdown"
         break
       else
-        nextPath=$(find $currentPath -mindepth 1 -maxdepth 1 -name $(basename $currentPath) | head -1)
+        nextPath=$(find "$currentPath" -mindepth 1 -maxdepth 1 -name "$(basename "$currentPath")" | head -1)
 
         if [[ -d "$nextPath" ]]; then
           currentPath=$nextPath
@@ -245,18 +245,18 @@ function dot() {
   elif [[ ! -z "$1" ]]; then
     local NEEDLE=$1
   else
-    cd $DOTFILE_PATH
+    cd "$DOTFILE_PATH"
     return 0
   fi
 
   # open entire directory
   if [[ "$NEEDLE" == "." ]]; then
-    subl $DOTFILE_PATH
+    subl "$DOTFILE_PATH"
     return 0
   fi
 
   # find file matches
-  local FILE=$(find $DOTFILE_PATH -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1)
+  local FILE=$(find "$DOTFILE_PATH" -type f -iregex ".*$NEEDLE.*" -maxdepth 1 | head -n1)
   if [[ -z "$FILE" ]]; then
     echo "No matches for $1."
     return 1
@@ -264,17 +264,17 @@ function dot() {
 
   # dot [cmd] [file]
   if [[ ! -z "$1" && ! -z "$2" ]]; then
-    local BASENAME=$(basename $FILE)
+    local BASENAME=$(basename "$FILE")
     case "$1" in
       open) ;&
       vim)
-        v $FILE && src;;
+        v "$FILE" && src;;
       subl)
-        subl -w $FILE && src;;
+        subl -w "$FILE" && src;;
       run)
         shift 2
         if [[ -x "$FILE" ]]; then
-          echo "[Running $BASENAME...]" && source $FILE $@ && echo "[Ran $BASENAME]" || echo "[Couldn't run $BASENAME]"
+          echo "[Running $BASENAME...]" && source "$FILE" $@ && echo "[Ran $BASENAME]" || echo "[Couldn't run $BASENAME]"
         else
           echo "[\"$BASENAME\" not executable]"
         fi
@@ -285,7 +285,7 @@ function dot() {
 
   # dot [file]
   elif [[ ! -z "$FILE" ]]; then
-    v $FILE && src
+    v "$FILE" && src
   fi
 }
 
@@ -297,7 +297,7 @@ function notify() {
   local MESSAGE="Failure!"
   local SOUND="Basso"
 
-  if (( $EXIT_CODE == 0 )); then;
+  if (( $EXIT_CODE == 0 )); then
     MESSAGE="Success!"
     SOUND="Glass"
   fi
@@ -306,7 +306,7 @@ function notify() {
     MESSAGE="$1"
   fi
 
-  (terminal-notifier -message $MESSAGE && afplay -v 1 "/System/Library/Sounds/$SOUND.aiff" &) ; (exit $EXIT_CODE)
+  (terminal-notifier -message "$MESSAGE" && afplay -v 1 "/System/Library/Sounds/$SOUND.aiff" &) ; (exit $EXIT_CODE)
 }
 
 # mkdir then cd
@@ -316,7 +316,7 @@ function mkcd() {
 
 # remove last line from history
 function forget() {
-  (echo -e "$(tail -n1 "$HISTFILE")\n\n$(cat "$HISTFILE" | wc -l)->\c" && sed -i.bak '$d' $HISTFILE && [[ -s $HISTFILE ]] && rm $HISTFILE.bak) && echo $(cat $HISTFILE | wc -l) || echo "!"
+  (echo -e "$(tail -n1 "$HISTFILE")\n\n$(cat "$HISTFILE" | wc -l)->\c" && sed -i.bak '$d' "$HISTFILE" && [[ -s "$HISTFILE" ]] && rm $HISTFILE.bak) && echo $(cat "$HISTFILE" | wc -l) || echo "!"
 }
 
 # superman
@@ -326,10 +326,10 @@ function manz() {
 
 # override default `man` to search zshbuiltins when necessary
 function man() {
-  if command man $1 2>/dev/null | head -n2 | fgrep -q BUILTIN && [[ $1 != "builtin" ]]; then
-    manz $1
+  if command man "$1" 2>/dev/null | head -n2 | fgrep -q BUILTIN && [[ $1 != "builtin" ]]; then
+    manz "$1"
   else
-    command man $1
+    command man "$1"
   fi
 }
 
@@ -409,10 +409,10 @@ function adhoc() {
   </dict>
 </plist>"
 
-      mkdir -p $DIR
-      cp $FILENAME $DIR/$1
-      echo $HTML > "$DIR/index.html"
-      echo $MANIFEST > "$DIR/manifest"
+      mkdir -p "$DIR"
+      cp "$FILENAME" "$DIR/$1"
+      echo "$HTML" > "$DIR/index.html"
+      echo "$MANIFEST" > "$DIR/manifest"
 
       echo ""
       echo "  * Creating iOS Ad Hoc distribution server at:"
@@ -439,7 +439,7 @@ function adhoc() {
 #   15 sec delay before reattempting
 #
 function upalert() {
-  if [[ -n $1 ]]; then
+  if [[ -n "$1" ]]; then
     echo "Will notify when $1 comes back online..."
     for i in {1..1000}; do curl -Is -m 30 $1 && notify "$1 is back up!" && break; sleep 15; done
   else
@@ -459,7 +459,7 @@ function decode64 {
 
 # https://coderwall.com/p/-mgtww/debugging-xcode-plugins
 function xcd {
-  lldb -p `ps aux | grep Xcode | grep -v grep | awk '{print $2}'`
+  lldb -p "$(ps aux | grep Xcode | grep -v grep | awk '{print $2}')"
 }
 
 # generate random temp directory
@@ -507,8 +507,8 @@ function pomodoro {
 
   echo "🍅  Pomodoro Timer 🍅"
 
-  while true; do;
-    for i in {1..5}; do;
+  while true; do
+    for i in {1..5}; do
       chime
       echo_say "WORK"
       sleep_minutes 25
@@ -542,24 +542,24 @@ function xcode_plugin_fix {
 
 function xcode_clean_derived_data {
   local dd_dir=~/Library/Developer/Xcode/DerivedData
-  if [ -d $dd_dir ]; then
+  if [ -d "$dd_dir" ]; then
     local filesize="$(du -hcs $dd_dir | tr "	" " " | cut -d " " -f1 | head -1)"
     echo "Removing ${dd_dir} (${filesize})..."
-    rm -rf $dd_dir
+    rm -rf "$dd_dir"
   else
     echo "$dd_dir has already been cleaned"
   fi
 }
 
 function gemedit {
-  local gemname=$1
-  local cmd=$2
+  local gemname="$1"
+  local cmd="$2"
   local gemlocation
 
   if [[ -n "$gemname" ]]; then
-    gem which $gemname > /dev/null 2>&1
+    gem which "$gemname" > /dev/null 2>&1
     if (($? == 0)); then
-      gemlocation="$(dirname $(gem which $gemname))"
+      gemlocation="$(dirname "$(gem which "$gemname")")"
     fi
   fi
 
@@ -598,16 +598,16 @@ XCPlaygroundPage.currentPage.liveView"
   tempdir
   mkcd "Temp.playground"
 
-  echo $swift > Contents.swift
-  echo $playground > contents.xcplayground
-  echo $timeline > timeline.xctimeline
+  echo "$swift" > Contents.swift
+  echo "$playground" > contents.xcplayground
+  echo "$timeline" > timeline.xctimeline
 
   cd ..
   open "Temp.playground"
 }
 
 function prdiff {
-  if [[ -n $1 && -n $2 && -n $3 && -n $4 ]]; then
+  if [[ -n "$1" && -n "$2" && -n "$3" && -n "$4" ]]; then
     local REPONAME=$1
     local PRNUMBER=$2
     local LASTSHA=$3

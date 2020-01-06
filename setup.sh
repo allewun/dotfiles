@@ -2,7 +2,7 @@
 
 autoload -U colors && colors
 
-source $DOTFILE_PATH/zsh/functions.sh
+source "$DOTFILE_PATH/zsh/functions.sh"
 source .zshrc
 
 # Guard dotfiles repo
