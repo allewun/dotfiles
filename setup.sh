@@ -19,3 +19,4 @@ logsetup "misc"     && ./setup/misc.sh       | indent 4
 logsetup "Xcode"    && ./setup/xcode.sh      | indent 4
 logsetup "Sublime"  && ./setup/sublime.sh    | indent 4
 logsetup "Homebrew" && brew bundle --verbose | indent 4
+logsetup "duti"     && duti ~/.duti
