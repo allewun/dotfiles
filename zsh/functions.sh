@@ -8,10 +8,8 @@ function hist() {
   local magenta=$(echo '\033[35m')
   local none=$(echo '\033[0m')
 
-  local history=$(history -n -t '%F %T' 1)
-
   echo "${magenta}$(wc -l "$HISTFILE" | sed -e 's/^[ ]*//')${none}"
-  echo "$history" | sed -E "s/^([0-9: -]{19})(.*)$/${yellow}[\1]${none}\2/g" | less +G
+  history -nt '%F %T' 1 | sed -E "s/^([0-9: -]{19})(.*)$/${yellow}[\1]${none}\2/g" | less +G
 }
 
 
