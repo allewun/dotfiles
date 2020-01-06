@@ -3,7 +3,7 @@
 source "$DOTFILE_PATH/zsh/functions.sh"
 
 # install color themes
-THEME_SRC=$DOTFILE_PATH/xcode/themes/
+THEME_SRC="$DOTFILE_PATH/xcode/themes"
 THEME_DEST=~/Library/Developer/Xcode/UserData/FontAndColorThemes
 mkdir -p "$THEME_DEST"
 
@@ -11,6 +11,18 @@ for file in $THEME_SRC/*; do
   echo "* Installing $(basename "$file")..."
   cp -v "$file" "$THEME_DEST"
 done
+
+
+# install snippets
+SNIPPET_SRC="$DOTFILE_PATH/xcode/snippets"
+SNIPPET_DEST=~/Library/Developer/Xcode/UserData/CodeSnippets
+mkdir -p "$SNIPPET_DEST"
+
+for file in $SNIPPET_SRC/*; do
+  echo "* Installing $(basename "$file")..."
+  cp -v "$file" "$SNIPPET_DEST"
+done
+
 
 # add duplicate line key binding
 echo
