@@ -4,7 +4,6 @@
 # Set up dotfile symlinks
 #==========================
 
-(
 DOTFILES_OLD=$(find $HOME         -not -name '.DS_Store' -name ".*" -type f -maxdepth 1 -exec basename {} \; | sort)
 DOTFILES_NEW=$(find $DOTFILE_PATH -not -name '.DS_Store' -name ".*" -type f -maxdepth 1 -exec basename {} \; | sort)
 DOTFILES_TO_BACKUP=($(comm -12 <(echo "$DOTFILES_OLD") <(echo "$DOTFILES_NEW")))
@@ -42,4 +41,3 @@ echo "
 *-----------------------------*
 |  Done setting up dotfiles!  |
 *-----------------------------*"
-)

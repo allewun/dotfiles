@@ -74,3 +74,5 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 killall Finder
 killall SystemUIServer
 killall Dock
+
+echo "Mac setup done."

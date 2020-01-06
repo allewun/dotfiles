@@ -4,7 +4,6 @@
 # Set up history symlink
 #=========================
 
-(
 DROPBOX_HISTORY_PATH=~/Dropbox/history
 HISTORY_FILE=$HOME/.zsh_history
 DATE=($(date +%Y%m%d%H%M%S))
@@ -28,4 +27,3 @@ echo "
 *-----------------------------*
 |  .zsh_history syncing done  |
 *-----------------------------*\n"
-)

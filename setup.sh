@@ -6,19 +6,16 @@ source $DOTFILE_PATH/zsh/functions.sh
 source .zshrc
 
 # Guard dotfiles repo
-if [[ "$(pwd)" != ~/dotfiles ]]; then
-  echo "Ensure that this repo lives in ~/dotfiles"
-  exit 1
-fi
+[[ "$(pwd)" == ~/dotfiles ]] || { echo "Ensure that this repo lives in ~/dotfiles" && exit 1; }
+
+# Ensure homebrew installed
+ensure_installed "brew" || { echo "Homebrew required." && exit 1; }
 
 # Call subscripts
-logsetup "dotfiles" && ./setup/dotfiles.sh | indent 4
-logsetup "macOS"    && ./setup/mac.sh      | indent 4
-logsetup "vim"      && ./setup/vim.sh      | indent 4
-logsetup "misc"     && ./setup/misc.sh     | indent 4
-logsetup "Xcode"    && ./setup/xcode.sh    | indent 4
-logsetup "Sublime"  && ./setup/sublime.sh  | indent 4
-
-ensure_installed "brew" && (logsetup "Homebrew" && brew bundle --verbose) || echo "Homebrew not installed, skipping setup."
-
-logsetup "File Associations" && duti -v ~/.duti | indent 4
+logsetup "dotfiles" && ./setup/dotfiles.sh   | indent 4
+logsetup "macOS"    && ./setup/mac.sh        | indent 4
+logsetup "vim"      && ./setup/vim.sh        | indent 4
+logsetup "misc"     && ./setup/misc.sh       | indent 4
+logsetup "Xcode"    && ./setup/xcode.sh      | indent 4
+logsetup "Sublime"  && ./setup/sublime.sh    | indent 4
+logsetup "Homebrew" && brew bundle --verbose | indent 4

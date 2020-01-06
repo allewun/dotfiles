@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-(
 DATE=($(date +%Y%m%d%H%M%S))
 
 # backup source history file if it exists already
@@ -9,4 +8,3 @@ if [[ -d $HOME/.vim ]]; then
 fi
 
 gcp -rs $DOTFILE_PATH/vim $HOME/.vim
-)
