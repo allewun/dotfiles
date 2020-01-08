@@ -1,6 +1,8 @@
 {
   "applyBrowserTheme": false,
   "autoCollapseExpandSubtreeOnSelect": false,
+  "autoGroupNewTabsFromPinned": false,
+  "autoGroupNewTabsTimeout": 500,
   "cachedExternalAddons": [
     "{724545b6-7e17-4fa2-96e0-71eddf3c3319}"
   ],
@@ -20,6 +22,7 @@
     "section-newTab"
   ],
   "scrollbarMode": 1,
+  "showExpertOptions": true,
   "style": "highcontrast",
-  "userStyleRules": "/* Show title of unread tabs with red and italic font */\n/*\n.tab.unread .label {\n  color: red !important;\n  font-style: italic !important;\n}\n*/\n\n/* Add private browsing indicator per tab */\n/*\n.tab.private-browsing .label:before {\n  content: \"🕶\";\n}\n*/\n\n.tab .twisty {\n  margin-left: 3px;\n  margin-right: 5px;\n  padding: 9px;\n  border-radius: 10px;\n}\n\n.tab:not(.active) .twisty:hover {\n  background-color: #3277cf;\n  color: white;\n}\n\n.tab .twisty:hover {\n  background-color: #8caeda;\n}"
+  "userStyleRules": "/* Show title of unread tabs with red and italic font */\n/*\n.tab.unread .label {\n  color: red !important;\n  font-style: italic !important;\n}\n*/\n\n/* Add private browsing indicator per tab */\n/*\n.tab.private-browsing .label:before {\n  content: \"🕶\";\n}\n*/\n\n.tab tab-twisty {\n  margin-left: 3px;\n  margin-right: 5px;\n  border-radius: 10px;\n}\n\n.tab tab-twisty:hover {\n  background-color: #bbb;\n}\n\n.tab.active tab-twisty:hover {\n  background-color: #8caeda;\n}"
 }
