@@ -3,140 +3,245 @@
 <plist version="1.0">
 <dict>
 	<key>build</key>
-	<real>601</real>
+	<string>1113</string>
 	<key>preferences</key>
 	<dict>
 		<key>CPU_MenubarCombineCores</key>
 		<integer>0</integer>
-		<key>CPU_MenubarGraphCustomColors</key>
-		<integer>0</integer>
-		<key>CPU_MenubarGroupItems</key>
-		<integer>0</integer>
-		<key>CPU_MenubarMode</key>
-		<string>100,1</string>
-		<key>CPU_MenubarSingleHistoryGraph</key>
-		<integer>0</integer>
-		<key>CombinedMenubarDisplayMode</key>
-		<string></string>
 		<key>Diagnostics_Enabled</key>
 		<integer>0</integer>
-		<key>DisksMonitorSMART</key>
+		<key>DropdownGraphBackground</key>
 		<integer>1</integer>
-		<key>Disks_DropdownShowRemovable</key>
-		<integer>0</integer>
-		<key>Disks_DropdownShowUnmounted</key>
-		<integer>0</integer>
-		<key>Disks_MonitorSMART</key>
-		<false/>
-		<key>DropdownShowLauncher</key>
-		<integer>0</integer>
 		<key>DropdownTheme</key>
-		<integer>1</integer>
-		<key>Memory_IgnoreInactive</key>
 		<integer>0</integer>
-		<key>Memory_MenubarGraphBreakdowns</key>
-		<integer>1</integer>
-		<key>Memory_MenubarGraphCustomColors</key>
-		<integer>1</integer>
-		<key>Memory_MenubarGraphInactive</key>
-		<string>0.40 0.86 0.42 1.00</string>
-		<key>Memory_MenubarMode</key>
-		<string>6</string>
-		<key>MenubarGraphOpacity</key>
-		<real>0.0029383297078311443</real>
-		<key>MenubarGraphOpacity-DarkMode</key>
-		<real>0.0</real>
 		<key>MenubarSkinColor</key>
 		<integer>0</integer>
-		<key>MenubarSkinColor-Dark</key>
-		<integer>0</integer>
-		<key>MenubarSkinColor-Light</key>
-		<integer>0</integer>
-		<key>MenubarTheme</key>
-		<integer>0</integer>
+		<key>MigratedExtras_5.0</key>
+		<true/>
+		<key>MigratedExtras_5.1</key>
+		<true/>
+		<key>MigratedExtras_5.11</key>
+		<true/>
 		<key>Migrated_5.0</key>
 		<true/>
+		<key>Migrated_6.0</key>
+		<true/>
+		<key>Migrated_6.22</key>
+		<true/>
+		<key>Network_AddressMode</key>
+		<integer>0</integer>
+		<key>Network_AppSort</key>
+		<integer>0</integer>
 		<key>Network_DataFormat</key>
 		<integer>1</integer>
-		<key>Network_DecimalLevel</key>
-		<integer>1</integer>
+		<key>Network_DecimalLevelKB</key>
+		<integer>0</integer>
+		<key>Network_DecimalLevelMB</key>
+		<integer>2</integer>
 		<key>Network_DotDownload</key>
-		<string>0.01 0.94 0.42 1.00</string>
-		<key>Network_DotUpload</key>
-		<string>1.00 0.43 0.39 1.00</string>
+		<string>0.20 0.84 0.15 1.00</string>
 		<key>Network_GraphCustomColors</key>
 		<integer>1</integer>
 		<key>Network_GraphDownload</key>
-		<string>0.00 0.96 0.43 1.00</string>
+		<string>0.24 0.84 0.10 1.00</string>
 		<key>Network_GraphMode</key>
+		<integer>1</integer>
+		<key>Network_GraphShowBackground</key>
 		<integer>0</integer>
-		<key>Network_GraphUpload</key>
-		<string>1.00 0.43 0.39 1.00</string>
 		<key>Network_GraphWidth</key>
-		<real>69.701919555664062</real>
+		<real>45</real>
+		<key>Network_IPV6ShowSecured</key>
+		<integer>0</integer>
 		<key>Network_MenubarMode</key>
-		<string>0,2,1</string>
+		<array>
+			<dict>
+				<key>key</key>
+				<string>0</string>
+				<key>uuid</key>
+				<string>97D526C2-0DB2-4F0D-BC9C-E04B4627B9F0</string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>2</string>
+				<key>uuid</key>
+				<string>3C6E28DA-6F42-405E-A993-E786B3DB8545</string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>1</string>
+				<key>uuid</key>
+				<string>E1D353BE-E09D-4BC6-AA1A-4358C1A1CBEF</string>
+			</dict>
+		</array>
+		<key>Network_ProcessCount</key>
+		<integer>5</integer>
+		<key>Network_ShowBSD</key>
+		<integer>0</integer>
+		<key>Network_TextDownloadColor</key>
+		<string>1.00 1.00 1.00 1.00</string>
+		<key>Network_TextDownloadShadowColor</key>
+		<string>1.00 1.00 1.00 0.00</string>
+		<key>Network_TextUploadColor</key>
+		<string>1.00 1.00 1.00 1.00</string>
+		<key>Network_TextUploadShadowColor</key>
+		<string>1.00 1.00 1.00 0.00</string>
+		<key>Notifications-Enabled</key>
+		<false/>
 		<key>Sensors_MenubarItem</key>
 		<array>
 			<string>TCXC</string>
-			<string>TG1D</string>
-			<string>ID0R</string>
-			<string>PCPT</string>
 		</array>
-		<key>Sensors_MenubarMode</key>
-		<string>0</string>
-		<key>Sensors_TemperatureMode</key>
-		<integer>1</integer>
+		<key>StatusItems-Order</key>
+		<array>
+			<integer>-1</integer>
+			<integer>4</integer>
+			<integer>7</integer>
+		</array>
 		<key>Theme-SeperateStyles</key>
-		<integer>1</integer>
-		<key>Time_CalendarShowWeeks</key>
-		<integer>0</integer>
+		<false/>
 		<key>Time_Cities</key>
 		<array>
-			<real>5368361</real>
-			<real>5128581</real>
-			<real>2643743</real>
-			<real>1819729</real>
+			<dict>
+				<key>city</key>
+				<string>Moon</string>
+				<key>identifier</key>
+				<string>-6</string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>Current Location</string>
+				<key>identifier</key>
+				<string>-7</string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>Los Angeles</string>
+				<key>city_plain</key>
+				<string></string>
+				<key>country</key>
+				<string>United States</string>
+				<key>identifier</key>
+				<real>5368361</real>
+				<key>latitude</key>
+				<real>34.052230000000002</real>
+				<key>longitude</key>
+				<real>-118.24368</real>
+				<key>population</key>
+				<real>3971883</real>
+				<key>state</key>
+				<string>California</string>
+				<key>timezone</key>
+				<string>America/Los_Angeles</string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>New York City</string>
+				<key>city_plain</key>
+				<string></string>
+				<key>country</key>
+				<string>United States</string>
+				<key>identifier</key>
+				<real>5128581</real>
+				<key>latitude</key>
+				<real>40.714269999999999</real>
+				<key>longitude</key>
+				<real>-74.005970000000005</real>
+				<key>population</key>
+				<real>8175133</real>
+				<key>state</key>
+				<string>New York</string>
+				<key>timezone</key>
+				<string>America/New_York</string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>Munich</string>
+				<key>city_plain</key>
+				<string></string>
+				<key>country</key>
+				<string>Germany</string>
+				<key>identifier</key>
+				<real>2867714</real>
+				<key>latitude</key>
+				<real>48.137430000000002</real>
+				<key>longitude</key>
+				<real>11.57549</real>
+				<key>population</key>
+				<real>1260391</real>
+				<key>state</key>
+				<string>Bavaria</string>
+				<key>timezone</key>
+				<string>Europe/Berlin</string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>Hong Kong</string>
+				<key>city_plain</key>
+				<string></string>
+				<key>country</key>
+				<string>Hong Kong</string>
+				<key>identifier</key>
+				<real>1819729</real>
+				<key>latitude</key>
+				<real>22.278320000000001</real>
+				<key>longitude</key>
+				<real>114.17469</real>
+				<key>population</key>
+				<real>7012738</real>
+				<key>state</key>
+				<string>Central and Western</string>
+				<key>timezone</key>
+				<string>Asia/Hong_Kong</string>
+			</dict>
 		</array>
-		<key>Time_DropdownFormat</key>
-		<array>
-			<string>h</string>
-			<string>':'</string>
-			<string>mm</string>
-			<string>' '</string>
-			<string>a</string>
-		</array>
-		<key>Time_DropdownShowMoon</key>
-		<integer>0</integer>
-		<key>Time_MenubarFlashSeperators</key>
-		<integer>0</integer>
 		<key>Time_MenubarFormat</key>
 		<array>
-			<string>EE</string>
-			<string>' '</string>
-			<string>MMM</string>
-			<string>' '</string>
-			<string>d</string>
-			<string>'  '</string>
-			<string>h</string>
-			<string>':'</string>
-			<string>mm</string>
-			<string>':'</string>
-			<string>ss</string>
-			<string>' '</string>
-			<string>a</string>
-			<string>' '</string>
+			<dict>
+				<key>format</key>
+				<array>
+					<array>
+						<string>EE</string>
+						<string>' '</string>
+						<string>MMM</string>
+						<string>' '</string>
+						<string>d</string>
+						<string>'  '</string>
+						<string>h</string>
+						<string>':'</string>
+						<string>mm</string>
+						<string>':'</string>
+						<string>ss</string>
+						<string>' '</string>
+						<string>a</string>
+					</array>
+					<array/>
+				</array>
+			</dict>
 		</array>
 		<key>Time_TextColor</key>
-		<string>0.10 0.10 0.10 1.00</string>
+		<string>1.00 1.00 1.00 1.00</string>
 		<key>Time_TextSize</key>
 		<integer>14</integer>
 		<key>TimerFrequency</key>
 		<integer>2</integer>
+		<key>UpdateCheckerAutomaticDisabled</key>
+		<true/>
+		<key>Weather_TemperatureUnits</key>
+		<integer>0</integer>
+		<key>Zarya-TLE</key>
+		<dict>
+			<key>time</key>
+			<real>1578637330.0986261</real>
+			<key>tle</key>
+			<string>ISS (ZARYA)             
+1 25544U 98067A   19024.69130787  .00000289  00000-0  11946-4 0  9991
+2 25544  51.6429 354.9058 0004630 308.2748  50.7575 15.53168972152956
+</string>
+		</dict>
 		<key>migrated4.0</key>
 		<true/>
 	</dict>
 	<key>version</key>
-	<real>5.0999999046325684</real>
+	<string>6.40</string>
 </dict>
 </plist>
