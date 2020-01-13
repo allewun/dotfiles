@@ -35,6 +35,9 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 25
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
+# disable automatically inserting a period with double-spaces
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
 #======================================
 # Finder
 #======================================
