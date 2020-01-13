@@ -1,6 +1,6 @@
 #==============================================================================
-# .zshrc
-# Allen Wu (2019/11)
+# .zshrc (2013-2020)
+# - Allen Wu
 #==============================================================================
 
 typeset -U PATH
@@ -263,6 +263,7 @@ function lessc() {
   LESSOPEN="| pygmentize -f terminal256 -O style=monokai -g %s" less -R "$@";
 }
 
+source $DOTFILE_PATH/.zsh-private.sh
 
 #======================================
 # Temporary stuff

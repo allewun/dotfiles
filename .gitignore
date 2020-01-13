@@ -2,7 +2,7 @@
 *.swp
 
 # Personal
-constants-private.sh
+.zsh-private.sh
 
 # Xcode
 # (https://github.com/github/gitignore)
