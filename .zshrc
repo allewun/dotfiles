@@ -175,6 +175,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 alias uuid='uuidgen | tee "$(tty)" | tr -d "\n" | pbcopy'
 alias bepi='bundle exec pod install'
 alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) -- "*.png"'
+alias imageoptim='/Applications/ImageOptim.app/Contents/MacOS/ImageOptim'
 
 #======================================
 # History
