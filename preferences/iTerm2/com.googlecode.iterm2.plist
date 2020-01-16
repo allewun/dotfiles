@@ -366,7 +366,7 @@
 			<key>Background Image Is Tiled</key>
 			<false/>
 			<key>Background Image Location</key>
-			<string>/Users/allenwu/dotfiles/preferences/iTerm2/gradient.png</string>
+			<string>/Users/allen/dotfiles/preferences/iTerm2/gradient.png</string>
 			<key>Background Image Mode</key>
 			<integer>0</integer>
 			<key>Badge Text</key>
@@ -1475,7 +1475,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/allenwu/dotfiles/preferences/iTerm2</string>
+	<string>/Users/allen/dotfiles/preferences/iTerm2</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
