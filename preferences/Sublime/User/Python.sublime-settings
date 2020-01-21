@@ -1,6 +1,7 @@
 {
-    "extensions":
-    [
-        "BUCK"
-    ]
+	"extensions":
+	[
+		"BUCK",
+		"bzl"
+	]
 }
