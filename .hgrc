@@ -1,13 +1,23 @@
 [ui]
 username = # Name <email@domain.com>
+merge = Kaleidoscope
 
 [pager]
 pager = less -iRc
 
 [extensions]
 sparse =
+extdiff =
 
 [alias]
 co = checkout
 c = commit
 s = status
+
+[extdiff]
+cmd.kdiff = /usr/local/bin/ksdiff
+opts.kdiff = --changeset --wait --filelist
+
+[merge-tools]
+Kaleidoscope.executable = /usr/local/bin/ksdiff
+Kaleidoscope.args = --merge --output $output --base $base -- $local $other
