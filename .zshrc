@@ -264,7 +264,10 @@ function lessc() {
   LESSOPEN="| pygmentize -f terminal256 -O style=monokai -g %s" less -R "$@";
 }
 
-source $DOTFILE_PATH/.zsh-private.sh
+# load private config
+if [[ -f "$DOTFILE_PATH/.zsh-private.sh" ]]; then
+  source $DOTFILE_PATH/.zsh-private.sh
+fi
 
 #======================================
 # Temporary stuff
