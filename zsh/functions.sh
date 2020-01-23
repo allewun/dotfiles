@@ -28,6 +28,10 @@ function finder {
   open -a Finder "$directory"
 }
 
+function cheat {
+  curl "cheat.sh/$1"
+}
+
 
 # open a repository online
 # if no arguments provided, guess the hosting service
