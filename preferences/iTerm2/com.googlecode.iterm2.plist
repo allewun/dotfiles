@@ -365,14 +365,12 @@
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
-			<key>Background Image Location</key>
-			<string>/Users/allen/dotfiles/preferences/iTerm2/gradient.png</string>
 			<key>Background Image Mode</key>
 			<integer>0</integer>
 			<key>Badge Text</key>
 			<string></string>
 			<key>Blend</key>
-			<real>1</real>
+			<real>0.050000000000000003</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
@@ -689,7 +687,7 @@
 			<key>Terminal Type</key>
 			<string>xterm</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.13630631345177666</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
