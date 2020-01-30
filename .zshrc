@@ -97,6 +97,7 @@ alias preview=" open -a Preview"
 alias tower=" open -a Tower ."
 alias ql=' qlmanage -p "$@" > /dev/null 2>&1'
 alias f=" finder"
+alias s=" subl ."
 
 # directory shortcuts
 alias desk=" cd ~/Desktop/"
