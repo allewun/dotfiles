@@ -5,11 +5,30 @@
 
 typeset -U PATH
 export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
-
 export DOTFILE_PATH=~/dotfiles
 
+#======================================
+# Shell integrations
+#======================================
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# autojump
+[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+
+
+#======================================
+# Private
+#======================================
+
+if [[ -d "${DOTFILE_PATH}-private/autocomplete" ]]; then
+  fpath=($fpath "${DOTFILE_PATH}-private/autocomplete")
+fi
+
+if [[ -f "${DOTFILE_PATH}-private/.zshrc" ]]; then
+  source "${DOTFILE_PATH}-private/.zshrc"
+fi
 
 #======================================
 # Prompt
@@ -264,11 +283,6 @@ function chpwd() {
 function lessc() {
   LESSOPEN="| pygmentize -f terminal256 -O style=monokai -g %s" less -R "$@";
 }
-
-# load private config
-if [[ -f "$DOTFILE_PATH/.zsh-private.sh" ]]; then
-  source $DOTFILE_PATH/.zsh-private.sh
-fi
 
 #======================================
 # Temporary stuff
