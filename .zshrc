@@ -126,6 +126,7 @@ alias sim="cd ~/Library/Application\ Support/iPhone\ Simulator/"
 alias firefox="cd ~/Library/Application\ Support/Firefox/Profiles/*.default/"
 alias sublime="cd ~/Library/Application\ Support/Sublime\ Text\ 3/"
 alias pwdcp="pwd | tr -d '\n' | pbcopy"
+js() { (j "$1"; s) }
 
 # ls
 alias ls=' ls -AFGh' # trailing slash for dirs and colors, human-readable filesizes
