@@ -212,7 +212,7 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-for cmd (repo notify hist histsearch forget man manz xc md j); do 
+for cmd (repo notify hist histsearch forget man manz xc md j dot); do 
   alias $cmd=" $cmd";
 done
 
