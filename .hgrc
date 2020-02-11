@@ -15,6 +15,7 @@ c = commit
 status = \status --pager never
 s = status
 st = status
+help = help --verbose
 
 [extdiff]
 cmd.kdiff = /usr/local/bin/ksdiff
