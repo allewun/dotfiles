@@ -9,10 +9,18 @@
       }
     },
     {
-      /* cmd+d to delete a line, but only when no selection exists */
+      /* cmd+d: delete a line, but only when no selection exists */
       "keys": ["super+d"],
       "command": "run_macro_file",
       "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"},
+      "context": [
+        { "key": "selection_empty", "operator": "equal", "operand": true }
+      ]
+    },
+    {
+      /* cmd+g: find under cursor, but only when no selection exists */
+      "keys": ["super+g"],
+      "command": "find_under",
       "context": [
         { "key": "selection_empty", "operator": "equal", "operand": true }
       ]
