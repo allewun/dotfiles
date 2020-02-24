@@ -1,6 +1,7 @@
 com.sublimetext.3 public.plain-text all
 com.sublimetext.3 public.unix-executable all
 com.sublimetext.3 .graphql editor
+com.sublimetext.3 .json editor
 com.sublimetext.3 .h editor
 com.sublimetext.3 .m editor
 com.sublimetext.3 .mm editor
