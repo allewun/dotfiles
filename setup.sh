@@ -2,6 +2,7 @@
 
 autoload -U colors && colors
 
+export DOTFILE_PATH=~/dotfiles # needed before first time (since .zshrc isn't installed yet)
 source "$DOTFILE_PATH/zsh/functions.sh"
 source .zshrc
 
