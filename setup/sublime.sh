@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    echo "Skipping Sublime setup (not on Mac)."
+    exit
+fi
+
 source "$DOTFILE_PATH/zsh/functions.sh"
 
 SUBLIME_SRC="$DOTFILE_PATH/preferences/Sublime"

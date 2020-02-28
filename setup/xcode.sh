@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    echo "Skipping Mac setup (not on Mac)."
+    exit
+fi
+
 source "$DOTFILE_PATH/zsh/functions.sh"
 
 # install color themes

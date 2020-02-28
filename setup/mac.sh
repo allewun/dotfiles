@@ -5,6 +5,11 @@
 # initially based on: github.com/mathiasbynens/dotfiles/blob/master/.osx
 #==============================================================================
 
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    echo "Skipping Mac setup (not on Mac)."
+    exit
+fi
+
 #======================================
 # General
 #======================================
