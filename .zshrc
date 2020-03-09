@@ -49,7 +49,7 @@ done
 
 # prompt: path, git status, rbenv status
 NEWLINE=$'\n'
-PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}$%f '
+PROMPT='$NEWLINE%U%F{green}%~%f%u%F{cyan}$(__git_ps1 " [%s]")%f%F{yellow}$(_hg_prompt " [%s]")$f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}$%f '
 
 # directory in terminal tab title
 function precmd() { echo -ne "\e]1;${PWD##*/}\a" }
@@ -218,7 +218,7 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 
 # history ignores
-for cmd (repo notify hist histsearch forget man manz xc md j dot); do 
+for cmd (repo notify hist histsearch forget man manz xc md j); do 
   alias $cmd=" $cmd";
 done
 
