@@ -12,11 +12,14 @@ export DOTFILE_PATH=~/dotfiles
 #======================================
 
 # rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if hash rbenv &> /dev/null; then
+  eval "$(rbenv init -)";
+fi
 
 # autojump
-[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
-
+if hash brew &>/dev/null; then
+  [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+fi
 
 #======================================
 # Private
@@ -290,7 +293,3 @@ function lessc() {
 #======================================
 
 alias temp="cd ~/temp"
-
-export NVM_DIR="/Users/allen/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-

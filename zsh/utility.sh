@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 function ensure_installed() {
-  if ! hash "$1" 2>/dev/null; then
+  if ! hash "$1" &>/dev/null; then
     return 1
   fi
 }
