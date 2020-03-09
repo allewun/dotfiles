@@ -255,9 +255,6 @@ export ACK_COLOR_FILENAME='underline cyan'
 export ACK_COLOR_MATCH='underline yellow'
 export ACK_COLOR_LINENO='cyan'
 
-# xcode
-export CURRENT_XCODE=$(xcode-select -p | grep -oE 'Xcode[^/]+')
-
 # zsh
 autoload -U colors && colors
 

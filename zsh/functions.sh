@@ -156,6 +156,7 @@ function swiftrepl() {
 
 # xcode
 function xc() {
+  local CURRENT_XCODE=$(xcode-select -p | grep -oE 'Xcode[^/]+')
   echo "Using $CURRENT_XCODE"
   if [[ ! -z "$1" ]]; then
     open -a "$CURRENT_XCODE" "$1"
