@@ -49,7 +49,7 @@ done
 
 # prompt: path, git status, rbenv status
 NEWLINE=$'\n'
-PROMPT='$NEWLINE%U%F{green}%~%f%u%F{cyan}$(__git_ps1 " [%s]")%f%F{yellow}$(_hg_prompt " [%s]")$f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}$%f '
+PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{yellow}$(_hg_prompt " [%s]")$f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}$%f '
 
 # directory in terminal tab title
 function precmd() { echo -ne "\e]1;${PWD##*/}\a" }
