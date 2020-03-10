@@ -47,9 +47,18 @@ for p in $DOTFILE_PATH/zsh/prompts/*.sh;
   do source $p
 done
 
-# prompt: path, git status, rbenv status
-NEWLINE=$'\n'
-PROMPT='$NEWLINE%F{green}%~%f%F{cyan}$(__git_ps1 " [%s]")%f%F{yellow}$(_hg_prompt " [%s]")$f%F{red}$(__rbenv_ps1)%f$NEWLINE%F{white}$%f '
+# prompt
+__aw_prompt() {
+  local NEWLINE=$'\n'
+  local GIT_PROMPT='%F{cyan}$(__git_ps1 " [%s]")%f' # git in cyan
+  local HG_PROMPT='%F{yellow}$(_hg_prompt " [%s]")%f' # hg in yellow
+  local RBENV_PROMPT='%F{red}$(__rbenv_ps1)%f' # rbenv in red
+  local REL_PATH='%F{green}%~%f' # relative path in green
+  local HOSTNAME=$([[ -n "$SSH_CONNECTION" ]] && echo '%m ' || echo '')
+  local TEXT_ENTRY="%F{white}${HOSTNAME}$%f " # right before the cursor
+  echo "${NEWLINE}${REL_PATH}${GIT_PROMPT}${HG_PROMPT}${RBENV_PROMPT}${NEWLINE}${TEXT_ENTRY}"
+} 
+export PS1=$(__aw_prompt)
 
 # directory in terminal tab title
 function precmd() { echo -ne "\e]1;${PWD##*/}\a" }
