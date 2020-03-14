@@ -1,5 +1,6 @@
 # core packages
 brew "autojump"
+brew "broot"
 brew "coreutils"
 brew "duti"
 brew "ffmpeg"
