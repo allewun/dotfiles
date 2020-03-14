@@ -134,7 +134,7 @@ s() {
   if hash subl &>/dev/null; then
     subl "${@:-.}";
   elif hash rmate &>/dev/null; then
-    rmate "${@:-.}";
+    rmate -n "${@:-.}";
   else
     echo "Couldn't open files with sublime"
   fi
