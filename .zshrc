@@ -4,8 +4,8 @@
 #==============================================================================
 
 typeset -U PATH
-export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin
 export DOTFILE_PATH=~/dotfiles
+export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:$DOTFILE_PATH/scripts
 
 #======================================
 # Shell integrations
