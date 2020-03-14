@@ -17,6 +17,7 @@ brew "terminal-notifier"
 brew "tmux"
 brew "tree"
 brew "wget"
+brew "MisterTea/et/et"
 
 cask "monitorcontrol" # 1.7.0
 cask "provisionql"
