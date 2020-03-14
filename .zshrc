@@ -21,6 +21,9 @@ if hash brew &>/dev/null; then
   [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 fi
 
+# iterm
+source "$DOTFILE_PATH/zsh/iterm2_shell_integration.zsh"
+
 #======================================
 # Private
 #======================================
@@ -56,7 +59,7 @@ __aw_prompt() {
   local REL_PATH='%F{green}%~%f' # relative path in green
   local HOSTNAME=$([[ -n "$SSH_CONNECTION" ]] && echo '%m' || echo '')
   local TEXT_ENTRY="%F{white}${HOSTNAME}$%f " # right before the cursor
-  echo "${NEWLINE}${REL_PATH}${GIT_PROMPT}${HG_PROMPT}${RBENV_PROMPT}${NEWLINE}${TEXT_ENTRY}"
+  echo "${NEWLINE}%{$(iterm2_prompt_mark)%}${REL_PATH}${GIT_PROMPT}${HG_PROMPT}${RBENV_PROMPT}${NEWLINE}${TEXT_ENTRY}"
 } 
 export PS1=$(__aw_prompt)
 
