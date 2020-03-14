@@ -29,6 +29,15 @@ if hash fzf &> /dev/null; then
   [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 fi
 
+# broot
+if hash broot &>/dev/null; then
+  if [[ -f ~/Library/Preferences/org.dystroy.broot/launcher/bash/br ]]; then
+    source ~/Library/Preferences/org.dystroy.broot/launcher/bash/br
+  elif [[ -f  ~/.config/broot/launcher/bash/br ]]; then
+    source ~/.config/broot/launcher/bash/br
+  fi
+fi
+
 #======================================
 # Private
 #======================================
