@@ -128,7 +128,17 @@ alias preview=" open -a Preview"
 alias tower=" open -a Tower ."
 alias ql=' qlmanage -p "$@" > /dev/null 2>&1'
 alias f=" finder"
-s() { subl "${@:-.}"; }
+
+# sublime
+s() {
+  if hash subl &>/dev/null; then
+    subl "${@:-.}";
+  elif hash rmate &>/dev/null; then
+    rmate "${@:-.}";
+  else
+    echo "Couldn't open files with sublime"
+  fi
+}
 
 # directory shortcuts
 alias desk=" cd ~/Desktop/"
