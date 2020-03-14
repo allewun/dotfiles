@@ -5,7 +5,7 @@
 
 typeset -U PATH
 export DOTFILE_PATH=~/dotfiles
-export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:$DOTFILE_PATH/scripts
+export PATH=~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:$DOTFILE_PATH/scripts:/usr/local/opt/fzf/bin
 
 #======================================
 # Shell integrations
@@ -23,6 +23,11 @@ fi
 
 # iterm
 source "$DOTFILE_PATH/zsh/iterm2_shell_integration.zsh"
+
+# fzf
+if hash fzf &> /dev/null; then
+  [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+fi
 
 #======================================
 # Private
