@@ -1,5 +1,4 @@
 # core packages
-brew "ag"
 brew "autojump"
 brew "coreutils"
 brew "duti"
@@ -18,7 +17,7 @@ brew "tmux"
 brew "tree"
 brew "wget"
 
-# quicklook
+cask "monitorcontrol" # 1.7.0
 cask "provisionql"
 cask "qlcolorcode"
 cask "qlimagesize"
