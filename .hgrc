@@ -15,6 +15,7 @@ c = commit
 status = \status --pager never
 s = status
 st = status
+shelf = shelve --list
 
 [extdiff]
 cmd.kdiff = /usr/local/bin/ksdiff
