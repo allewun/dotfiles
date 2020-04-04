@@ -7,7 +7,14 @@
 	[
 		"Decent Swift Syntax",
 		"GraphQL",
+		"Origami",
 		"Package Control",
+		"Pretty JSON",
+		"RemoteSubl",
 		"TypeScript"
+	],
+	"repositories":
+	[
+		"https://github.com/allewun/RemoteSubl"
 	]
 }
