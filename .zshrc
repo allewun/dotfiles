@@ -138,7 +138,7 @@ alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
 alias hgrc=" v ~/.hgrc"
-alias src=" source ~/.zshrc > /dev/null 2>&1 && echo Reloaded .zshrc"
+alias src=" source ~/.zshrc && echo Reloaded .zshrc"
 
 # macOS applications
 alias preview=" open -a Preview"
