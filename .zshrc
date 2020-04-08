@@ -327,10 +327,16 @@ function chpwd() {
   ls
 }
 
-# less with syntax highlighting
-function lessc() {
-  LESSOPEN="| pygmentize -f terminal256 -O style=monokai -g %s" less -R "$@";
+# bat for compressed files
+# https://github.com/sharkdp/bat/issues/237#issuecomment-566495835
+function zbat() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: zbat container.zip file.json"
+  fi
+  [[ "$2" =~ '([^\.]+)$' ]] && EXTENSION=$MATCH
+  unzip -p "$1" "$2" | bat -l "$EXTENSION"
 }
+
 
 #======================================
 # Temporary stuff
