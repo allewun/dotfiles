@@ -154,6 +154,21 @@ function swiftrepl() {
   v $SOURCE && echo "----------[ /tmp/swiftrepl ]----------" && (exec "$SOURCE")
 }
 
+# python repl
+funcion pythonrepl() {
+  local NAME="pythonrepl"
+  local DIR="/tmp/python"
+  local SOURCE="$DIR/$NAME.py"
+  local BOILERPLATE=""
+
+  if [[ ! -f $SOURCE ]]; then
+    mkdir -p $DIR && echo "$BOILERPLATE" > $SOURCE
+    chmod +x $SOURCE
+  fi
+
+  v $SOURCE && echo "----------[ /tmp/pythonrepl ]----------" && (python "$SOURCE")
+}
+
 # xcode
 function xc() {
   local CURRENT_XCODE=$(xcode-select -p | grep -oE 'Xcode[^/]+')
