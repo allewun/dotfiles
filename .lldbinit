@@ -15,3 +15,7 @@ command script import ~/dotfiles/xcode/lldb/chisel/fblldb.py
 command alias uikit expr @import UIKit
 command alias foundation expr @import Foundation
 
+
+### Reveal LLDB commands support - DO NOT MODIFY
+command script import /Users/allenwu/Library/Application\ Support/Reveal/RevealServerCommands.py
+###
