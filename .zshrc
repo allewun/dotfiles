@@ -251,17 +251,13 @@ dots() { s "$DOTFILE_PATH" "${DOTFILE_PATH}-private"}
 HISTFILE=~/.zsh_history
 HISTSIZE=100000000
 SAVEHIST=100000000
+HISTORY_IGNORE="(ls|cd|cd ..|pwd|hist|forget|man|md|s|f|dot|dots|tower)"
 
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
-
-# history ignores
-for cmd (repo notify hist histsearch forget man manz xc md j); do 
-  alias $cmd=" $cmd";
-done
 
 #======================================
 # Environment Variables
