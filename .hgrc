@@ -19,6 +19,9 @@ shelf = shelve --list
 sfdiff = kdiff
 preview = kdiff -c .
 
+[revsetalias]
+base = ancestor(master, .)
+
 [extdiff]
 cmd.kdiff = /usr/local/bin/ksdiff
 opts.kdiff = --changeset --wait --filelist
