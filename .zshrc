@@ -138,7 +138,7 @@ alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
 alias hgrc=" v ~/.hgrc"
-alias src=" source ~/.zshrc && echo Reloaded .zshrc"
+alias src=" exec zsh -l && echo Reloaded .zshrc" # https://news.ycombinator.com/item?id=23309427
 
 # macOS applications
 alias preview=" open -a Preview"
@@ -241,7 +241,7 @@ alias uuid='uuidgen | tee "$(tty)" | tr -d "\n" | pbcopy'
 alias bepi='bundle exec pod install'
 alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) -- "*.png"'
 alias imageoptim='/Applications/ImageOptim.app/Contents/MacOS/ImageOptim'
-dot() { cd $DOTFILE_PATH }
+# dot() { cd $DOTFILE_PATH }
 dots() { s "$DOTFILE_PATH" "${DOTFILE_PATH}-private"}
 
 #======================================
