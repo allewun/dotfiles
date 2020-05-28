@@ -124,19 +124,29 @@ function list() {
   git list | sed -E "s/^(stash@\{[0-9]+\})(: On)([^:]+)(: )([0-9a-z]+)(.*)(\[)([A-Z]{1}[a-z]{2} [0-9]{2}\/[0-9]{2} [0-2][0-9]:[0-5][0-9])(\])$/$green\1$none\2$cyan\3$none\4$red\5$none\6$yellow\7\8\9$none/" | less -R
 }
 
+# TODO - write a better repl function!
+
 # objective-c repl
 function objcrepl() {
   local NAME="objcrepl"
   local DIR="/tmp/objcrepl"
   local SOURCE="$DIR/$NAME.m"
-  local EXE="$DIR/$NAME"
   local BOILERPLATE="#import \"Foundation/Foundation.h\"\n\n@interface TestClass : NSObject\n@property (strong, nonatomic) NSString* key;\n@end\n\n@implementation TestClass\n@end\n\nint main () {\n  @autoreleasepool {\n    \n    NSLog(@\"Hello world!\");\n  }\n  return 0;\n}\n"
 
   if [[ ! -f $SOURCE ]]; then
     mkdir -p $DIR && echo "$BOILERPLATE" > $SOURCE
   fi
 
-  v $SOURCE && clang -fobjc-arc -Weverything -Wno-newline-eof -framework Foundation -o $EXE $DIR/*.m && echo "----------[ /tmp/objcrepl ]----------" && (exec $EXE)
+  s -w -n $SOURCE && objcreplrun
+}
+
+# objctive-c repl - run
+function objcreplrun() {
+  local NAME="objcrepl"
+  local DIR="/tmp/objcrepl"
+  local EXE="$DIR/$NAME"
+
+  clang -fobjc-arc -Weverything -Wno-newline-eof -framework Foundation -o $EXE $DIR/*.m && echo "----------[ /tmp/objcrepl ]----------" && (exec $EXE)
 }
 
 # swift repl
