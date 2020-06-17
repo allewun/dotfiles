@@ -2,12 +2,16 @@
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
     echo "Skipping Sublime setup (not on Mac)."
+    echo
+    echo "❌ Skipped."
     exit
 fi
 
 if [[ ! -a "/Applications/Sublime Text.app" ]]; then
     echo "Skipping Sublime setup (not yet installed)."
     echo "  * https://www.sublimetext.com/"
+    echo
+    echo "❌ Skipped."
     exit
 fi
 
@@ -29,3 +33,5 @@ echo "Installing user preferences..."
 for file in $SUBLIME_SRC/User/*; do
   cp -v "$file" "$SUBLIME_DEST/User" | indent 4
 done;
+
+echo "✅ Done."

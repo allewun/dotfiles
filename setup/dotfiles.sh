@@ -37,7 +37,4 @@ for i in $(echo "$DOTFILES_NEW"); do
   (ln -s "$DOTFILE_PATH/$f" "$HOME/$f" > /dev/null 2>&1) && echo "Linked: ~/$f" || (ln -sf "$DOTFILE_PATH/$f" "$HOME/$f" && echo "Relinked: $f")
 done
 
-echo "
-*-----------------------------*
-|  Done setting up dotfiles!  |
-*-----------------------------*"
+echo "✅ Done."

@@ -83,4 +83,4 @@ killall Finder
 killall SystemUIServer
 killall Dock
 
-echo "Mac setup done."
+echo "✅ Done."

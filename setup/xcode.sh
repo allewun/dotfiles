@@ -2,6 +2,8 @@
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
     echo "Skipping Mac setup (not on Mac)."
+    echo
+    echo "❌ Skipped."
     exit
 fi
 
@@ -50,3 +52,5 @@ else
     echo "Couldn't find Xcode at: \"$XCODE_PATH\". Skipping."
   fi
 fi
+
+echo "✅ Done."

@@ -12,3 +12,5 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 else
     gcp -rs "$DOTFILE_PATH/vim" "$HOME/.vim"
 fi
+
+echo "✅ Done."
