@@ -41,7 +41,7 @@ echo
 read XCODE_FILENAME
 
 XCODE_PATH="/Applications/$XCODE_FILENAME"
-if [[ -d "$XCODE_PATH" ]]; then
+if [[ -n "$XCODE_FILENAME" && -d "$XCODE_PATH" ]]; then
   KEYBINDING_FILE="$XCODE_PATH/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist"
   cp "$KEYBINDING_FILE" ~/Desktop/IDETextKeyBindingSet-backup.plist # backup
   sudo perl -pi -e 's/<string>selectWord:<\/string>/<string>selectWord:<\/string>\n    <key>Duplicate Selection<\/key>\n    <string>selectParagraph:, delete:, undo:, moveRight:, yankAndSelect:<\/string>/g' $KEYBINDING_FILE && echo "Done!"
