@@ -47,9 +47,9 @@ if [[ -n "$XCODE_FILENAME" && -d "$XCODE_PATH" ]]; then
   sudo perl -pi -e 's/<string>selectWord:<\/string>/<string>selectWord:<\/string>\n    <key>Duplicate Selection<\/key>\n    <string>selectParagraph:, delete:, undo:, moveRight:, yankAndSelect:<\/string>/g' $KEYBINDING_FILE && echo "Done!"
 else
   if [[ -z "$XCODE_FILENAME" ]]; then
-    echo "Skipping."
+    echo "  Skipping."
   else
-    echo "Couldn't find Xcode at: \"$XCODE_PATH\". Skipping."
+    echo "  Couldn't find Xcode at: \"$XCODE_PATH\". Skipping."
   fi
 fi
 
