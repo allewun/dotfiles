@@ -83,6 +83,9 @@ defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess closeViewSmoothImages -bool false
 defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 1048576
 
+# menu bar
+defaults write com.apple.menuextra.battery ShowPercent -bool true
+
 
 killall Finder
 killall SystemUIServer
