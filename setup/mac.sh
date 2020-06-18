@@ -86,6 +86,8 @@ defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 1
 # menu bar
 defaults write com.apple.menuextra.battery ShowPercent -bool true
 
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
 
 killall Finder
 killall SystemUIServer
