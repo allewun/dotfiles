@@ -78,6 +78,11 @@ chflags nohidden ~/Library
 # avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# accessibility zoom with command key
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.universalaccess closeViewSmoothImages -bool false
+defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 1048576
+
 
 killall Finder
 killall SystemUIServer
