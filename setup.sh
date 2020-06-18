@@ -23,7 +23,7 @@ logsetup "Xcode"    && ./setup/xcode.sh    | indent 4
 logsetup "Sublime"  && ./setup/sublime.sh  | indent 4
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    logsetup "Homebrew" && brew bundle --verbose | indent 4
+    logsetup "Homebrew" && ./setup/homebrew.sh | indent 4
     logsetup "duti"     && duti ~/.duti
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     logsetup "yum" && ./setup/yum.sh | indent 4
