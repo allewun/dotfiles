@@ -22,7 +22,7 @@ SUBLIME_DEST="$HOME/Library/Application Support/Sublime Text 3/Packages"
 
 # symlink subl command
 echo "Symlinking subl command..."
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 # theme
 echo "Installing Soda Theme..."
