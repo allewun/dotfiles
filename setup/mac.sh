@@ -89,6 +89,9 @@ defaults write com.apple.menuextra.battery ShowPercent -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
+# Desktop snap to grid
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
 killall Finder
 killall SystemUIServer
 killall Dock
