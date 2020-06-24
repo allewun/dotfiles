@@ -92,6 +92,21 @@ defaults write com.apple.dock show-recents -bool false
 # Desktop snap to grid
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
+#======================================
+# QuickLook
+#======================================
+
+for ql in ~/Library/QuickLook/*.qlgenerator; do
+    xattr -cr "$ql"
+done
+
+#======================================
+# Reset
+#======================================
+
+qlmanage -r
+qlmanage -r cache
+
 killall Finder
 killall SystemUIServer
 killall Dock
