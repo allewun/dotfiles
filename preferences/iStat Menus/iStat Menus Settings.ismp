@@ -74,6 +74,8 @@
 		<integer>2</integer>
 		<key>Network_DotDownload</key>
 		<string>0.20 0.84 0.15 1.00</string>
+		<key>Network_DotFlatten</key>
+		<integer>0</integer>
 		<key>Network_GraphCustomColors</key>
 		<integer>1</integer>
 		<key>Network_GraphDownload</key>
@@ -92,19 +94,19 @@
 				<key>key</key>
 				<string>0</string>
 				<key>uuid</key>
-				<string>97D526C2-0DB2-4F0D-BC9C-E04B4627B9F0</string>
+				<string>C27A30E0-5727-45B8-8AAF-77ED26DD889D</string>
 			</dict>
 			<dict>
 				<key>key</key>
 				<string>2</string>
 				<key>uuid</key>
-				<string>3C6E28DA-6F42-405E-A993-E786B3DB8545</string>
+				<string>B3F4ED3E-5724-48E6-88DF-855920FAEEB3</string>
 			</dict>
 			<dict>
 				<key>key</key>
 				<string>1</string>
 				<key>uuid</key>
-				<string>E1D353BE-E09D-4BC6-AA1A-4358C1A1CBEF</string>
+				<string>FDBC2284-131C-4C48-9562-B0D19CEC7A3D</string>
 			</dict>
 		</array>
 		<key>Network_ProcessCount</key>
@@ -308,7 +310,7 @@
 		<key>Time_TextColor</key>
 		<string>0.00 0.00 0.00 1.00</string>
 		<key>Time_TextShadowColor</key>
-		<string>1.00 1.00 1.00 0.50</string>
+		<string>1.00 1.00 1.00 0.00</string>
 		<key>Time_TextSize</key>
 		<integer>14</integer>
 		<key>TimerFrequency</key>
@@ -320,7 +322,7 @@
 		<key>Zarya-TLE</key>
 		<dict>
 			<key>time</key>
-			<real>1592449460.579706</real>
+			<real>1592542872.283777</real>
 			<key>tle</key>
 			<string>ISS (ZARYA)             
 1 25544U 98067A   19024.69130787  .00000289  00000-0  11946-4 0  9991
