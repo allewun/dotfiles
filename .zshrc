@@ -209,7 +209,6 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias lip='ifconfig | grep "inet " | grep -v "127.0.0.1" | cut -d" " -f2'
 alias geoip='curl -s "http://ip-api.com/json/$(ip)" | jsonc'
 alias headers='curl -I'
-alias speedtest='wget -O /dev/null http://184.82.225.2/bigtest.tgz'
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 
 # ruby/rails

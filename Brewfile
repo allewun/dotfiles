@@ -29,3 +29,6 @@ cask "qlmarkdown"
 cask "qlstephen"
 cask "quicklook-json"
 cask "suspicious-package"
+
+tap "teamookla/speedtest"
+brew "speedtest"
