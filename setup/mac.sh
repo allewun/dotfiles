@@ -101,6 +101,13 @@ for ql in ~/Library/QuickLook/*.qlgenerator; do
 done
 
 #======================================
+# Application Shortcuts
+#======================================
+
+# firefox: cmd+opt+1 to toggle tree style tab sidebar
+defaults write org.mozilla.firefox NSUserKeyEquivalents -dict-add "Tree Style Tab" "@~1"
+
+#======================================
 # Reset
 #======================================
 
