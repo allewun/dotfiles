@@ -9,3 +9,4 @@ com.sublimetext.3 .py editor
 com.sublimetext.3 .bzl editor
 abnerworks.Typora .md editor
 com.facebook.keyframes.previewer.local .kf all
+org.videolan.vlc .mp4 all
