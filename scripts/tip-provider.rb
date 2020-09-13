@@ -1,15 +1,43 @@
 #!/usr/bin/env ruby
 
-# Please copy this file to the folder: ~/Library/Application\ Scripts/tanin.tip/
-
 require 'json'
+require "unicode/name"
 
 def main(input)
   input = input.strip
   items = []
   items += iphone_version(input)
+  items += codepoint_emoji(input)
 
   puts items.compact.to_json
+end
+
+def codepoint_emoji(input)
+  if input.match(/^[\\Uu0-9A-Fa-f ]+$/).nil?
+    return []
+  end
+  matches = input.scan(/(?:\\[uU])?[0-9A-Fa-f]{4,9}/)
+  if matches.any?
+    string = matches.map { |m| m.gsub(/\\[uU]0*/, '').hex }.pack("U")
+    decomposed =
+      matches
+        .map do |m|
+          [m.gsub(/\\[uU]0*/, '').hex].pack("U")
+        end
+        .map do |u|
+          {
+            type: "text",
+            label: Unicode::Name.of(u),
+            value: u,
+          }
+        end
+    return [{
+      type: "text",
+      label: string,
+      value: string,
+    }] + decomposed
+  end
+  return []
 end
 
 def iphone_version(input)
