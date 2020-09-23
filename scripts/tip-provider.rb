@@ -9,6 +9,7 @@ def main(input)
   items += iphone_version(input)
   items += emoji_to_codepoint(input)
   items += codepoint_to_emoji(input)
+  items += android_screen(input)
 
   puts items.compact.to_json
 end
@@ -108,6 +109,29 @@ def iphone_version(input)
   return []
 end
 
+def android_screen(input)
+  lookup = {
+    "ldpi" => "0.75x",
+    "mdpi" => "1.0x",
+    "hdpi" => "1.5x",
+    "xhdpi" => "2.0x",
+    "xxhdpi" => "3.0x",
+    "xxxhdpi" => "4.0x",
+  }
+  m = input.match(/(?<code>(?:x{1,3}|[lmh])dpi)/)
+  if m
+    code = m[:code]
+    if lookup.key?(code)
+      scale = lookup[code]
+      return [{
+        type: 'text',
+        label: "Android screen: #{scale}",
+        value: "#{scale}"
+      }]
+    end
+  end
+  return []
+end
 if __FILE__ == $0
   main(ARGV[0])
 end
