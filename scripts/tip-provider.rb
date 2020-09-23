@@ -2,6 +2,7 @@
 
 require 'json'
 require "unicode/name"
+require 'uri'
 
 def main(input)
   input = input.strip
@@ -10,6 +11,7 @@ def main(input)
   items += emoji_to_codepoint(input)
   items += codepoint_to_emoji(input)
   items += android_screen(input)
+  items += uri_unescape(input)
 
   puts items.compact.to_json
 end
@@ -132,6 +134,23 @@ def android_screen(input)
   end
   return []
 end
+
+def uri_unescape(input)
+  m = input.match(/(?<code>%[A-F0-9]{2})/)
+  if m
+    code = m[:code]
+    if code
+      unencoded = URI.unescape(code)
+      return [{
+        type: 'text',
+        label: "URI Unencoded: #{unencoded}",
+        value: "#{unencoded}"
+      }]
+    end
+  end
+  return []
+end
+
 if __FILE__ == $0
   main(ARGV[0])
 end
