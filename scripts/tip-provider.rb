@@ -7,12 +7,27 @@ def main(input)
   input = input.strip
   items = []
   items += iphone_version(input)
-  items += codepoint_emoji(input)
+  items += emoji_to_codepoint(input)
+  items += codepoint_to_emoji(input)
 
   puts items.compact.to_json
 end
 
-def codepoint_emoji(input)
+def emoji_to_codepoint(input)
+  if /^\p{Emoji}$/u =~ input.force_encoding('utf-8')
+    codepoints = input.each_codepoint.map {|n| "U+#{n.to_s(16).upcase}" }
+    return codepoints.map do |c|
+      {
+        type: "text",
+        label: c,
+        value: c,
+      }
+    end
+  end
+  return []
+end
+
+def codepoint_to_emoji(input)
   if input.match(/^[\\Uu0-9A-Fa-f ]+$/).nil?
     return []
   end
