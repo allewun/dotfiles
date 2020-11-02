@@ -15,6 +15,7 @@ c = commit
 status = \status --pager never
 s = status
 st = status
+ar = addremove
 shelf = shelve --list
 sfdiff = kdiff
 preview = kdiff -c .
