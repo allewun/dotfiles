@@ -94,7 +94,12 @@ def iphone_version(input)
     "11,8" => "XR",
     "12,1" => "11",
     "12,3" => "11 Pro",
-    "12,5" => "11 Pro Max"
+    "12,5" => "11 Pro Max",
+    "12,8" => "SE (2nd Gen)",
+    "13,1" => "12 Mini",
+    "13,2" => "12",
+    "13,3" => "12 Pro",
+    "13,4" => "12 Pro Max",
   }
   m = input.match(/iPhone(?<code>\d+,\d+)/)
   if m
