@@ -149,6 +149,14 @@ function objcreplrun() {
   clang -fobjc-arc -Weverything -Wno-newline-eof -framework Foundation -o $EXE $DIR/*.m && echo "----------[ /tmp/objcrepl ]----------" && (exec $EXE)
 }
 
+function cppreplrun() {
+  local NAME="objcrepl"
+  local DIR="/tmp/objcrepl"
+  local EXE="$DIR/$NAME"
+
+  clang++ -Os -fobjc-arc -framework Foundation -lz -ObjC++ -std=gnu++14 -stdlib=libc++ -o $EXE $DIR/*.m && echo "----------[ /tmp/cpprepl ]----------" && (exec $EXE)
+}
+
 # swift repl
 function swiftrepl() {
   local NAME="swiftrepl"
