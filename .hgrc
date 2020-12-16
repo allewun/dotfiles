@@ -18,7 +18,7 @@ st = status
 ar = addremove
 shelf = shelve --list
 sfdiff = kdiff
-preview = kdiff -c .
+preview = kdiff -c
 
 [revsetalias]
 base = ancestor(master, .)
