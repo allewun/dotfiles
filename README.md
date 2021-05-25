@@ -1,6 +1,6 @@
 # 🚥 dotfiles
 
-- macOS 10.14.6
+- macOS 10.15.7
 - zsh 5.7.1
 
 ##  Setup
