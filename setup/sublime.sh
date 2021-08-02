@@ -18,7 +18,7 @@ fi
 source "$DOTFILE_PATH/zsh/functions.sh"
 
 SUBLIME_SRC="$DOTFILE_PATH/preferences/Sublime"
-SUBLIME_DEST="$HOME/Library/Application Support/Sublime Text 3/Packages"
+SUBLIME_DEST="$HOME/Library/Application Support/Sublime Text/Packages"
 
 # symlink subl command
 if ! which subl; then
