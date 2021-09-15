@@ -3,3 +3,13 @@
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] > #sidebar-header {
      visibility: collapse;
 }
+
+/* ---Menu Items height/padding--- */
+/* https://old.reddit.com/r/firefox/comments/popg8b/should_i_update_from_89_to_92_despite_disabling/ */
+menupopup > menu, menupopup > menuitem {
+  padding-block: 2px !important;
+}
+
+:root {
+  --arrowpanel-menuitem-padding: 1px !important;
+}
