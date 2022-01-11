@@ -1,0 +1,62 @@
+/*
+Useful links:
+
+- Proton theme styles:  https://github.com/piroor/treestyletab/blob/trunk/webextensions/sidebar/styles/proton/proton.css
+- Code snippets:  https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#for-version-2x
+*/
+
+/* Show title of unread tabs with red and italic font */
+/*
+.tab.unread .label {
+  color: red !important;
+  font-style: italic !important;
+}
+*/
+
+/* Add private browsing indicator per tab */
+/*
+.tab.private-browsing .label:before {
+  content: "🕶";
+}
+*/
+
+.tab tab-twisty {
+  margin-left: 3px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+
+.tab tab-twisty:hover {
+  background-color: #bbb;
+}
+
+.tab.active tab-twisty:hover {
+  background-color: #8caeda;
+}
+
+/* fake tab divider */
+tab-item[data-current-uri="about:blank#divider"] tab-item-substance {
+  height: 4px;
+  padding: 0;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  margin-right: 2px;
+  border-radius: 1px;
+
+  border-top-color: #222;
+  background-color: #999;
+  border-bottom-color: #fff;
+
+}
+
+tab-item[data-current-uri="about:blank#divider"]:hover tab-item-substance {
+  border-top-color: #02376C;
+  background-color: #2890F8;
+  border-bottom-color: #fff;
+}
+
+tab-item[data-current-uri="about:blank#divider"] .label-content,
+tab-item[data-current-uri="about:blank#divider"] tab-favicon,
+tab-item[data-current-uri="about:blank#divider"] tab-closebox {
+  display: none;
+}

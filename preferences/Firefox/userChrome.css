@@ -13,3 +13,9 @@ menupopup > menu, menupopup > menuitem {
 :root {
   --arrowpanel-menuitem-padding: 1px !important;
 }
+
+/* Sidebar min and max width removal */
+#sidebar {
+    max-width: none !important;
+    min-width: 0px !important;
+}

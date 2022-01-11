@@ -1,28 +1,40 @@
 {
-  "applyBrowserTheme": false,
   "autoCollapseExpandSubtreeOnSelect": false,
   "autoGroupNewTabsFromPinned": false,
   "autoGroupNewTabsTimeout": 500,
   "cachedExternalAddons": [
     "{724545b6-7e17-4fa2-96e0-71eddf3c3319}"
   ],
+  "chunkedUserStyleRules0": "LyoKVXNlZnVsIGxpbmtzOgoKLSBQcm90b24gdGhlbWUgc3R5bGVzOiAgaHR0cHM6Ly9naXRodWIuY29tL3Bpcm9vci90cmVlc3R5bGV0YWIvYmxvYi90cnVuay93ZWJleHRlbnNpb25zL3NpZGViYXIvc3R5bGVzL3Byb3Rvbi9wcm90b24uY3NzCi0gQ29kZSBzbmlwcGV0czogIGh0dHBzOi8vZ2l0aHViLmNvbS9waXJvb3IvdHJlZXN0eWxldGFiL3dpa2kvQ29kZS1zbmlwcGV0cy1mb3ItY3VzdG9tLXN0eWxlLXJ1bGVzI2Zvci12ZXJzaW9uLTJ4CiovCgovKiBTaG93IHRpdGxlIG9mIHVucmVhZCB0YWJzIHdpdGggcmVkIGFuZCBpdGFsaWMgZm9udCAqLwovKgoudGFiLnVucmVhZCAubGFiZWwgewogIGNvbG9yOiByZWQgIWltcG9ydGFudDsKICBmb250LXN0eWxlOiBpdGFsaWMgIWltcG9ydGFudDsKfQoqLwoKLyogQWRkIHByaXZhdGUgYnJvd3NpbmcgaW5kaWNhdG9yIHBlciB0YWIgKi8KLyoKLnRhYi5wcml2YXRlLWJyb3dzaW5nIC5sYWJlbDpiZWZvcmUgewogIGNvbnRlbnQ6ICLwn5W2IjsKfQoqLwoKLnRhYiB0YWItdHdpc3R5IHsKICBtYXJnaW4tbGVmdDogM3B4OwogIG1hcmdpbi1yaWdodDogNXB4OwogIGJvcmRlci1yYWRpdXM6IDEwcHg7Cn0KCi50YWIgdGFiLXR3aXN0eTpob3ZlciB7CiAgYmFja2dyb3VuZC1jb2xvcjogI2JiYjsKfQoKLnRhYi5hY3RpdmUgdGFiLXR3aXN0eTpob3ZlciB7CiAgYmFja2dyb3VuZC1jb2xvcjogIzhjYWVkYTsKfQoKLyogZmFrZSB0YWIgZGl2aWRlciAqLwp0YWItaXRlbVtkYXRhLWN1cnJlbnQtdXJpPSJhYm91dDpibGFuayNkaXZpZGVyIl0gdGFiLWl0ZW0tc3Vic3RhbmNlIHsKICBoZWlnaHQ6IDRweDsKICBwYWRkaW5nOiAwOwogIGJvcmRlci10b3Atd2lkdGg6IDFweDsKICBib3JkZXItYm90dG9tLXdpZHRoOiAxcHg7CiAgbWFyZ2luLXJpZ2h0OiAycHg7CiAgYm9yZGVyLXJhZGl1czogMXB4OwoKICBib3JkZXItdG9wLWNvbG9yOiAjMjIyOwogIGJhY2tncm91bmQtY29sb3I6ICM5OTk7CiAgYm9yZGVyLWJvdHRvbS1jb2xvcjogI2ZmZjsKCn0KCnRhYi1pdGVtW2RhdGEtY3VycmVudC11cmk9ImFib3V0OmJsYW5rI2RpdmlkZXIiXTpob3ZlciB0YWItaXRlbS1zdWJzdGFuY2UgewogIGJvcmRlci10b3AtY29sb3I6ICMwMjM3NkM7CiAgYmFja2dyb3VuZC1jb2xvcjogIzI4OTBGODsKICBib3JkZXItYm90dG9tLWNvbG9yOiAjZmZmOwp9Cgp0YWItaXRlbVtkYXRhLWN1cnJlbnQtdXJpPSJhYm91dDpibGFuayNkaXZpZGVyIl0gLmxhYmVsLWNvbnRlbnQsCnRhYi1pdGVtW2RhdGEtY3VycmVudC11cmk9ImFib3V0OmJsYW5rI2RpdmlkZXIiXSB0YWItZmF2aWNvbiwKdGFiLWl0ZW1bZGF0YS1jdXJyZW50LXVyaT0iYWJvdXQ6YmxhbmsjZGl2aWRlciJdIHRhYi1jbG9zZWJveCB7CiAgZGlzcGxheTogbm9uZTsKfQ==",
   "closeParentBehaviorMode": 1,
-  "configsVersion": 7,
+  "configsVersion": 25,
   "context_bookmarkTree": false,
   "context_collapseAll": false,
   "context_expandAll": false,
-  "lastConfirmedToCloseTabs": 1573799482384,
-  "notifiedFeaturesVersion": 4,
+  "notifiedFeaturesVersion": 9,
   "optionsExpandedSections": [
     "section-appearance",
     "section-contextMenu",
     "section-treeBehavior",
     "section-advanced",
     "section-debug",
-    "section-newTab"
+    "section-newTab",
+    "section-drag",
+    "section-addons"
   ],
+  "parentTabOperationBehaviorMode": 1,
   "scrollbarMode": 1,
   "showExpertOptions": true,
-  "style": "highcontrast",
-  "userStyleRules": "/* Show title of unread tabs with red and italic font */\n/*\n.tab.unread .label {\n  color: red !important;\n  font-style: italic !important;\n}\n*/\n\n/* Add private browsing indicator per tab */\n/*\n.tab.private-browsing .label:before {\n  content: \"🕶\";\n}\n*/\n\n.tab tab-twisty {\n  margin-left: 3px;\n  margin-right: 5px;\n  border-radius: 10px;\n}\n\n.tab tab-twisty:hover {\n  background-color: #bbb;\n}\n\n.tab.active tab-twisty:hover {\n  background-color: #8caeda;\n}"
+  "style": "proton",
+  "syncDevices": {
+    "device-1604940281799-34814": {
+      "id": "device-1604940281799-34814",
+      "name": "Firefox on macOS",
+      "icon": "device-desktop",
+      "timestamp": 1641870904039
+    }
+  },
+  "tabBunchesDetectionTimeout": 500,
+  "userStyleRules": "",
+  "userStyleRulesFieldHeight": "467px"
 }
