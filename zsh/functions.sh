@@ -462,3 +462,29 @@ function prdiff {
     echo "Usage: prdiff [repo name] [pull request #] [old SHA] [current SHA]"
   fi
 }
+
+function deskcolor {
+  if [[ -z "$1" ]]; then
+    echo "Usage: deskcolor [reset | <color (#hex, name)>]"
+  fi
+
+  local COLOR=$1
+  local WALLPAPER_COOKIE=~/.deskcolor
+  local CURRENT_WALLPAPER="$(osascript -e 'tell app "finder" to get posix path of (get desktop picture as alias)')"
+
+  # save wallpaper before we replace it with a color
+  local PREVIOUS_WALLPAPER="$(cat $WALLPAPER_COOKIE 2> /dev/null)"
+  if [[ "$CURRENT_WALLPAPER" != *"deskcolor"* ]]; then
+    PREVIOUS_WALLPAPER="$CURRENT_WALLPAPER"
+    echo "$CURRENT_WALLPAPER" > $WALLPAPER_COOKIE
+  fi
+
+  if [[ "$1" == "reset" ]]; then
+    osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$PREVIOUS_WALLPAPER\""
+    return 0
+  fi
+
+  local COLOR_WALLPAPER="/tmp/deskcolor-$COLOR.png"
+  convert -size 100x100 xc:$COLOR $COLOR_WALLPAPER
+  osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$COLOR_WALLPAPER\""
+}
