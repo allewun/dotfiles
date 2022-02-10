@@ -1,6 +1,6 @@
 # 🚥 dotfiles
 
-- macOS 10.15.7
+- macOS 12.2
 - zsh 5.7.1
 
 ##  Setup
@@ -12,20 +12,22 @@
 3. Install [Sublime Text](https://www.sublimetext.com/)
 4. Generate SSH key
    ```
-   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+   $ ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
    - [Autoload SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent) (`~/.ssh/config`)
       ```
       Host *
         AddKeysToAgent yes
+        IgnoreUnknown UseKeychain
         UseKeychain yes
-        IdentityFile ~/.ssh/id_rsa
+        IdentityFile ~/.ssh/id_ed25519
       ```
 
 ### dotfiles setup
 
 ```
 $ git clone git@github.com:allewun/dotfiles.git ~/dotfiles
+$ export DOTFILE_PATH=~/dotfiles # this env var is used in several setup scripts, but it's loaded in .zshrc
 $ ./setup.sh
 ```
 
