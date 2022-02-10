@@ -43,3 +43,15 @@ $ ./setup.sh
 ```
 $ git clone git@github.com:allewun/dotfiles-private.git ~/dotfiles-private
 ```
+
+## Essential Apps
+
+- [Dropbox](https://www.dropbox.com/)
+- [1Password](https://1password.com/downloads/mac/)
+- [Karabiner](https://karabiner-elements.pqrs.org/)
+- [Yoink](https://eternalstorms.at/yoink/mac/index.html)
+- [Bartender](https://www.macbartender.com/)
+- [Timing](https://timingapp.com/)
+- [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
+- [DaisyDisk](https://daisydiskapp.com/)
+- [Dash](https://kapeli.com/dash)
