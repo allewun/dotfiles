@@ -68,6 +68,12 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 # show hidden files
 defaults write com.apple.finder AppleShowAllFiles true
 
+# view as columns
+defaults write com.apple.Finder FXPreferredViewStyle clmv
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
 # show the ~/Library folder
 chflags nohidden ~/Library
 
