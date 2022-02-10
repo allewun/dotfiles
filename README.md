@@ -29,6 +29,12 @@
 $ git clone git@github.com:allewun/dotfiles.git ~/dotfiles
 $ export DOTFILE_PATH=~/dotfiles # this env var is used in several setup scripts, but it's loaded in .zshrc
 $ ./setup.sh
+
+...
+
+# data migration:
+#   ~/.zsh_history
+#   ~/Library/autojump/autojump.txt
 ```
 
 ### Per-app settings
