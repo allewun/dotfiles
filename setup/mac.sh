@@ -98,6 +98,9 @@ defaults write com.apple.dock show-recents -bool false
 # Desktop snap to grid
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
+# Play feedback when volume is changed
+defaults write -globalDomain "com.apple.sound.beep.feedback" -int 0
+
 #======================================
 # QuickLook
 #======================================
