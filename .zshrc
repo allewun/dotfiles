@@ -295,6 +295,9 @@ export ACK_COLOR_FILENAME='underline cyan'
 export ACK_COLOR_MATCH='underline yellow'
 export ACK_COLOR_LINENO='cyan'
 
+# homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # zsh
 autoload -U colors && colors
 
