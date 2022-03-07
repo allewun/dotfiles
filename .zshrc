@@ -157,6 +157,8 @@ s() {
   fi
 }
 
+alias ss='subl -n'
+
 # directory shortcuts
 alias desk=" cd ~/Desktop/"
 alias deks=desk
