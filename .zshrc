@@ -149,6 +149,7 @@ alias f=" finder"
 # sublime
 s() {
   if hash subl &>/dev/null; then
+    # if no positional args ($@), open '.'
     subl "${@:-.}";
   elif hash rmate &>/dev/null; then
     rmate -n "${@:-.}";
@@ -157,7 +158,15 @@ s() {
   fi
 }
 
-alias ss='subl -n'
+ss() {
+  # s (new window)
+  if hash subl &>/dev/null; then
+    # if no positional args ($@), open '.'
+    subl -n "${@:-.}";
+  else
+    echo "Couldn't open files with sublime"
+  fi
+}
 
 # directory shortcuts
 alias desk=" cd ~/Desktop/"
