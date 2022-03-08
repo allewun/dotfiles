@@ -113,13 +113,13 @@ bindkey '^Z' ctrlz
 # zsh completion
 #======================================
 
-autoload -U compinit && compinit
 setopt EXTENDED_GLOB
 setopt GLOB_COMPLETE
 setopt DOTGLOB
 
-zstyle ':completion:*' completer _complete
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+# case insensitive autocomplete
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # menu selection
 zstyle ':completion:*' menu select
