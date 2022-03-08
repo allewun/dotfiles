@@ -8,9 +8,6 @@ command alias ql quicklook
 # Recursive description (http://jeffreysambells.com/2013/01/24/debugging-layouts-with-recursive-view-descriptions-in-xcode)
 command regex rd 's/^[[:space:]]*$/po [[[UIApplication sharedApplication] keyWindow] recursiveDescription]/' 's/^(.+)$/po [%1 recursiveDescription]/'
 
-# chisel
-command script import ~/dotfiles/xcode/lldb/chisel/fblldb.py
-
 # modules
 command alias uikit expr @import UIKit
 command alias foundation expr @import Foundation
