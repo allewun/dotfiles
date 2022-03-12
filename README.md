@@ -8,6 +8,10 @@
 ### Pre-requisites
 
 1. Install [Homebrew](https://brew.sh/)
+   ```
+   # installing here to prevent conflict with system binaries
+   $ git clone https://github.com/Homebrew/brew ~/homebrew
+   ```
 2. Install [iTerm2](https://iterm2.com/)
 3. Install [Sublime Text](https://www.sublimetext.com/)
 4. Generate SSH key
