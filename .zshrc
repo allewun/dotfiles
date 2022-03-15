@@ -117,9 +117,22 @@ setopt EXTENDED_GLOB
 setopt GLOB_COMPLETE
 setopt DOTGLOB
 
-# case insensitive autocomplete
 autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# mostly from: https://github.com/scriptingosx/dotfiles/blob/master/zshrc
+
+# case insensitive autocomplete
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+
+# show descriptions when autocompleting
+zstyle ':completion:*' auto-description 'specify: %d'
+
+# partial completion suggestions
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' expand prefix suffix
+
+# list with colors
+zstyle ':completion:*' list-colors ''x
 
 # menu selection
 zstyle ':completion:*' menu select
