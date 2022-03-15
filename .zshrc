@@ -181,6 +181,18 @@ ss() {
   fi
 }
 
+# ffmpeg 
+
+ffmpeg265() {
+  if [[ -z "$1" ]]; then echo "Usage: ffmpeg265 input [output]"; return; fi
+
+  local destination
+  # foo.xyz -> foo.xyz-x265.mp4
+  if [[ -z "$2" ]]; then destination="${1}-x265.mp4"; fi
+
+  ffmpeg -i "$1" -c:v libx265 -pix_fmt yuv420p -preset fast -crf 28 -tag:v hvc1 "$destination"
+}
+
 # directory shortcuts
 alias desk=" cd ~/Desktop/"
 alias deks=desk
