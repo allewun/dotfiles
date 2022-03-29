@@ -7,6 +7,7 @@ com.sublimetext.4 .m editor
 com.sublimetext.4 .mm editor
 com.sublimetext.4 .py editor
 com.sublimetext.4 .bzl editor
+com.sublimetext.4 .dot editor
 abnerworks.Typora .md editor
 com.facebook.keyframes.previewer.local .kf all
 org.videolan.vlc .mp4 all
