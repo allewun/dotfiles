@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from __future__ import print_function
 
 import os
@@ -7,7 +7,7 @@ import json
 import struct
 import subprocess
 
-VERSION = '7.1b2'
+VERSION = '7.2.6'
 
 try:
 	sys.stdin.buffer
@@ -32,24 +32,8 @@ try:
 		sys.stdout.buffer.flush()
 
 except AttributeError:
-	# Python 2.x version (if sys.stdin.buffer is not defined)
-	# Read a message from stdin and decode it.
-	def getMessage():
-		rawLength = sys.stdin.read(4)
-		if len(rawLength) == 0:
-			sys.exit(0)
-		messageLength = struct.unpack('@I', rawLength)[0]
-		message = sys.stdin.read(messageLength)
-		return json.loads(message)
-
-	# Send an encoded message to stdout
-	def sendMessage(messageContent):
-		encodedContent = json.dumps(messageContent)
-		encodedLength = struct.pack('@I', len(encodedContent))
-
-		sys.stdout.write(encodedLength)
-		sys.stdout.write(encodedContent)
-		sys.stdout.flush()
+	print('Python 3.2 or newer is required.')
+	sys.exit(-1)
 
 
 def install():
@@ -64,17 +48,20 @@ def install():
 	locations = {
 		'chrome': os.path.join(home_path, 'Library', 'Application Support', 'Google', 'Chrome', 'NativeMessagingHosts'),
 		'chromium': os.path.join(home_path, 'Library', 'Application Support', 'Chromium', 'NativeMessagingHosts'),
+		'edge': os.path.join(home_path, 'Library', 'Application Support', 'Microsoft Edge', 'NativeMessagingHosts'),
 		'firefox': os.path.join(home_path, 'Library', 'Application Support', 'Mozilla', 'NativeMessagingHosts'),
+		'thunderbird1': os.path.join(home_path, 'Library', 'Application Support', 'Thunderbird', 'NativeMessagingHosts'),
+		'thunderbird2': os.path.join(home_path, 'Library', 'Mozilla', 'NativeMessagingHosts'),
 	}
 	filename = 'open_with.json'
 
 	for browser, location in locations.items():
 		if os.path.exists(os.path.dirname(location)):
 			if not os.path.exists(location):
-				os.mkdir(location)
+				os.makedirs(location, exist_ok=True)
 
 			browser_manifest = manifest.copy()
-			if browser == 'firefox':
+			if browser in ['firefox', 'thunderbird1', 'thunderbird2']:
 				browser_manifest['allowed_extensions'] = ['openwith@darktrojan.net']
 			else:
 				browser_manifest['allowed_origins'] = [
@@ -94,6 +81,7 @@ def find_browsers():
 		'Chromium',
 		'Firefox',
 		'Google Chrome',
+		'Microsoft Edge',
 		'Opera',
 		'Safari',
 		'SeaMonkey',
@@ -160,4 +148,5 @@ if __name__ == '__main__':
 			listen()
 			sys.exit(0)
 
-	print('Open With native helper, version %s.' % VERSION)
+	print('This is the Open With native helper, version %s.' % VERSION)
+	print('Run this script again with the word "install" after the file name to install.')
