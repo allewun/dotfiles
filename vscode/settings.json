@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Made of Code",
+    "editor.fontFamily": "Inconsolata-aw, Menlo, Monaco, 'Courier New', monospace",
+    "workbench.colorCustomizations": {
+        "editor.background": "#090a1c",
+        "editorBracketMatch.border": "#6c71a8",
+        "editorBracketMatch.background": "#292b42",
+        "editor.lineHighlightBorder": "#090a1c",
+        "editor.lineHighlightBackground": "#292b42"
+    },
+    },
+    "terminal.integrated.scrollback": 10000,
+}
