@@ -4,6 +4,10 @@
      visibility: collapse;
 }
 
+tab-item.pinned tab-favicon {
+   
+}
+
 /* ---Menu Items height/padding--- */
 /* https://old.reddit.com/r/firefox/comments/popg8b/should_i_update_from_89_to_92_despite_disabling/ */
 menupopup > menu, menupopup > menuitem {
@@ -15,7 +19,8 @@ menupopup > menu, menupopup > menuitem {
 }
 
 /* Sidebar min and max width removal */
-#sidebar {
+/* https://support.mozilla.org/mk/questions/1396856 */
+#sidebar-box {
     max-width: none !important;
-    min-width: 0px !important;
+    min-width: 25px !important;
 }
