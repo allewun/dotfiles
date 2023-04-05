@@ -488,3 +488,11 @@ function deskcolor {
   convert -size 100x100 xc:$COLOR $COLOR_WALLPAPER
   osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$COLOR_WALLPAPER\""
 }
+
+function grepct {
+  local stdin=$(</dev/stdin)
+  local total_lines=$(echo $stdin | wc -l)
+  local matching_lines=$(echo $stdin | grep $@ | wc -l)
+  local percent=$(echo "result = (${matching_lines}/${total_lines}) * 100; scale=2; result / 1" | bc -l)
+  echo "Pattern was matched in ${percent}% ($matching_lines / $total_lines) of lines"
+}
