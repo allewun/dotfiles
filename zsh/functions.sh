@@ -491,8 +491,8 @@ function deskcolor {
 
 function grepct {
   local stdin=$(</dev/stdin)
-  local total_lines=$(echo $stdin | wc -l)
-  local matching_lines=$(echo $stdin | grep $@ | wc -l)
+  local total_lines=$(echo $stdin | wc -l | sed -E 's/^ *| *$//g')
+  local matching_lines=$(echo $stdin | grep $@ | wc -l | sed -E 's/^ *| *$//g')
   local percent=$(echo "result = (${matching_lines}/${total_lines}) * 100; scale=2; result / 1" | bc -l)
-  echo "Pattern was matched in ${percent}% ($matching_lines / $total_lines) of lines"
+  echo "${percent}% of lines matched the pattern ($matching_lines / $total_lines)"
 }
