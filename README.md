@@ -1,7 +1,7 @@
 # 🚥 dotfiles
 
-- macOS 12.2
-- zsh 5.7.1
+- macOS 14.1.2
+- zsh 5.9
 
 ##  Setup
 
@@ -14,7 +14,7 @@
    ```
 2. Install [iTerm2](https://iterm2.com/)
 3. Install [Sublime Text](https://www.sublimetext.com/)
-4. Generate SSH key
+4. Setup SSH key
    ```
    $ ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
@@ -25,6 +25,10 @@
         IgnoreUnknown UseKeychain
         UseKeychain yes
         IdentityFile ~/.ssh/id_ed25519
+      ```
+   - Add to keychain
+      ```
+      ssh-add --apple-use-keychain ~/.ssh/id_ed25519
       ```
 
 ### dotfiles setup
@@ -48,7 +52,7 @@ $ ./setup.sh
 3. [Karabiner-Elements](https://karabiner-elements.pqrs.org/) - `~/dotfiles/preferences/Karabiner`
 4. [iStat Menus](https://bjango.com/mac/istatmenus/) - `~/dotfiles/preferences/iStat Menus/iStat Menus Settings.ismp`
 
-### Private 🔐
+### Private 🙈
 
 ```
 $ git clone git@github.com:allewun/dotfiles-private.git ~/dotfiles-private
@@ -56,8 +60,9 @@ $ git clone git@github.com:allewun/dotfiles-private.git ~/dotfiles-private
 
 ## Essential Apps
 
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - [Dropbox](https://www.dropbox.com/)
-- [1Password](https://1password.com/downloads/mac/)
+- [1Password 7](https://app-updates.agilebits.com/product_history/OPM7)
 - [Karabiner](https://karabiner-elements.pqrs.org/)
 - [Yoink](https://eternalstorms.at/yoink/mac/index.html)
 - [Bartender](https://www.macbartender.com/)
