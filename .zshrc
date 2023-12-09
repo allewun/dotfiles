@@ -5,7 +5,7 @@
 
 typeset -U PATH
 export DOTFILE_PATH=~/dotfiles
-export PATH=~/homebrew/bin:~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:$DOTFILE_PATH/scripts:/usr/local/opt/fzf/bin
+export PATH=~/homebrew/bin:~/.rbenv/shims:/usr/local/bin:/usr/local:/sbin:/usr/sbin:/usr/local/sbin:$PATH:/usr/local/opt/coreutils/libexec/gnubin:$DOTFILE_PATH/scripts:/usr/local/opt/fzf/bin:/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
 
 #======================================
 # Shell integrations
