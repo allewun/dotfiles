@@ -58,3 +58,26 @@ tab-item[data-current-uri="about:blank#divider"] tab-favicon,
 tab-item[data-current-uri="about:blank#divider"] tab-closebox {
   display: none;
 }
+
+/* hide close buttons on inactive tabs */
+tab-item:not(.active):not(:hover) tab-closebox {
+  display: none;
+}
+
+tab-item.active .background {
+  background: linear-gradient(to bottom, #fff 0%,#fafafa 50%,#eaeaea 51%,#fff 100%);
+}
+
+tab-item.active {
+  --tab-text-shadow: 0 1px 0 white !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  tab-item.active {
+    --tab-text-shadow: 0 1px 0 #000 !important;
+  }
+  
+  tab-item.active .background {
+    background: #555;
+  }
+}
