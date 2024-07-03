@@ -24,3 +24,7 @@ menupopup > menu, menupopup > menuitem {
     max-width: none !important;
     min-width: 25px !important;
 }
+
+#statuspanel-label {
+   font-family: "Inconsolata-aw", "Inconsolata", monospace !important;
+}
