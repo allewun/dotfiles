@@ -1,0 +1,35 @@
+/* For use with Custom CSS and JS Loader (https://marketplace.visualstudio.com/items?itemName=be5invis.vscode-custom-css) */
+
+.search-view {
+    /* the filename of the search result */
+    & .monaco-icon-label-container .label-name {
+        font-weight: bold;
+    }
+
+    & .linematch {
+        /* darken the context around the match */
+        color: #aaa;
+
+        /* remove obnoxiously bright match highlight but matches still stand out */
+        & .findInFileMatch {
+            background-color: transparent;
+            color: #e2c08d;
+            border-bottom: 2px solid #e2c08daa;
+        }
+    }
+}
+
+/* code comments */
+.mtk3 {
+    font-style: italic;
+}
+
+/* nicer tooltip (from https://github.com/glennraya/vscode-settings-json/blob/main/custom-vscode.css#L101-L109) */
+.monaco-editor-hover,
+.monaco-hover {
+    box-shadow: 0px 8px 32px rgba(0,0,0,.45) !important;
+    padding: 5px !important;
+    background-image: linear-gradient(#3c3c50 0%, #2a2b38 100%) !important;
+    border-radius: 5px !important;
+    border: none !important
+}
