@@ -93,8 +93,8 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 bindkey "^[[3~" delete-char
-bindkey "^[[1;9C" forward-word
-bindkey "^[[1;9D" backward-word
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 # ctrl-z toggle (http://serverfault.com/a/225821)
 function ctrlz () {
