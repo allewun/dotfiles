@@ -1,9 +1,11 @@
-# Copyright (C) 2015 Facebook, Inc
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+#
+# This software may be used and distributed according to the terms of the
+# GNU General Public License version 2.
+
 # Maintained by Ryan McElroy <rm@fb.com>
 #
 # Inspiration and derivation from git-completion.bash by Shawn O. Pearce.
-#
-# Distributed under the GNU General Public License, version 2.0.
 #
 # ========================================================================
 #
@@ -50,6 +52,11 @@
 #    is a remote or autofs mount point.
 #  * WANT_OLD_SCM_PROMPT : Use '%s' as the formatting for the prompt instead
 #    of ' (%s)'
+#  * SHOW_DIRTY_STATE : Show dirty state of the working directory of a
+#    repo with a star *. In addition, for hg, show untracked files with ?.
+#    For git, show staged change with +.  When SHOW_DIRTY_STATE is set,
+#    you can opt out invidivual repo by setting shell.showDirtyState to false
+#    in .hg/hgrc or .git/config.
 #
 # Notes to developers:
 #
@@ -78,7 +85,7 @@ _find_most_relevant() {
     builtin echo "$(command sort -r <<< "$1" | command head -n 1)"
 }
 
-__hg_prompt() {
+_hg_prompt() {
   local hg br extra
   hg="$1"
 
@@ -99,6 +106,7 @@ __hg_prompt() {
   elif [[ -L "$hg/wlock" ]]; then
     extra="|WDIR-LOCKED"
   fi
+
   local dirstate="$( \
     ( [[ -f "$hg/dirstate" ]] && \
     command hexdump -vn 20 -e '1/1 "%02x"' "$hg/dirstate") || \
@@ -123,7 +131,7 @@ __hg_prompt() {
       fi
     fi
   else
-    br="$(builtin echo "$dirstate" | command cut -c 1-8)"
+    br="$(builtin echo "$dirstate" | command cut -c 1-9)"
   fi
   if [[ -f "$remote" ]]; then
     local allremotemarks="$(command grep "^$dirstate bookmarks" "$remote" | \
@@ -147,32 +155,18 @@ __hg_prompt() {
       br="$br|$branch"
     fi
   fi
-  br="$br$extra"
+  br="$br$extra$(_hg_dirty)"
   builtin printf "%s" "$br"
 }
 
-_hg_prompt() {
-  local dir fmt br
-  # Default to be compatable with __git_ps1. In particular:
-  # - provide a space for the user so that they don't have to have
-  #   random extra spaces in their prompt when not in a repo
-  # - provide parens so it's differentiated from other crap in their prompt
-  fmt="${1:-%s}"
-
-  # find out if we're in a git or hg repo by looking for the control dir
-  dir="$PWD"
-  while : ; do
-    [[ -n "$HOME_IS_NOT_A_REPO" ]] && [[ "$dir" = "/home" ]] && break
-    if [[ -d "$dir/.hg" ]]; then
-      br="$(__hg_prompt "$dir/.hg")"
-      break
-    fi
-    [[ "$dir" = "/" ]] && break
-    # portable "realpath" equivalent
-    dir="$(realpath "$dir/..")"
-  done
-
-  if [[ -n "$br" ]]; then
-    builtin printf "$fmt" "$br"
+# cf. https://www.internalfb.com/intern/qa/4964/how-do-i-show-the-mercurial-bookmarkgit-branch-in?answerID=540621130023036
+_hg_dirty() {
+  if [ -n "${SHOW_DIRTY_STATE}" ] &&
+     [ "$(command sl config shell.showDirtyState)" != "false" ]; then
+       command sl status 2> /dev/null \
+         | command awk '{print $1}'\
+         | command sort\
+         | command uniq\
+         | command paste -sd ' ' -
   fi
 }
