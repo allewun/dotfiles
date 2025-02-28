@@ -72,7 +72,7 @@ __aw_prompt() {
   local RBENV_PROMPT='%F{red}$(__rbenv_ps1)%f' # rbenv in red
   local REL_PATH='%F{green}%~%f' # relative path in green
   local HOSTNAME=$([[ -n "$SSH_CONNECTION" ]] && echo '%m' || echo '')
-  local TEXT_ENTRY="%F{white}${HOSTNAME}$%f " # right before the cursor
+  local TEXT_ENTRY="${HOSTNAME}$ " # right before the cursor
   echo "${NEWLINE}%{$(iterm2_prompt_mark)%}${REL_PATH}${GIT_PROMPT}${HG_PROMPT}${RBENV_PROMPT}${NEWLINE}${TEXT_ENTRY}"
 } 
 export PS1=$(__aw_prompt)
