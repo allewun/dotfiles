@@ -39,18 +39,6 @@ if hash broot &>/dev/null; then
 fi
 
 #======================================
-# Private
-#======================================
-
-if [[ -d "${DOTFILE_PATH}-private/autocomplete" ]]; then
-  fpath=($fpath "${DOTFILE_PATH}-private/autocomplete")
-fi
-
-if [[ -f "${DOTFILE_PATH}-private/.zshrc" ]]; then
-  source "${DOTFILE_PATH}-private/.zshrc"
-fi
-
-#======================================
 # Prompt
 #======================================
 
@@ -78,6 +66,19 @@ export PS1=$(__aw_prompt)
 
 # directory in terminal tab title
 function precmd() { echo -ne "\e]1;${PWD##*/}\a" }
+
+
+#======================================
+# Private
+#======================================
+
+if [[ -d "${DOTFILE_PATH}-private/autocomplete" ]]; then
+  fpath=($fpath "${DOTFILE_PATH}-private/autocomplete")
+fi
+
+if [[ -f "${DOTFILE_PATH}-private/.zshrc" ]]; then
+  source "${DOTFILE_PATH}-private/.zshrc"
+fi
 
 
 #======================================
