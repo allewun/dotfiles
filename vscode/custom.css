@@ -24,6 +24,12 @@
     font-style: italic;
 }
 
+/* line commit context */
+.monaco-mouse-cursor-text .view-line span span[class^="ced-1-TextEditorDecorationType"]::after {
+    font-style: italic;
+    letter-spacing: -0.5px;
+}
+
 /* nicer tooltip (from https://github.com/glennraya/vscode-settings-json/blob/main/custom-vscode.css#L101-L109) */
 .monaco-editor-hover,
 .monaco-hover {
