@@ -85,20 +85,19 @@
                     },
                     {
                         "description": "Map Shift+Shift to Option + A in Google Chrome (No Interruptions)",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
-                                    {
-                                        "name": "left_shift_pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
                                     {
                                         "bundle_identifiers": [
                                             "com.google.Chrome"
                                         ],
                                         "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "name": "left_shift_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
@@ -122,6 +121,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.google.Chrome"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "left_shift",
                                     "modifiers": { "optional": ["any"] }
@@ -164,20 +171,19 @@
                     },
                     {
                         "description": "Map Shift+Shift to Ctrl+Tab in VS Code (No Interruptions)",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
-                                    {
-                                        "name": "left_shift_pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
                                     {
                                         "bundle_identifiers": [
                                             "com.facebook.fbvscode"
                                         ],
                                         "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "name": "left_shift_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
@@ -201,6 +207,14 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.facebook.fbvscode"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "left_shift",
                                     "modifiers": { "optional": ["any"] }
