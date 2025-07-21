@@ -277,6 +277,8 @@ alias bepi='bundle exec pod install'
 alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) -- "*.png"'
 alias imageoptim='/Applications/ImageOptim.app/Contents/MacOS/ImageOptim'
 alias fixcalendar='launchctl stop com.apple.CalendarAgent'
+alias jqsample='jq "walk(if type == \"array\" then (if length > 0 then [.[0]] else . end) else . end)"'
+
 # dot() { cd $DOTFILE_PATH }
 dots() { s "$DOTFILE_PATH" "${DOTFILE_PATH}-private"}
 
