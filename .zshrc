@@ -216,6 +216,21 @@ alias ..=' cd ..'
 alias ...=' cd ../..'
 alias ....=' cd ../../..'
 alias .....=' cd ../../../..'
+alias cd='smartcd'
+smartcd () {
+  if [ $# -eq 0 ]; then
+    builtin cd ~;
+    return $?;
+  else
+    if [ -f "$1" ]; then
+      pushd "$(dirname "$1")" > /dev/null;
+      return $?;
+    else
+      pushd "$1" > /dev/null;
+      return $?;
+    fi;
+  fi
+}
 
 # mkdir
 alias mkdir='mkdir -p'
