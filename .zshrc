@@ -220,16 +220,14 @@ alias cd='smartcd'
 smartcd () {
   if [ $# -eq 0 ]; then
     builtin cd ~;
-    return $?;
   else
     if [ -f "$1" ]; then
-      pushd "$(dirname "$1")" > /dev/null;
-      return $?;
+      builtin cd "$(dirname "$1")"
     else
-      pushd "$1" > /dev/null;
-      return $?;
-    fi;
+      builtin cd "$1"
+    fi
   fi
+  return $?
 }
 
 # mkdir
