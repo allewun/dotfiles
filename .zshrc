@@ -347,6 +347,9 @@ export ACK_COLOR_FILENAME='underline cyan'
 export ACK_COLOR_MATCH='underline yellow'
 export ACK_COLOR_LINENO='cyan'
 
+# fzf
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=plain --line-range :300 {}'"
+
 # homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
