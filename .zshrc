@@ -274,7 +274,7 @@ alias ocaml="rlwrap ocaml"
 
 # misc
 tree() { command tree -CF $* | less }
-alias treehash="tree -h --du -D"
+alias treehash="tree -h --du"
 alias json="python -m json.tool"
 alias jsonc="json | pygmentize -f terminal256 -l javascript -O style=monokai"
 alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
