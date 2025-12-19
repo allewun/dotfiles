@@ -273,7 +273,7 @@ alias v='vim -c "'"'"'\""' # open to last position
 alias ocaml="rlwrap ocaml"
 
 # misc
-alias tree=" tree -C | less"
+tree() { command tree -C $* | less }
 alias json="python -m json.tool"
 alias jsonc="json | pygmentize -f terminal256 -l javascript -O style=monokai"
 alias curl="noglob curl" # prevent zsh from treating ? as wildcard in URLs
