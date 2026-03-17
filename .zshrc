@@ -69,19 +69,6 @@ function precmd() { echo -ne "\e]1;${PWD##*/}\a" }
 
 
 #======================================
-# Private
-#======================================
-
-if [[ -d "${DOTFILE_PATH}-private/autocomplete" ]]; then
-  fpath=($fpath "${DOTFILE_PATH}-private/autocomplete")
-fi
-
-if [[ -f "${DOTFILE_PATH}-private/.zshrc" ]]; then
-  source "${DOTFILE_PATH}-private/.zshrc"
-fi
-
-
-#======================================
 # Key bindings
 #======================================
 
@@ -397,3 +384,15 @@ function zbat() {
 #======================================
 
 alias temp="cd ~/temp"
+
+#======================================
+# Private
+#======================================
+
+if [[ -d "${DOTFILE_PATH}-private/autocomplete" ]]; then
+  fpath=($fpath "${DOTFILE_PATH}-private/autocomplete")
+fi
+
+if [[ -f "${DOTFILE_PATH}-private/.zshrc" ]]; then
+  source "${DOTFILE_PATH}-private/.zshrc"
+fi
