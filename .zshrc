@@ -378,6 +378,40 @@ function zbat() {
   unzip -p "$1" "$2" | bat -l "$EXTENSION"
 }
 
+function hex_to_rgb() {
+  local hex="${1#\#}"
+  R=$((16#${hex:0:2}))
+  G=$((16#${hex:2:2}))
+  B=$((16#${hex:4:2}))
+}
+
+function set_iterm_bgcolor() {
+  local R=$1 G=$2 B=$3
+  printf "\033]11;rgb:%02x/%02x/%02x\033\\" $R $G $B
+}
+
+function set_iterm_bgcolor_hex() {
+  local R G B
+  hex_to_rgb "$1"
+  set_iterm_bgcolor $R $G $B
+}
+
+function set_iterm_tab_color() {
+  local R=$1 G=$2 B=$3
+  echo -e "\033]6;1;bg;red;brightness;$R\a"
+  echo -e "\033]6;1;bg;green;brightness;$G\a"
+  echo -e "\033]6;1;bg;blue;brightness;$B\a"
+}
+
+function set_iterm_tab_color_hex() {
+  local R G B
+  hex_to_rgb "$1"
+  set_iterm_tab_color $R $G $B
+}
+
+function reset_iterm_tab_color() {
+  echo -e "\033]6;1;bg;*;default\a"
+}
 
 #======================================
 # Temporary stuff
