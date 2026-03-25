@@ -138,6 +138,7 @@ alias zshrc=" v ~/.zshrc && src"
 alias vimrc=" vim ~/.vimrc"
 alias gitconfig=" v ~/.gitconfig"
 alias hgrc=" v ~/.hgrc"
+alias clmd=" v ~/.claude/CLAUDE.md"
 alias src=" exec zsh -l && echo Reloaded .zshrc" # https://news.ycombinator.com/item?id=23309427
 
 # macOS applications
@@ -279,6 +280,7 @@ alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) --
 alias imageoptim='/Applications/ImageOptim.app/Contents/MacOS/ImageOptim'
 alias fixcalendar='launchctl stop com.apple.CalendarAgent'
 alias jqsample='jq "walk(if type == \"array\" then (if length > 0 then [.[0]] else . end) else . end)"'
+alias cl='claude'
 
 # dot() { cd $DOTFILE_PATH }
 dots() { s "$DOTFILE_PATH" "${DOTFILE_PATH}-private"}
