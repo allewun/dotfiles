@@ -366,6 +366,7 @@ __git_files () {
 
 # automatically 'ls' after 'cd'
 function chpwd() {
+  [[ -o interactive ]] || return
   emulate -L zsh
   ls
 }
@@ -400,9 +401,9 @@ function set_iterm_bgcolor_hex() {
 
 function set_iterm_tab_color() {
   local R=$1 G=$2 B=$3
-  echo -e "\033]6;1;bg;red;brightness;$R\a"
-  echo -e "\033]6;1;bg;green;brightness;$G\a"
-  echo -e "\033]6;1;bg;blue;brightness;$B\a"
+  printf "\033]6;1;bg;red;brightness;$R\a"
+  printf "\033]6;1;bg;green;brightness;$G\a"
+  printf "\033]6;1;bg;blue;brightness;$B\a"
 }
 
 function set_iterm_tab_color_hex() {
@@ -412,7 +413,7 @@ function set_iterm_tab_color_hex() {
 }
 
 function reset_iterm_tab_color() {
-  echo -e "\033]6;1;bg;*;default\a"
+  printf "\033]6;1;bg;*;default\a"
 }
 
 #======================================
