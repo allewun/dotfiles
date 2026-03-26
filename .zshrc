@@ -22,7 +22,10 @@ if hash brew &>/dev/null; then
 fi
 
 # iterm
-source "$DOTFILE_PATH/zsh/iterm2_shell_integration.zsh"
+if [[ ("$TERM_PROGRAM" == "iTerm.app" || -n "$ITERM_SESSION_ID") && -f "$DOTFILE_PATH/zsh/iterm2_shell_integration.zsh" ]]; then
+  source "$DOTFILE_PATH/zsh/iterm2_shell_integration.zsh"
+fi
+(( $+functions[iterm2_prompt_mark] )) || iterm2_prompt_mark() {}
 
 # fzf
 if hash fzf &> /dev/null; then
@@ -48,7 +51,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUPSTREAM=auto
 
 # source prompt files
-for p in $DOTFILE_PATH/zsh/prompts/*.sh;
+for p in $DOTFILE_PATH/zsh/prompts/*.sh(N);
   do source $p
 done
 
@@ -349,7 +352,7 @@ autoload -U colors && colors
 #======================================
 # Functions
 #======================================
-source $DOTFILE_PATH/zsh/functions.sh
+[[ -f "$DOTFILE_PATH/zsh/functions.sh" ]] && source "$DOTFILE_PATH/zsh/functions.sh"
 
 
 #======================================
