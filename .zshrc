@@ -122,7 +122,7 @@ zstyle ':completion:*' list-suffixes true
 zstyle ':completion:*' expand prefix suffix
 
 # list with colors
-zstyle ':completion:*' list-colors ''x
+zstyle ':completion:*' list-colors ''
 
 # menu selection
 zstyle ':completion:*' menu select
@@ -286,7 +286,7 @@ alias jqsample='jq "walk(if type == \"array\" then (if length > 0 then [.[0]] el
 alias cl='claude'
 
 # dot() { cd $DOTFILE_PATH }
-dots() { s "$DOTFILE_PATH" "${DOTFILE_PATH}-private"}
+dots() { s "$DOTFILE_PATH" "${DOTFILE_PATH}-private" }
 
 #======================================
 # History
