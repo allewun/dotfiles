@@ -22,10 +22,7 @@ if hash brew &>/dev/null; then
 fi
 
 # iterm
-if [[ ("$TERM_PROGRAM" == "iTerm.app" || -n "$ITERM_SESSION_ID") && -f "$DOTFILE_PATH/zsh/iterm2_shell_integration.zsh" ]]; then
-  source "$DOTFILE_PATH/zsh/iterm2_shell_integration.zsh"
-fi
-(( $+functions[iterm2_prompt_mark] )) || iterm2_prompt_mark() {}
+source "$DOTFILE_PATH/zsh/iterm2_shell_integration.zsh"
 
 # fzf
 if hash fzf &> /dev/null; then
@@ -64,7 +61,7 @@ __aw_prompt() {
   local HOSTNAME=$([[ -n "$SSH_CONNECTION" ]] && echo '%m' || echo '')
   local TEXT_ENTRY="${HOSTNAME}$ " # right before the cursor
   echo "${NEWLINE}%{$(iterm2_prompt_mark)%}${REL_PATH}${GIT_PROMPT}${HG_PROMPT}${NEWLINE}${TEXT_ENTRY}"
-} 
+}
 export PS1=$(__aw_prompt)
 
 # directory in terminal tab title
@@ -172,7 +169,7 @@ ss() {
   fi
 }
 
-# ffmpeg 
+# ffmpeg
 
 ffmpeg265() {
   if [[ -z "$1" ]]; then echo "Usage: ffmpeg265 input [output]"; return; fi
