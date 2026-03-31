@@ -281,6 +281,7 @@ alias imageoptim='/Applications/ImageOptim.app/Contents/MacOS/ImageOptim'
 alias fixcalendar='launchctl stop com.apple.CalendarAgent'
 alias jqsample='jq "walk(if type == \"array\" then (if length > 0 then [.[0]] else . end) else . end)"'
 alias cl='claude'
+alias icat='imgcat'
 
 # dot() { cd $DOTFILE_PATH }
 dots() { s "$DOTFILE_PATH" "${DOTFILE_PATH}-private" }
