@@ -280,8 +280,21 @@ alias imagediff='git difftool development..$(git rev-parse --abbrev-ref HEAD) --
 alias imageoptim='/Applications/ImageOptim.app/Contents/MacOS/ImageOptim'
 alias fixcalendar='launchctl stop com.apple.CalendarAgent'
 alias jqsample='jq "walk(if type == \"array\" then (if length > 0 then [.[0]] else . end) else . end)"'
-alias cl='claude'
+alias cc='claude'
 alias icat='imgcat'
+
+ccedit() {
+  local tmpfile current new
+  tmpfile=$(mktemp)
+  current=$(grep "^alias cc=" ~/.zshrc | head -1 | sed "s/^alias cc='\\(.*\\)'$/\\1/")
+  print -n "$current" > "$tmpfile"
+  vim "$tmpfile"
+  new=$(<"$tmpfile")
+  rm -f "$tmpfile"
+  sed -i "s|^alias cc=.*|alias cc='${new}'|" ~/.zshrc
+  alias cc="$new"
+  echo "Updated alias cc='$new'"
+}
 
 # dot() { cd $DOTFILE_PATH }
 dots() { s "$DOTFILE_PATH" "${DOTFILE_PATH}-private" }
