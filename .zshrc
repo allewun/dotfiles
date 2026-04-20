@@ -82,6 +82,8 @@ bindkey "^[[B" history-beginning-search-forward-end
 bindkey "^[[3~" delete-char
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
+bindkey '^[^?' backward-kill-word
+bindkey "^[[3;3~" kill-word
 
 # ctrl-z toggle (http://serverfault.com/a/225821)
 function ctrlz () {
