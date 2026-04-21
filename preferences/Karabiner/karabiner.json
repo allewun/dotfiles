@@ -296,420 +296,361 @@
                         ]
                     },
                     {
-                        "description": "Map fn + a-z to control + a-z",
+                        "description": "Map fn to control; double-tap fn sends fn; fn+F-keys preserved",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
+                                "conditions": [
+                                    {
+                                        "name": "fn_tapped_once",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
+                                ],
+                                "from": {
+                                    "key_code": "fn",
+                                    "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
+                                    { "key_code": "fn" },
                                     {
-                                        "key_code": "a",
-                                        "modifiers": ["left_control"]
+                                        "set_variable": {
+                                            "name": "fn_tapped_once",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "fn_as_control",
+                                            "value": 0
+                                        }
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
-                                    "key_code": "b",
+                                    "key_code": "fn",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 300 },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "fn_tapped_once",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "fn_as_control",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "fn_as_control",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "fn_tapped_once",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "fn_tapped_once",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f1",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "b",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f1",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "c",
+                                    "key_code": "f2",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "c",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f2",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "d",
+                                    "key_code": "f3",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "d",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f3",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "e",
+                                    "key_code": "f4",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "e",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f4",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "f",
+                                    "key_code": "f5",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f5",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "g",
+                                    "key_code": "f6",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "g",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f6",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "h",
+                                    "key_code": "f7",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "h",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f7",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "i",
+                                    "key_code": "f8",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "i",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f8",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "j",
+                                    "key_code": "f9",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "j",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f9",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "k",
+                                    "key_code": "f10",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "k",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f10",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "f11",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "l",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f11",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
+                                "conditions": [
                                     {
-                                        "key_code": "m",
-                                        "modifiers": ["left_control"]
+                                        "name": "fn_as_control",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
-                                "type": "basic"
-                            },
-                            {
                                 "from": {
-                                    "key_code": "n",
+                                    "key_code": "f12",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "n",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "o",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "p",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "p",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "q",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "r",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "r",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "s",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "t",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "u",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "v",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "w",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "x",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "x",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "y",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "y",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": ["left_control"]
+                                        "key_code": "f12",
+                                        "modifiers": ["fn"]
                                     }
                                 ],
                                 "type": "basic"
