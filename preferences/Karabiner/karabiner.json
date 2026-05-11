@@ -170,13 +170,14 @@
                         ]
                     },
                     {
-                        "description": "Map Shift+Shift to Ctrl+Tab in VS Code (No Interruptions)",
+                        "description": "Map Shift+Shift to Ctrl+Tab in VS Code/iTerm2 (No Interruptions)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com.facebook.fbvscode"
+                                            "com.facebook.fbvscode",
+                                            "com.googlecode.iterm2"
                                         ],
                                         "type": "frontmost_application_if"
                                     },
@@ -210,7 +211,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com.facebook.fbvscode"
+                                            "com.facebook.fbvscode",
+                                            "com.googlecode.iterm2"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
